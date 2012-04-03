@@ -15,6 +15,18 @@
 		5ED0198E152B6D370012148C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0198D152B6D370012148C /* AppDelegate.m */; };
 		5ED01991152B6D370012148C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED01990152B6D370012148C /* ViewController.m */; };
 		5ED01994152B6D370012148C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED01992152B6D370012148C /* ViewController.xib */; };
+		5ED019E8152B6EFB0012148C /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D1152B6EFB0012148C /* Day.m */; };
+		5ED019E9152B6EFB0012148C /* DayType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D3152B6EFB0012148C /* DayType.m */; };
+		5ED019EA152B6EFB0012148C /* FileCreationRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D5152B6EFB0012148C /* FileCreationRecord.m */; };
+		5ED019EB152B6EFB0012148C /* ProjectCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D7152B6EFB0012148C /* ProjectCalendar.m */; };
+		5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */; };
+		5ED019ED152B6EFB0012148C /* ProjectFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DB152B6EFB0012148C /* ProjectFile.m */; };
+		5ED019EE152B6EFB0012148C /* ProjectHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DD152B6EFB0012148C /* ProjectHeader.m */; };
+		5ED019EF152B6EFB0012148C /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DF152B6EFB0012148C /* Relation.m */; };
+		5ED019F0152B6EFB0012148C /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E1152B6EFB0012148C /* Resource.m */; };
+		5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E3152B6EFB0012148C /* ResourceAssignment.m */; };
+		5ED019F2152B6EFB0012148C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.m */; };
+		5ED019F3152B6EFB0012148C /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E7152B6EFB0012148C /* TaskField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +43,30 @@
 		5ED0198F152B6D370012148C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5ED01990152B6D370012148C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5ED01993152B6D370012148C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		5ED019D0152B6EFB0012148C /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		5ED019D1152B6EFB0012148C /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		5ED019D2152B6EFB0012148C /* DayType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayType.h; sourceTree = "<group>"; };
+		5ED019D3152B6EFB0012148C /* DayType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayType.m; sourceTree = "<group>"; };
+		5ED019D4152B6EFB0012148C /* FileCreationRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCreationRecord.h; sourceTree = "<group>"; };
+		5ED019D5152B6EFB0012148C /* FileCreationRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCreationRecord.m; sourceTree = "<group>"; };
+		5ED019D6152B6EFB0012148C /* ProjectCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCalendar.h; sourceTree = "<group>"; };
+		5ED019D7152B6EFB0012148C /* ProjectCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCalendar.m; sourceTree = "<group>"; };
+		5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCalendarWeek.h; sourceTree = "<group>"; };
+		5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCalendarWeek.m; sourceTree = "<group>"; };
+		5ED019DA152B6EFB0012148C /* ProjectFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectFile.h; sourceTree = "<group>"; };
+		5ED019DB152B6EFB0012148C /* ProjectFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectFile.m; sourceTree = "<group>"; };
+		5ED019DC152B6EFB0012148C /* ProjectHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectHeader.h; sourceTree = "<group>"; };
+		5ED019DD152B6EFB0012148C /* ProjectHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectHeader.m; sourceTree = "<group>"; };
+		5ED019DE152B6EFB0012148C /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
+		5ED019DF152B6EFB0012148C /* Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relation.m; sourceTree = "<group>"; };
+		5ED019E0152B6EFB0012148C /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
+		5ED019E1152B6EFB0012148C /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resource.m; sourceTree = "<group>"; };
+		5ED019E2152B6EFB0012148C /* ResourceAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceAssignment.h; sourceTree = "<group>"; };
+		5ED019E3152B6EFB0012148C /* ResourceAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceAssignment.m; sourceTree = "<group>"; };
+		5ED019E4152B6EFB0012148C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		5ED019E5152B6EFB0012148C /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		5ED019E6152B6EFB0012148C /* TaskField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskField.h; sourceTree = "<group>"; };
+		5ED019E7152B6EFB0012148C /* TaskField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +86,30 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
+				5ED019D0152B6EFB0012148C /* Day.h */,
+				5ED019D1152B6EFB0012148C /* Day.m */,
+				5ED019D2152B6EFB0012148C /* DayType.h */,
+				5ED019D3152B6EFB0012148C /* DayType.m */,
+				5ED019D4152B6EFB0012148C /* FileCreationRecord.h */,
+				5ED019D5152B6EFB0012148C /* FileCreationRecord.m */,
+				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
+				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
+				5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */,
+				5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */,
+				5ED019DA152B6EFB0012148C /* ProjectFile.h */,
+				5ED019DB152B6EFB0012148C /* ProjectFile.m */,
+				5ED019DC152B6EFB0012148C /* ProjectHeader.h */,
+				5ED019DD152B6EFB0012148C /* ProjectHeader.m */,
+				5ED019DE152B6EFB0012148C /* Relation.h */,
+				5ED019DF152B6EFB0012148C /* Relation.m */,
+				5ED019E0152B6EFB0012148C /* Resource.h */,
+				5ED019E1152B6EFB0012148C /* Resource.m */,
+				5ED019E2152B6EFB0012148C /* ResourceAssignment.h */,
+				5ED019E3152B6EFB0012148C /* ResourceAssignment.m */,
+				5ED019E4152B6EFB0012148C /* Task.h */,
+				5ED019E5152B6EFB0012148C /* Task.m */,
+				5ED019E6152B6EFB0012148C /* TaskField.h */,
+				5ED019E7152B6EFB0012148C /* TaskField.m */,
 				5ED01983152B6D370012148C /* MppViewer */,
 				5ED0197C152B6D370012148C /* Frameworks */,
 				5ED0197A152B6D370012148C /* Products */,
@@ -163,6 +223,18 @@
 				5ED0198A152B6D370012148C /* main.m in Sources */,
 				5ED0198E152B6D370012148C /* AppDelegate.m in Sources */,
 				5ED01991152B6D370012148C /* ViewController.m in Sources */,
+				5ED019E8152B6EFB0012148C /* Day.m in Sources */,
+				5ED019E9152B6EFB0012148C /* DayType.m in Sources */,
+				5ED019EA152B6EFB0012148C /* FileCreationRecord.m in Sources */,
+				5ED019EB152B6EFB0012148C /* ProjectCalendar.m in Sources */,
+				5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.m in Sources */,
+				5ED019ED152B6EFB0012148C /* ProjectFile.m in Sources */,
+				5ED019EE152B6EFB0012148C /* ProjectHeader.m in Sources */,
+				5ED019EF152B6EFB0012148C /* Relation.m in Sources */,
+				5ED019F0152B6EFB0012148C /* Resource.m in Sources */,
+				5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */,
+				5ED019F2152B6EFB0012148C /* Task.m in Sources */,
+				5ED019F3152B6EFB0012148C /* TaskField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
