@@ -1362,14 +1362,14 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 //
 // @param field custom field number
 // @param alias alias text
-
--(void)setResourceFieldAlias:(ResourceField *)field withAlias:(NSString *)alias
+#warning Incomplete
+/*-(void)setResourceFieldAlias:(ResourceField *)field withAlias:(NSString *)alias
 {
     if ((alias != null) && (alias.length() != 0))
     {
         m_resourceFieldAlias.put(field, alias);
         m_aliasResourceField.put(alias, field);
     }
-}
+}*/
 
 @end
