@@ -28,6 +28,7 @@
 		5ED019F2152B6EFB0012148C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.m */; };
 		7ABCBC4B153388650006391D /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.m */; };
 		7ABCBC801533B2C40006391D /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.m */; };
+		7ABCBC84153492A30006391D /* FieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC83153492A30006391D /* FieldType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +71,8 @@
 		7ABCBC4A153388650006391D /* DataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataType.m; sourceTree = "<group>"; };
 		7ABCBC7E1533B2C40006391D /* TaskField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskField.h; sourceTree = "<group>"; };
 		7ABCBC7F1533B2C40006391D /* TaskField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskField.m; sourceTree = "<group>"; };
-		7ABCBC811533B2DD0006391D /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
+		7ABCBC82153492A30006391D /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
+		7ABCBC83153492A30006391D /* FieldType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,8 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
-				7ABCBC811533B2DD0006391D /* FieldType.h */,
+				7ABCBC82153492A30006391D /* FieldType.h */,
+				7ABCBC83153492A30006391D /* FieldType.m */,
 				7ABCBC7E1533B2C40006391D /* TaskField.h */,
 				7ABCBC7F1533B2C40006391D /* TaskField.m */,
 				7ABCBC49153388640006391D /* DataType.h */,
@@ -243,6 +246,7 @@
 				5ED019F2152B6EFB0012148C /* Task.m in Sources */,
 				7ABCBC4B153388650006391D /* DataType.m in Sources */,
 				7ABCBC801533B2C40006391D /* TaskField.m in Sources */,
+				7ABCBC84153492A30006391D /* FieldType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

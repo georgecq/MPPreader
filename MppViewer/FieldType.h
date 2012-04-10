@@ -2,7 +2,7 @@
 //  FieldType.h
 //  MppViewer
 //
-//  Created by Fernando Araya on 4/9/12.
+//  Created by emilio1 on 4/10/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,13 +10,10 @@
 
 @class DataType;
 
-#warning FieldType is a protocol not a class ??? must be a class that adopts the FieldType protocol
-@class FieldType; 
+@interface FieldType : NSObject
 
-@protocol FieldType <NSObject>
-
--(NSString *) getName;
--(DataType *) getDataType;
+-(NSString *)getName;
+-(DataType *)getDataType;
 -(FieldType *) getUnitsType;
 
 @end
