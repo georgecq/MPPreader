@@ -1,8 +1,8 @@
 //
 //  TaskField.m
-//  mppParser
+//  MppViewer
 //
-//  Created by George on 4/3/12.
+//  Created by Fernando Araya on 4/9/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
