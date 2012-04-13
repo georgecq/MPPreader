@@ -13,7 +13,9 @@
 @interface FieldType : NSObject
 
 -(NSString *)getName;
+
 -(DataType *)getDataType;
+
 -(FieldType *) getUnitsType;
 
 @end
