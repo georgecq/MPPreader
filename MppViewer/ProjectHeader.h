@@ -14,4 +14,10 @@
 
 -(id)init:(ProjectFile *)file;
 
+-(int)getMinutesPerDay;
+
+-(int)getMinutesPerWeek;
+
+-(int)getDaysPerMonth;
+
 @end
