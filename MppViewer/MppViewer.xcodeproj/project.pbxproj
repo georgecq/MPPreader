@@ -37,6 +37,8 @@
 		7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */; };
 		7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */; };
 		7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */; };
+		7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */; };
+		7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,10 @@
 		7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceAssignmentWorkgroupFields.m; sourceTree = "<group>"; };
 		7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentField.h; sourceTree = "<group>"; };
 		7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentField.m; sourceTree = "<group>"; };
+		7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstraintType.h; sourceTree = "<group>"; };
+		7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintType.m; sourceTree = "<group>"; };
+		7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskMode.h; sourceTree = "<group>"; };
+		7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskMode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +122,12 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
+				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
+				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
+				7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */,
+				7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
 				7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */,
-				7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */,
-				7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */,
-				7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */,
-				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */,
 				7ABCBC49153388640006391D /* DataType.h */,
 				7ABCBC4A153388650006391D /* DataType.m */,
 				5ED019D0152B6EFB0012148C /* Day.h */,
@@ -149,6 +155,8 @@
 				5ED019DB152B6EFB0012148C /* ProjectFile.m */,
 				5ED019DC152B6EFB0012148C /* ProjectHeader.h */,
 				5ED019DD152B6EFB0012148C /* ProjectHeader.m */,
+				7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */,
+				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */,
 				7A29EE201538DB1000958CB7 /* RecurringTask.h */,
 				7A29EE211538DB1000958CB7 /* RecurringTask.m */,
 				5ED019DE152B6EFB0012148C /* Relation.h */,
@@ -157,6 +165,8 @@
 				5ED019E1152B6EFB0012148C /* Resource.m */,
 				5ED019E2152B6EFB0012148C /* ResourceAssignment.h */,
 				5ED019E3152B6EFB0012148C /* ResourceAssignment.m */,
+				7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */,
+				7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */,
 				5ED019E4152B6EFB0012148C /* Task.h */,
 				5ED019E5152B6EFB0012148C /* Task.m */,
 				7ABCBC7E1533B2C40006391D /* TaskField.h */,
@@ -295,6 +305,8 @@
 				7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */,
 				7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */,
 				7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */,
+				7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */,
+				7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
