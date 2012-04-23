@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectEntity.h"
 
 @class ProjectFile;
+@class TimeUnit;
 
-@interface ProjectHeader : NSObject
+@interface ProjectHeader : ProjectEntity
 
 -(id)init:(ProjectFile *)file;
 

@@ -27,6 +27,7 @@
 		5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E3152B6EFB0012148C /* ResourceAssignment.m */; };
 		5ED019F2152B6EFB0012148C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.m */; };
 		7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29EE211538DB1000958CB7 /* RecurringTask.m */; };
+		7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFECFB153F529A00884FB3 /* ProjectEntity.m */; };
 		7ABCBC4B153388650006391D /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.m */; };
 		7ABCBC801533B2C40006391D /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.m */; };
 		7ABCBC84153492A30006391D /* FieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC83153492A30006391D /* FieldType.m */; };
@@ -81,6 +82,8 @@
 		5ED019E5152B6EFB0012148C /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		7A29EE201538DB1000958CB7 /* RecurringTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecurringTask.h; sourceTree = "<group>"; };
 		7A29EE211538DB1000958CB7 /* RecurringTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecurringTask.m; sourceTree = "<group>"; };
+		7AAFECFA153F529A00884FB3 /* ProjectEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectEntity.h; sourceTree = "<group>"; };
+		7AAFECFB153F529A00884FB3 /* ProjectEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectEntity.m; sourceTree = "<group>"; };
 		7ABCBC49153388640006391D /* DataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataType.h; sourceTree = "<group>"; };
 		7ABCBC4A153388650006391D /* DataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataType.m; sourceTree = "<group>"; };
 		7ABCBC7E1533B2C40006391D /* TaskField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskField.h; sourceTree = "<group>"; };
@@ -128,10 +131,8 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
-				7AE1BB72153DCE8000E68139 /* RelationType.h */,
-				7AE1BB73153DCE8000E68139 /* RelationType.m */,
-				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
-				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
+				7AAFECFA153F529A00884FB3 /* ProjectEntity.h */,
+				7AAFECFB153F529A00884FB3 /* ProjectEntity.m */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
 				7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */,
 				7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */,
@@ -169,6 +170,8 @@
 				7A29EE211538DB1000958CB7 /* RecurringTask.m */,
 				5ED019DE152B6EFB0012148C /* Relation.h */,
 				5ED019DF152B6EFB0012148C /* Relation.m */,
+				7AE1BB72153DCE8000E68139 /* RelationType.h */,
+				7AE1BB73153DCE8000E68139 /* RelationType.m */,
 				5ED019E0152B6EFB0012148C /* Resource.h */,
 				5ED019E1152B6EFB0012148C /* Resource.m */,
 				5ED019E2152B6EFB0012148C /* ResourceAssignment.h */,
@@ -181,6 +184,8 @@
 				7ABCBC7F1533B2C40006391D /* TaskField.m */,
 				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
 				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
+				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
+				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.m */,
 			);
@@ -319,6 +324,7 @@
 				7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */,
 				7ABEB7FE153CE8C1007E9B05 /* TaskType.m in Sources */,
 				7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */,
+				7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
