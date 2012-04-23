@@ -135,15 +135,6 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
-				7AAFECFA153F529A00884FB3 /* ProjectEntity.h */,
-				7AAFECFB153F529A00884FB3 /* ProjectEntity.m */,
-				F594F6C01544EFDB00C1FF71 /* EnumUtility.h */,
-				F594F6C11544EFDB00C1FF71 /* EnumUtility.m */,
-				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
-				7AE1BB72153DCE8000E68139 /* RelationType.h */,
-				7AE1BB73153DCE8000E68139 /* RelationType.m */,
-				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
-				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
 				7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */,
 				7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */,
@@ -154,6 +145,8 @@
 				5ED019D1152B6EFB0012148C /* Day.m */,
 				5ED019D2152B6EFB0012148C /* DayType.h */,
 				5ED019D3152B6EFB0012148C /* DayType.m */,
+				F594F6C01544EFDB00C1FF71 /* EnumUtility.h */,
+				F594F6C11544EFDB00C1FF71 /* EnumUtility.m */,
 				7ABD892A153882890093112C /* FieldContainer.h */,
 				7ABD892B153882890093112C /* FieldContainer.m */,
 				7ABD892E153884A70093112C /* FieldListener.h */,
@@ -166,11 +159,14 @@
 				5ED01983152B6D370012148C /* MppViewer */,
 				7ABD89371538B8670093112C /* MPPViewerDuration.h */,
 				7ABD89381538B8670093112C /* MPPViewerDuration.m */,
+				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
 				5ED0197A152B6D370012148C /* Products */,
 				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
 				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
 				5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */,
 				5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */,
+				7AAFECFA153F529A00884FB3 /* ProjectEntity.h */,
+				7AAFECFB153F529A00884FB3 /* ProjectEntity.m */,
 				5ED019DA152B6EFB0012148C /* ProjectFile.h */,
 				5ED019DB152B6EFB0012148C /* ProjectFile.m */,
 				5ED019DC152B6EFB0012148C /* ProjectHeader.h */,
@@ -196,9 +192,13 @@
 				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
 				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
 				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
+				7AE1BB72153DCE8000E68139 /* RelationType.h */,
 				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.m */,
+				7AE1BB73153DCE8000E68139 /* RelationType.m */,
+				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
+				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
 			);
 			sourceTree = "<group>";
 		};

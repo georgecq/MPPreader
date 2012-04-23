@@ -25,8 +25,8 @@
     {
         if([rec isKindOfClass:[RecurrenceType class]])
         {
-            RecurrenceType *type = (RecurrenceType *)rec;
-            NSLog(@"%@", [type getValue]);
+            ////RecurrenceType *type = (RecurrenceType *)rec;
+            NSLog(@"%d", (int)[rec performSelector:@selector(getValue)]);
         }
         else
         {
