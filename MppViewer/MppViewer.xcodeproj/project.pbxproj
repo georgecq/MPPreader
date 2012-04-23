@@ -42,6 +42,7 @@
 		7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */; };
 		7ABEB7FE153CE8C1007E9B05 /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FD153CE8C1007E9B05 /* TaskType.m */; };
 		7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1BB73153DCE8000E68139 /* RelationType.m */; };
+		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,9 @@
 		7ABEB7FD153CE8C1007E9B05 /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
 		7AE1BB72153DCE8000E68139 /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
 		7AE1BB73153DCE8000E68139 /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
+		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
+		F594F6C01544EFDB00C1FF71 /* EnumUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumUtility.h; sourceTree = "<group>"; };
+		F594F6C11544EFDB00C1FF71 /* EnumUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

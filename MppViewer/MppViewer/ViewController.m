@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RecurrenceType.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSMutableArray *values = [RecurrenceType TYPE_VALUES];
+    for (NSObject *rec in values) 
+    {
+        if([rec isKindOfClass:[RecurrenceType class]])
+        {
+            RecurrenceType *type = (RecurrenceType *)rec;
+            NSLog(@"%@", [type getValue]);
+        }
+        else
+        {
+            NSLog(@"NULL");
+        }
+    }
 }
 
 - (void)viewDidUnload

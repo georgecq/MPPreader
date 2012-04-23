@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface RelationType : NSObject
+#import "MpxjEnum.h"
+ 
+@interface RelationType : NSObject <MpxjEnum>
 {
     int _value;
     NSString *_name;
@@ -17,8 +18,6 @@
 +(RelationType *)getInstance:(int)type;
 
 +(RelationType *)getInstanceWithNumber:(NSNumber *)type;
-
--(int)getValue;
 
 -(NSString *)toString;
 

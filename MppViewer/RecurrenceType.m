@@ -7,6 +7,7 @@
 //
 
 #import "RecurrenceType.h"
+#import "EnumUtility.h"
 
 @implementation RecurrenceType
 
@@ -112,7 +113,9 @@ static NSMutableArray *_TYPE_VALUES = nil;
 {
     if (_TYPE_VALUES == nil) 
     {
-        _TYPE_VALUES = [[NSMutableArray alloc]initWithObjects:[RecurrenceType DAILY],[RecurrenceType WEEKLY],[RecurrenceType MONTLY],[RecurrenceType YEARLY], nil];
+        NSMutableArray *temp = [[NSMutableArray alloc]initWithObjects:[RecurrenceType DAILY],[RecurrenceType WEEKLY],[RecurrenceType MONTLY],[RecurrenceType YEARLY], nil];
+        
+        _TYPE_VALUES = [EnumUtility createTypeArray:temp withOffSet:13];
     }
     return _TYPE_VALUES;
 }

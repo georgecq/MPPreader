@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface RecurrenceType : NSObject
+@interface RecurrenceType : NSObject <MpxjEnum>
 {
     int _value;
     NSString *_name;
@@ -24,5 +25,7 @@
 +(RecurrenceType *)WEEKLY;
 +(RecurrenceType *)MONTHLY;
 +(RecurrenceType *)YEARLY;
+
++(NSMutableArray *)TYPE_VALUES;
 
 @end
