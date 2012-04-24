@@ -37,7 +37,6 @@
 		7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */; };
 		7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */; };
 		7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */; };
-		7ABEB7FE153CE8C1007E9B05 /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FD153CE8C1007E9B05 /* TaskType.m */; };
 		7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA31546176B004FF2A2 /* AccrueType.m */; };
 		7AD45AAE15461789004FF2A2 /* BackgroundPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA715461789004FF2A2 /* BackgroundPattern.m */; };
 		7AD45AAF15461789004FF2A2 /* BookingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA915461789004FF2A2 /* BookingType.m */; };
@@ -67,7 +66,8 @@
 		7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF115462563004FF2A2 /* WorkContour.m */; };
 		7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF315462565004FF2A2 /* WorkGroup.m */; };
 		7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.m */; };
-		7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1BB73153DCE8000E68139 /* RelationType.m */; };
+		7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.m */; };
+		7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.m */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
 /* End PBXBuildFile section */
 
@@ -129,8 +129,6 @@
 		7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintType.m; sourceTree = "<group>"; };
 		7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskMode.h; sourceTree = "<group>"; };
 		7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskMode.m; sourceTree = "<group>"; };
-		7ABEB7FC153CE8C1007E9B05 /* TaskType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskType.h; sourceTree = "<group>"; };
-		7ABEB7FD153CE8C1007E9B05 /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
 		7AD45AA21546176B004FF2A2 /* AccrueType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccrueType.h; sourceTree = "<group>"; };
 		7AD45AA31546176B004FF2A2 /* AccrueType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccrueType.m; sourceTree = "<group>"; };
 		7AD45AA615461789004FF2A2 /* BackgroundPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundPattern.h; sourceTree = "<group>"; };
@@ -193,8 +191,10 @@
 		7AD45AFA154628EB004FF2A2 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		7AD45AFB15462A60004FF2A2 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
 		7AD45AFC15462A61004FF2A2 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
-		7AE1BB72153DCE8000E68139 /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
-		7AE1BB73153DCE8000E68139 /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
+		7AF9FE8715462CBA002AB0CF /* TaskType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskType.h; sourceTree = "<group>"; };
+		7AF9FE8815462CBA002AB0CF /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
+		7AF9FE8915462CBA002AB0CF /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
+		7AF9FE8C15462CDA002AB0CF /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
 		F594F6C01544EFDB00C1FF71 /* EnumUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumUtility.h; sourceTree = "<group>"; };
 		F594F6C11544EFDB00C1FF71 /* EnumUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumUtility.m; sourceTree = "<group>"; };
@@ -298,8 +298,8 @@
 				7A29EE211538DB1000958CB7 /* RecurringTask.m */,
 				5ED019DE152B6EFB0012148C /* Relation.h */,
 				5ED019DF152B6EFB0012148C /* Relation.m */,
-				7AE1BB72153DCE8000E68139 /* RelationType.h */,
-				7AE1BB73153DCE8000E68139 /* RelationType.m */,
+				7AF9FE8C15462CDA002AB0CF /* RelationType.h */,
+				7AF9FE8815462CBA002AB0CF /* RelationType.m */,
 				5ED019E0152B6EFB0012148C /* Resource.h */,
 				5ED019E1152B6EFB0012148C /* Resource.m */,
 				5ED019E2152B6EFB0012148C /* ResourceAssignment.h */,
@@ -316,8 +316,8 @@
 				7ABCBC7F1533B2C40006391D /* TaskField.m */,
 				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
 				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
-				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
-				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
+				7AF9FE8715462CBA002AB0CF /* TaskType.h */,
+				7AF9FE8915462CBA002AB0CF /* TaskType.m */,
 				7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */,
 				7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */,
 				7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */,
@@ -333,10 +333,6 @@
 				7AD45AF115462563004FF2A2 /* WorkContour.m */,
 				7AD45AF215462564004FF2A2 /* WorkGroup.h */,
 				7AD45AF315462565004FF2A2 /* WorkGroup.m */,
-				7AE1BB72153DCE8000E68139 /* RelationType.h */,
-				7AE1BB73153DCE8000E68139 /* RelationType.m */,
-				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
-				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,8 +464,6 @@
 				7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */,
 				7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */,
 				7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */,
-				7ABEB7FE153CE8C1007E9B05 /* TaskType.m in Sources */,
-				7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */,
 				7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */,
 				F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */,
 				7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */,
@@ -501,6 +495,8 @@
 				7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */,
 				7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */,
 				7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */,
+				7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */,
+				7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
