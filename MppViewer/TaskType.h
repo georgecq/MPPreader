@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface TaskType : NSObject
+@interface TaskType : NSObject <MpxjEnum>
 {
     int _value;
 }
@@ -16,8 +17,6 @@
 +(TaskType *)getInstance:(int)type;
 
 +(TaskType *)getInstanceWithNumber:(NSNumber *)type;
-
--(int)getValue;
 
 +(TaskType *)FIXED_UNITS;
 +(TaskType *)FIXED_DURATION;

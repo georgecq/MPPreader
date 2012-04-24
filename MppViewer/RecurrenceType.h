@@ -17,8 +17,6 @@
 
 +(RecurrenceType *)getInstance:(int)type;
 
--(int)getValue;
-
 -(NSString *)toString;
 
 +(RecurrenceType *)DAILY;

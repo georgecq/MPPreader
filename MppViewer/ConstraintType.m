@@ -7,6 +7,7 @@
 //
 
 #import "ConstraintType.h"
+#import "NumberUtility.h"
 
 @implementation ConstraintType
 
@@ -51,6 +52,27 @@ static NSMutableArray *_TYPE_VALUES = nil;
         type = [[ConstraintType AS_SOON_AS_POSSIBLE] getValue];
     }
     return [[ConstraintType TYPE_VALUES] objectAtIndex:type];
+}
+
+/**
+ * Retrieve an instance of the enum based on its int value.
+ *
+ * @param type int type
+ * @return enum instance
+ */
+
++(ConstraintType *)getInstanceWithNumber:(NSNumber *)type
+{
+    int value;
+    if(type == nil)
+    {
+        value = -1;
+    }
+    else
+    {
+        value = [NumberUtility getInt:type];
+    }
+    return [self getInstance:value];
 }
 
 /**

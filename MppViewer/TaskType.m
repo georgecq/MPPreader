@@ -7,6 +7,7 @@
 //
 
 #import "TaskType.h"
+#import "NumberUtility.h"
 
 @implementation TaskType
 
@@ -64,7 +65,7 @@ static NSMutableArray *_TYPE_VALUES = nil;
     }
     else
     {
-        value = [type intValue];
+        value = [NumberUtility getInt:type];
     }
     return [self getInstance:value];
 }

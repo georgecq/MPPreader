@@ -7,6 +7,7 @@
 //
 
 #import "TaskMode.h"
+#import "NumberUtility.h"
 
 @implementation TaskMode
 
@@ -45,6 +46,27 @@ static NSMutableArray *_TYPE_VALUES = nil;
         type = [[TaskMode AUTO_SCHEDULED] getValue];
     }
     return [[TaskMode TYPE_VALUES] objectAtIndex:type];
+}
+
+/**
+ * Retrieve an instance of the enum based on its int value.
+ *
+ * @param type int type
+ * @return enum instance
+ */
+
++(TaskMode *)getInstanceWithNumber:(NSNumber *)type
+{
+    int value;
+    if(type == nil)
+    {
+        value = -1;
+    }
+    else
+    {
+        value = [NumberUtility getInt:type];
+    }
+    return [self getInstance:value];
 }
 
 /**

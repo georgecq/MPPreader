@@ -2,20 +2,20 @@
 //  FieldType.h
 //  MppViewer
 //
-//  Created by emilio1 on 4/10/12.
+//  Created by emilio1 on 4/23/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
+#import "DataType.h"
 
-@class DataType;
-
-@interface FieldType : NSObject
+@protocol FieldType <MpxjEnum>
 
 -(NSString *)getName;
 
 -(DataType *)getDataType;
 
--(FieldType *) getUnitsType;
+-(id<FieldType>)getUnitsType;
 
 @end

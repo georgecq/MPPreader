@@ -2,25 +2,22 @@
 //  FieldContainer.h
 //  MppViewer
 //
-//  Created by Fernando Araya on 4/13/12.
+//  Created by emilio1 on 4/23/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "FieldType.h"
+#import "FieldListener.h"
 
-@class FieldType;
-@class FieldListener;
+@protocol FieldContainer <NSObject>
 
-@interface FieldContainer : NSObject
+-(void)set:(id<FieldType>)field withObject:(NSObject *)value;
 
--(void)set:(FieldType *)field withValue:(NSObject *)value;
+-(NSObject *)getCurrentValue:(id<FieldType>)field;
 
--(NSObject *)getCachedValue:(FieldType *) field;
+-(void)addListener:(id<FieldListener>)listener;
 
--(NSObject *)getCurrentValue:(FieldType *) field;
-
--(void)addFieldListener:(FieldListener *)listener;
-
--(void)removeFieldListener:(FieldListener *)listener;
+-(void)removeListener:(id<FieldListener>)listener;
 
 @end

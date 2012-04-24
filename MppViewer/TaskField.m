@@ -939,7 +939,7 @@ static NSMutableArray *_TYPE_VALUES = nil;
  * @param unitsType field units type
  */
 
--(id)init:(DataType *) dataType withUnitsType:(FieldType *) unitsType
+-(id)init:(DataType *) dataType withUnitsType:(id<FieldType>) unitsType
 {
     self = [super init];
     if (self)
@@ -1002,7 +1002,7 @@ static NSMutableArray *_TYPE_VALUES = nil;
  * {@inheritDoc}
  */
 
--(FieldType *) getUnitsType
+-(id<FieldType>) getUnitsType
 {
     return _unitsType;
 }
@@ -1036,7 +1036,6 @@ static NSMutableArray *_TYPE_VALUES = nil;
     
     return result;
 }
-
 
 +(TaskField *)START 
 {

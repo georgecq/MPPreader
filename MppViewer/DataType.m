@@ -7,6 +7,8 @@
 //
 
 #import "DataType.h"
+#import "NumberUtility.h"
+#import "EnumUtility.h"
 
 @implementation DataType
 
@@ -67,6 +69,26 @@ static NSMutableArray *_TYPE_VALUES = nil;
     return [[DataType TYPE_VALUES] objectAtIndex:type];
 }
 
+/**
+ * Retrieve an instance of the enum based on its int value.
+ *
+ * @param type int type
+ * @return enum instance
+ */
+
++(DataType *)getinstanceWithNumber:(NSNumber *)type
+{
+    int value;
+    if(type == nil)
+    {
+        value = -1;
+    }
+    else
+    {
+        value = [NumberUtility getInt:type];
+    }
+    return [self getInstance:value];
+}
 
 // Accessor method used to retrieve the numeric representation of the enum. 
 //
@@ -311,12 +333,13 @@ static NSMutableArray *_TYPE_VALUES = nil;
     return _RATE_UNITS;
 }
 
-
 +(NSMutableArray *)TYPE_VALUES
 {
     if (_TYPE_VALUES == nil) 
     {
-        _TYPE_VALUES = [[NSMutableArray alloc]initWithObjects:[DataType STRING],[DataType DATE],[DataType CURRENCY],[DataType BOOLEAN],[DataType NUMERIC],[DataType DURATION],[DataType UNITS],[DataType PERCENTAGE],[DataType ACCRUE],[DataType CONSTRAINT],[DataType RATE],[DataType PRIORITY],[DataType RELATION_LIST],[DataType TASK_TYPE],[DataType RESOURCE_TYPE],[DataType TIME_UNITS],[DataType WORK],[DataType INTEGER],[DataType ASCII_STRING],[DataType SHORT],[DataType BINARY],[DataType DELAY],[DataType WORK_UNITS],[DataType WORKGROUP],[DataType GUID],[DataType RATE_UNITS], nil];
+        NSMutableArray *temp = [[NSMutableArray alloc]initWithObjects:[DataType STRING],[DataType DATE],[DataType CURRENCY],[DataType BOOLEAN],[DataType NUMERIC],[DataType DURATION],[DataType UNITS],[DataType PERCENTAGE],[DataType ACCRUE],[DataType CONSTRAINT],[DataType RATE],[DataType PRIORITY],[DataType RELATION_LIST],[DataType TASK_TYPE],[DataType RESOURCE_TYPE],[DataType TIME_UNITS],[DataType WORK],[DataType INTEGER],[DataType ASCII_STRING],[DataType SHORT],[DataType BINARY],[DataType DELAY],[DataType WORK_UNITS],[DataType WORKGROUP],[DataType GUID],[DataType RATE_UNITS], nil];
+        
+        _TYPE_VALUES = [EnumUtility createTypeArray:temp withOffSet:1];
     }
     return _TYPE_VALUES;
 }

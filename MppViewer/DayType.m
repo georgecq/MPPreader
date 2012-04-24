@@ -7,6 +7,7 @@
 //
 
 #import "DayType.h"
+#import "NumberUtility.h"
 
 @implementation DayType
 
@@ -44,6 +45,26 @@ static NSMutableArray *_TYPE_VALUES = nil;
     return [[DayType TYPE_VALUES] objectAtIndex:type];
 }
 
+/**
+ * Retrieve an instance of the enum based on its int value.
+ *
+ * @param type int type
+ * @return enum instance
+ */
+
++(DayType *)getInstanceWithNumber:(NSNumber *)type
+{
+    int value;
+    if(type == nil)
+    {
+        value = -1;
+    }
+    else
+    {
+        value = [NumberUtility getInt:type];
+    }
+    return [self getInstance:value];
+}
 
 // Accessor method used to retrieve the numeric representation of the enum. 
 //

@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface TaskMode : NSObject
+@interface TaskMode : NSObject <MpxjEnum>
 {
     int _value;
 }
 
 +(TaskMode *)getInstance:(int)type;
 
--(int)getValue;
++(TaskMode *)getInstanceWithNumber:(NSNumber *)type;
 
 +(TaskMode *)MANUALLY_SCHEDULED;
 +(TaskMode *)AUTO_SCHEDULED;

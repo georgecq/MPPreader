@@ -7,17 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface DataType : NSObject
+@interface DataType : NSObject <MpxjEnum>
 { 
     int _value;
 }
 
--(id)init:(int)type;
-
 +(DataType *)getInstance:(int)type;
 
--(int)getValue;
++(DataType *)getinstanceWithNumber:(NSNumber *)type;
 
 +(DataType *)STRING;
 +(DataType *)DATE;

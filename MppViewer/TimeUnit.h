@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface TimeUnit : NSObject
+@interface TimeUnit : NSObject <MpxjEnum>
 {
     int _value;
     NSString *_name;
@@ -16,13 +17,13 @@
 
 -(id)init:(int)type withName:(NSString *)name;
 
--(int)getValue;
-
 -(NSString *)getName;
 
 -(NSString *)toString;
 
 +(TimeUnit *)getInstance:(int) type;
+
++(TimeUnit *)getInstanceWithNumber:(NSNumber *) type;
 
 +(TimeUnit *)MINUTES;
 +(TimeUnit *)HOURS;

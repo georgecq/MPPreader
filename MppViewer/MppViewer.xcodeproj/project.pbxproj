@@ -30,9 +30,6 @@
 		7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFECFB153F529A00884FB3 /* ProjectEntity.m */; };
 		7ABCBC4B153388650006391D /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.m */; };
 		7ABCBC801533B2C40006391D /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.m */; };
-		7ABCBC84153492A30006391D /* FieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC83153492A30006391D /* FieldType.m */; };
-		7ABD892C153882890093112C /* FieldContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD892B153882890093112C /* FieldContainer.m */; };
-		7ABD8930153884A70093112C /* FieldListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD892F153884A70093112C /* FieldListener.m */; };
 		7ABD8933153889340093112C /* TimeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD8932153889340093112C /* TimeUnit.m */; };
 		7ABD89391538B8670093112C /* MPPViewerDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD89381538B8670093112C /* MPPViewerDuration.m */; };
 		7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */; };
@@ -41,6 +38,34 @@
 		7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */; };
 		7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */; };
 		7ABEB7FE153CE8C1007E9B05 /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FD153CE8C1007E9B05 /* TaskType.m */; };
+		7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA31546176B004FF2A2 /* AccrueType.m */; };
+		7AD45AAE15461789004FF2A2 /* BackgroundPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA715461789004FF2A2 /* BackgroundPattern.m */; };
+		7AD45AAF15461789004FF2A2 /* BookingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA915461789004FF2A2 /* BookingType.m */; };
+		7AD45AB015461789004FF2A2 /* ChartPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAB15461789004FF2A2 /* ChartPattern.m */; };
+		7AD45AB115461789004FF2A2 /* ColorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAD15461789004FF2A2 /* ColorType.m */; };
+		7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */; };
+		7AD45ACB154617C2004FF2A2 /* DateOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB5154617C2004FF2A2 /* DateOrder.m */; };
+		7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */; };
+		7AD45ACD154617C2004FF2A2 /* GanttBarDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */; };
+		7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */; };
+		7AD45ACF154617C2004FF2A2 /* GanttBarShowForTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */; };
+		7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */; };
+		7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */; };
+		7AD45AD2154617C2004FF2A2 /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC3154617C2004FF2A2 /* Interval.m */; };
+		7AD45AD3154617C2004FF2A2 /* LineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC5154617C2004FF2A2 /* LineStyle.m */; };
+		7AD45AD4154617C2004FF2A2 /* LinkStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC7154617C2004FF2A2 /* LinkStyle.m */; };
+		7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */; };
+		7AD45AD815461876004FF2A2 /* NumberUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AD715461876004FF2A2 /* NumberUtility.m */; };
+		7AD45AE01546224E004FF2A2 /* ProjectDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */; };
+		7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */; };
+		7AD45AE415462313004FF2A2 /* ResourceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE315462313004FF2A2 /* ResourceType.m */; };
+		7AD45AE715462369004FF2A2 /* ScheduleFrom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE615462368004FF2A2 /* ScheduleFrom.m */; };
+		7AD45AF415462565004FF2A2 /* TimescaleAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */; };
+		7AD45AF515462565004FF2A2 /* TimescaleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */; };
+		7AD45AF615462565004FF2A2 /* TimescaleUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AED15462561004FF2A2 /* TimescaleUnits.m */; };
+		7AD45AF715462565004FF2A2 /* ViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEF15462562004FF2A2 /* ViewType.m */; };
+		7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF115462563004FF2A2 /* WorkContour.m */; };
+		7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF315462565004FF2A2 /* WorkGroup.m */; };
 		7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1BB73153DCE8000E68139 /* RelationType.m */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
 /* End PBXBuildFile section */
@@ -89,12 +114,6 @@
 		7ABCBC4A153388650006391D /* DataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataType.m; sourceTree = "<group>"; };
 		7ABCBC7E1533B2C40006391D /* TaskField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskField.h; sourceTree = "<group>"; };
 		7ABCBC7F1533B2C40006391D /* TaskField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskField.m; sourceTree = "<group>"; };
-		7ABCBC82153492A30006391D /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
-		7ABCBC83153492A30006391D /* FieldType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldType.m; sourceTree = "<group>"; };
-		7ABD892A153882890093112C /* FieldContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldContainer.h; sourceTree = "<group>"; };
-		7ABD892B153882890093112C /* FieldContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldContainer.m; sourceTree = "<group>"; };
-		7ABD892E153884A70093112C /* FieldListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldListener.h; sourceTree = "<group>"; };
-		7ABD892F153884A70093112C /* FieldListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldListener.m; sourceTree = "<group>"; };
 		7ABD8931153889340093112C /* TimeUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeUnit.h; sourceTree = "<group>"; };
 		7ABD8932153889340093112C /* TimeUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUnit.m; sourceTree = "<group>"; };
 		7ABD89371538B8670093112C /* MPPViewerDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPViewerDuration.h; sourceTree = "<group>"; };
@@ -111,6 +130,65 @@
 		7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskMode.m; sourceTree = "<group>"; };
 		7ABEB7FC153CE8C1007E9B05 /* TaskType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskType.h; sourceTree = "<group>"; };
 		7ABEB7FD153CE8C1007E9B05 /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
+		7AD45AA21546176B004FF2A2 /* AccrueType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccrueType.h; sourceTree = "<group>"; };
+		7AD45AA31546176B004FF2A2 /* AccrueType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccrueType.m; sourceTree = "<group>"; };
+		7AD45AA615461789004FF2A2 /* BackgroundPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundPattern.h; sourceTree = "<group>"; };
+		7AD45AA715461789004FF2A2 /* BackgroundPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundPattern.m; sourceTree = "<group>"; };
+		7AD45AA815461789004FF2A2 /* BookingType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingType.h; sourceTree = "<group>"; };
+		7AD45AA915461789004FF2A2 /* BookingType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingType.m; sourceTree = "<group>"; };
+		7AD45AAA15461789004FF2A2 /* ChartPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPattern.h; sourceTree = "<group>"; };
+		7AD45AAB15461789004FF2A2 /* ChartPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPattern.m; sourceTree = "<group>"; };
+		7AD45AAC15461789004FF2A2 /* ColorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorType.h; sourceTree = "<group>"; };
+		7AD45AAD15461789004FF2A2 /* ColorType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorType.m; sourceTree = "<group>"; };
+		7AD45AB2154617C2004FF2A2 /* CurrencySymbolPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencySymbolPosition.h; sourceTree = "<group>"; };
+		7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencySymbolPosition.m; sourceTree = "<group>"; };
+		7AD45AB4154617C2004FF2A2 /* DateOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateOrder.h; sourceTree = "<group>"; };
+		7AD45AB5154617C2004FF2A2 /* DateOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateOrder.m; sourceTree = "<group>"; };
+		7AD45AB6154617C2004FF2A2 /* EarnedValueMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarnedValueMethod.h; sourceTree = "<group>"; };
+		7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarnedValueMethod.m; sourceTree = "<group>"; };
+		7AD45AB8154617C2004FF2A2 /* GanttBarDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarDateFormat.h; sourceTree = "<group>"; };
+		7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarDateFormat.m; sourceTree = "<group>"; };
+		7AD45ABA154617C2004FF2A2 /* GanttBarMiddleShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarMiddleShape.h; sourceTree = "<group>"; };
+		7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarMiddleShape.m; sourceTree = "<group>"; };
+		7AD45ABC154617C2004FF2A2 /* GanttBarShowForTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarShowForTasks.h; sourceTree = "<group>"; };
+		7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarShowForTasks.m; sourceTree = "<group>"; };
+		7AD45ABE154617C2004FF2A2 /* GanttBarStartEndShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarStartEndShape.h; sourceTree = "<group>"; };
+		7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarStartEndShape.m; sourceTree = "<group>"; };
+		7AD45AC0154617C2004FF2A2 /* GanttBarStartEndType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarStartEndType.h; sourceTree = "<group>"; };
+		7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarStartEndType.m; sourceTree = "<group>"; };
+		7AD45AC2154617C2004FF2A2 /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
+		7AD45AC3154617C2004FF2A2 /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interval.m; sourceTree = "<group>"; };
+		7AD45AC4154617C2004FF2A2 /* LineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStyle.h; sourceTree = "<group>"; };
+		7AD45AC5154617C2004FF2A2 /* LineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStyle.m; sourceTree = "<group>"; };
+		7AD45AC6154617C2004FF2A2 /* LinkStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkStyle.h; sourceTree = "<group>"; };
+		7AD45AC7154617C2004FF2A2 /* LinkStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkStyle.m; sourceTree = "<group>"; };
+		7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonWorkingTimeStyle.h; sourceTree = "<group>"; };
+		7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonWorkingTimeStyle.m; sourceTree = "<group>"; };
+		7AD45AD615461876004FF2A2 /* NumberUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberUtility.h; sourceTree = "<group>"; };
+		7AD45AD715461876004FF2A2 /* NumberUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberUtility.m; sourceTree = "<group>"; };
+		7AD45AD915461ECD004FF2A2 /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
+		7AD45ADA154620C1004FF2A2 /* FieldListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldListener.h; sourceTree = "<group>"; };
+		7AD45ADB154620F6004FF2A2 /* FieldContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldContainer.h; sourceTree = "<group>"; };
+		7AD45ADC1546224D004FF2A2 /* ProjectDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDateFormat.h; sourceTree = "<group>"; };
+		7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDateFormat.m; sourceTree = "<group>"; };
+		7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectTimeFormat.h; sourceTree = "<group>"; };
+		7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectTimeFormat.m; sourceTree = "<group>"; };
+		7AD45AE215462313004FF2A2 /* ResourceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceType.h; sourceTree = "<group>"; };
+		7AD45AE315462313004FF2A2 /* ResourceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceType.m; sourceTree = "<group>"; };
+		7AD45AE515462368004FF2A2 /* ScheduleFrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleFrom.h; sourceTree = "<group>"; };
+		7AD45AE615462368004FF2A2 /* ScheduleFrom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleFrom.m; sourceTree = "<group>"; };
+		7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleAlignment.h; sourceTree = "<group>"; };
+		7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleAlignment.m; sourceTree = "<group>"; };
+		7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleFormat.h; sourceTree = "<group>"; };
+		7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleFormat.m; sourceTree = "<group>"; };
+		7AD45AEC15462561004FF2A2 /* TimescaleUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleUnits.h; sourceTree = "<group>"; };
+		7AD45AED15462561004FF2A2 /* TimescaleUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleUnits.m; sourceTree = "<group>"; };
+		7AD45AEE15462561004FF2A2 /* ViewType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewType.h; sourceTree = "<group>"; };
+		7AD45AEF15462562004FF2A2 /* ViewType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewType.m; sourceTree = "<group>"; };
+		7AD45AF015462563004FF2A2 /* WorkContour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkContour.h; sourceTree = "<group>"; };
+		7AD45AF115462563004FF2A2 /* WorkContour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkContour.m; sourceTree = "<group>"; };
+		7AD45AF215462564004FF2A2 /* WorkGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkGroup.h; sourceTree = "<group>"; };
+		7AD45AF315462565004FF2A2 /* WorkGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkGroup.m; sourceTree = "<group>"; };
 		7AE1BB72153DCE8000E68139 /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
 		7AE1BB73153DCE8000E68139 /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
@@ -135,42 +213,79 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
+				7AD45AA21546176B004FF2A2 /* AccrueType.h */,
+				7AD45AA31546176B004FF2A2 /* AccrueType.m */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
 				7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */,
+				7AD45AA615461789004FF2A2 /* BackgroundPattern.h */,
+				7AD45AA715461789004FF2A2 /* BackgroundPattern.m */,
+				7AD45AA815461789004FF2A2 /* BookingType.h */,
+				7AD45AA915461789004FF2A2 /* BookingType.m */,
+				7AD45AAA15461789004FF2A2 /* ChartPattern.h */,
+				7AD45AAB15461789004FF2A2 /* ChartPattern.m */,
+				7AD45AAC15461789004FF2A2 /* ColorType.h */,
+				7AD45AAD15461789004FF2A2 /* ColorType.m */,
 				7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */,
 				7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */,
+				7AD45AB2154617C2004FF2A2 /* CurrencySymbolPosition.h */,
+				7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */,
 				7ABCBC49153388640006391D /* DataType.h */,
 				7ABCBC4A153388650006391D /* DataType.m */,
+				7AD45AB4154617C2004FF2A2 /* DateOrder.h */,
+				7AD45AB5154617C2004FF2A2 /* DateOrder.m */,
 				5ED019D0152B6EFB0012148C /* Day.h */,
 				5ED019D1152B6EFB0012148C /* Day.m */,
 				5ED019D2152B6EFB0012148C /* DayType.h */,
 				5ED019D3152B6EFB0012148C /* DayType.m */,
+				7AD45AB6154617C2004FF2A2 /* EarnedValueMethod.h */,
+				7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */,
 				F594F6C01544EFDB00C1FF71 /* EnumUtility.h */,
 				F594F6C11544EFDB00C1FF71 /* EnumUtility.m */,
-				7ABD892A153882890093112C /* FieldContainer.h */,
-				7ABD892B153882890093112C /* FieldContainer.m */,
-				7ABD892E153884A70093112C /* FieldListener.h */,
-				7ABD892F153884A70093112C /* FieldListener.m */,
-				7ABCBC82153492A30006391D /* FieldType.h */,
-				7ABCBC83153492A30006391D /* FieldType.m */,
+				7AD45ADB154620F6004FF2A2 /* FieldContainer.h */,
+				7AD45ADA154620C1004FF2A2 /* FieldListener.h */,
+				7AD45AD915461ECD004FF2A2 /* FieldType.h */,
 				5ED019D4152B6EFB0012148C /* FileCreationRecord.h */,
 				5ED019D5152B6EFB0012148C /* FileCreationRecord.m */,
 				5ED0197C152B6D370012148C /* Frameworks */,
+				7AD45AB8154617C2004FF2A2 /* GanttBarDateFormat.h */,
+				7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */,
+				7AD45ABA154617C2004FF2A2 /* GanttBarMiddleShape.h */,
+				7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */,
+				7AD45ABC154617C2004FF2A2 /* GanttBarShowForTasks.h */,
+				7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */,
+				7AD45ABE154617C2004FF2A2 /* GanttBarStartEndShape.h */,
+				7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */,
+				7AD45AC0154617C2004FF2A2 /* GanttBarStartEndType.h */,
+				7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */,
+				7AD45AC2154617C2004FF2A2 /* Interval.h */,
+				7AD45AC3154617C2004FF2A2 /* Interval.m */,
+				7AD45AC4154617C2004FF2A2 /* LineStyle.h */,
+				7AD45AC5154617C2004FF2A2 /* LineStyle.m */,
+				7AD45AC6154617C2004FF2A2 /* LinkStyle.h */,
+				7AD45AC7154617C2004FF2A2 /* LinkStyle.m */,
 				5ED01983152B6D370012148C /* MppViewer */,
 				7ABD89371538B8670093112C /* MPPViewerDuration.h */,
 				7ABD89381538B8670093112C /* MPPViewerDuration.m */,
 				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
+				7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */,
+				7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */,
+				7AD45AD615461876004FF2A2 /* NumberUtility.h */,
+				7AD45AD715461876004FF2A2 /* NumberUtility.m */,
 				5ED0197A152B6D370012148C /* Products */,
 				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
 				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
 				5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */,
 				5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */,
+				7AD45ADC1546224D004FF2A2 /* ProjectDateFormat.h */,
+				7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */,
 				7AAFECFA153F529A00884FB3 /* ProjectEntity.h */,
 				7AAFECFB153F529A00884FB3 /* ProjectEntity.m */,
 				5ED019DA152B6EFB0012148C /* ProjectFile.h */,
 				5ED019DB152B6EFB0012148C /* ProjectFile.m */,
 				5ED019DC152B6EFB0012148C /* ProjectHeader.h */,
 				5ED019DD152B6EFB0012148C /* ProjectHeader.m */,
+				7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */,
+				7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */,
 				7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */,
 				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */,
 				7A29EE201538DB1000958CB7 /* RecurringTask.h */,
@@ -185,6 +300,10 @@
 				5ED019E3152B6EFB0012148C /* ResourceAssignment.m */,
 				7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */,
 				7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */,
+				7AD45AE215462313004FF2A2 /* ResourceType.h */,
+				7AD45AE315462313004FF2A2 /* ResourceType.m */,
+				7AD45AE515462368004FF2A2 /* ScheduleFrom.h */,
+				7AD45AE615462368004FF2A2 /* ScheduleFrom.m */,
 				5ED019E4152B6EFB0012148C /* Task.h */,
 				5ED019E5152B6EFB0012148C /* Task.m */,
 				7ABCBC7E1533B2C40006391D /* TaskField.h */,
@@ -192,10 +311,22 @@
 				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
 				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
 				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
-				7AE1BB72153DCE8000E68139 /* RelationType.h */,
 				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
+				7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */,
+				7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */,
+				7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */,
+				7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */,
+				7AD45AEC15462561004FF2A2 /* TimescaleUnits.h */,
+				7AD45AED15462561004FF2A2 /* TimescaleUnits.m */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.m */,
+				7AD45AEE15462561004FF2A2 /* ViewType.h */,
+				7AD45AEF15462562004FF2A2 /* ViewType.m */,
+				7AD45AF015462563004FF2A2 /* WorkContour.h */,
+				7AD45AF115462563004FF2A2 /* WorkContour.m */,
+				7AD45AF215462564004FF2A2 /* WorkGroup.h */,
+				7AD45AF315462565004FF2A2 /* WorkGroup.m */,
+				7AE1BB72153DCE8000E68139 /* RelationType.h */,
 				7AE1BB73153DCE8000E68139 /* RelationType.m */,
 				7ABEB7FC153CE8C1007E9B05 /* TaskType.h */,
 				7ABEB7FD153CE8C1007E9B05 /* TaskType.m */,
@@ -322,9 +453,6 @@
 				5ED019F2152B6EFB0012148C /* Task.m in Sources */,
 				7ABCBC4B153388650006391D /* DataType.m in Sources */,
 				7ABCBC801533B2C40006391D /* TaskField.m in Sources */,
-				7ABCBC84153492A30006391D /* FieldType.m in Sources */,
-				7ABD892C153882890093112C /* FieldContainer.m in Sources */,
-				7ABD8930153884A70093112C /* FieldListener.m in Sources */,
 				7ABD8933153889340093112C /* TimeUnit.m in Sources */,
 				7ABD89391538B8670093112C /* MPPViewerDuration.m in Sources */,
 				7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */,
@@ -337,6 +465,34 @@
 				7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */,
 				7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */,
 				F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */,
+				7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */,
+				7AD45AAE15461789004FF2A2 /* BackgroundPattern.m in Sources */,
+				7AD45AAF15461789004FF2A2 /* BookingType.m in Sources */,
+				7AD45AB015461789004FF2A2 /* ChartPattern.m in Sources */,
+				7AD45AB115461789004FF2A2 /* ColorType.m in Sources */,
+				7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.m in Sources */,
+				7AD45ACB154617C2004FF2A2 /* DateOrder.m in Sources */,
+				7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.m in Sources */,
+				7AD45ACD154617C2004FF2A2 /* GanttBarDateFormat.m in Sources */,
+				7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.m in Sources */,
+				7AD45ACF154617C2004FF2A2 /* GanttBarShowForTasks.m in Sources */,
+				7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.m in Sources */,
+				7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.m in Sources */,
+				7AD45AD2154617C2004FF2A2 /* Interval.m in Sources */,
+				7AD45AD3154617C2004FF2A2 /* LineStyle.m in Sources */,
+				7AD45AD4154617C2004FF2A2 /* LinkStyle.m in Sources */,
+				7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.m in Sources */,
+				7AD45AD815461876004FF2A2 /* NumberUtility.m in Sources */,
+				7AD45AE01546224E004FF2A2 /* ProjectDateFormat.m in Sources */,
+				7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.m in Sources */,
+				7AD45AE415462313004FF2A2 /* ResourceType.m in Sources */,
+				7AD45AE715462369004FF2A2 /* ScheduleFrom.m in Sources */,
+				7AD45AF415462565004FF2A2 /* TimescaleAlignment.m in Sources */,
+				7AD45AF515462565004FF2A2 /* TimescaleFormat.m in Sources */,
+				7AD45AF615462565004FF2A2 /* TimescaleUnits.m in Sources */,
+				7AD45AF715462565004FF2A2 /* ViewType.m in Sources */,
+				7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */,
+				7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

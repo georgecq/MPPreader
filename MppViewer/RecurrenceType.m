@@ -13,7 +13,7 @@
 
 static RecurrenceType *_DAILY = nil;
 static RecurrenceType *_WEEKLY = nil;
-static RecurrenceType *_MONTLY = nil;
+static RecurrenceType *_MONTHLY = nil;
 static RecurrenceType *_YEARLY = nil;
 static NSMutableArray *_TYPE_VALUES = nil;
 
@@ -91,13 +91,13 @@ static NSMutableArray *_TYPE_VALUES = nil;
     ;
 }
 
-+(RecurrenceType *)MONTLY
++(RecurrenceType *)MONTHLY
 {
-    if (_MONTLY == nil)
+    if (_MONTHLY == nil)
     {
-        _MONTLY = [[RecurrenceType alloc]init:8 withName:@"Monthly"];
+        _MONTHLY = [[RecurrenceType alloc]init:8 withName:@"Monthly"];
     }
-    return _MONTLY;
+    return _MONTHLY;
 }
 
 +(RecurrenceType *)YEARLY
@@ -113,7 +113,7 @@ static NSMutableArray *_TYPE_VALUES = nil;
 {
     if (_TYPE_VALUES == nil) 
     {
-        NSMutableArray *temp = [[NSMutableArray alloc]initWithObjects:[RecurrenceType DAILY],[RecurrenceType WEEKLY],[RecurrenceType MONTLY],[RecurrenceType YEARLY], nil];
+        NSMutableArray *temp = [[NSMutableArray alloc]initWithObjects:[RecurrenceType DAILY],[RecurrenceType WEEKLY],[RecurrenceType MONTHLY],[RecurrenceType YEARLY], nil];
         
         _TYPE_VALUES = [EnumUtility createTypeArray:temp withOffSet:13];
     }

@@ -9,20 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "FieldType.h"
 
-@interface AssignmentField : FieldType
+@interface AssignmentField : NSObject <FieldType>
 {
     int _value;
     DataType *_dataType;
-    FieldType *_unitsType;
+    id<FieldType> _unitsType;
 }
-
--(NSString *)getName;
-
--(int)getValue;
-
--(DataType *)getDataType;
-
--(FieldType *)getUnitsType;
 
 -(NSString *)toString;
 

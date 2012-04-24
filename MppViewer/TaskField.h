@@ -9,14 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "FieldType.h"
 
-@interface TaskField : FieldType 
+@interface TaskField : NSObject <FieldType> 
 {
     int _value;
     DataType *_dataType;
-    FieldType *_unitsType;
+    id<FieldType> _unitsType;
 }
-
--(int)getValue;
 
 -(NSString *)toString;
 

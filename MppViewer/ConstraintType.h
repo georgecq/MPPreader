@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface ConstraintType : NSObject
+@interface ConstraintType : NSObject <MpxjEnum>
 {
     int _value;
 }
 
 +(ConstraintType *)getInstance:(int)type;
 
--(int)getValue;
++(ConstraintType *)getInstanceWithNumber:(NSNumber *)type;
 
 +(ConstraintType *)AS_SOON_AS_POSSIBLE;
 +(ConstraintType *)AS_LATE_AS_POSSIBLE;

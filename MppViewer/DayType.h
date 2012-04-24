@@ -7,23 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpxjEnum.h"
 
-@interface DayType : NSObject
+@interface DayType : NSObject <MpxjEnum>
 {
     int _value;
 }
 
--(id)init:(int)type;
-
 +(DayType *)getInstance:(int)type;
 
--(int)getValue;
++(DayType *)getInstanceWithNumber:(NSNumber *)type;
 
 +(DayType *)NON_WORKING;
-
 +(DayType *)WORKING;
-
 +(DayType *)DEFAULT;
-
 
 @end
