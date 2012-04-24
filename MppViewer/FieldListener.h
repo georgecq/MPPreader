@@ -20,6 +20,6 @@
  * @param oldValue old value
  * @param newValue new value
  */
--(void)fieldChange:(id<FieldContainer>)container withType: (id<FieldType>) type withOldValue:(NSObject *) oldValue withNewValue:(NSObject *) newValue { }
+-(void)fieldChange:(id<FieldContainer>)container withType:(id<FieldType>)type withOldValue:(NSObject *)oldValue withNewValue:(NSObject *)newValue;
 
 @end

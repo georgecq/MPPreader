@@ -66,6 +66,7 @@
 		7AD45AF715462565004FF2A2 /* ViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEF15462562004FF2A2 /* ViewType.m */; };
 		7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF115462563004FF2A2 /* WorkContour.m */; };
 		7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF315462565004FF2A2 /* WorkGroup.m */; };
+		7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.m */; };
 		7AE1BB74153DCE8000E68139 /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1BB73153DCE8000E68139 /* RelationType.m */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
 /* End PBXBuildFile section */
@@ -189,6 +190,9 @@
 		7AD45AF115462563004FF2A2 /* WorkContour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkContour.m; sourceTree = "<group>"; };
 		7AD45AF215462564004FF2A2 /* WorkGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkGroup.h; sourceTree = "<group>"; };
 		7AD45AF315462565004FF2A2 /* WorkGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkGroup.m; sourceTree = "<group>"; };
+		7AD45AFA154628EB004FF2A2 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		7AD45AFB15462A60004FF2A2 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
+		7AD45AFC15462A61004FF2A2 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
 		7AE1BB72153DCE8000E68139 /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
 		7AE1BB73153DCE8000E68139 /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 				7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */,
 				7AD45AD615461876004FF2A2 /* NumberUtility.h */,
 				7AD45AD715461876004FF2A2 /* NumberUtility.m */,
+				7AD45AFB15462A60004FF2A2 /* Pair.h */,
+				7AD45AFC15462A61004FF2A2 /* Pair.m */,
 				5ED0197A152B6D370012148C /* Products */,
 				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
 				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
@@ -320,6 +326,7 @@
 				7AD45AED15462561004FF2A2 /* TimescaleUnits.m */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.m */,
+				7AD45AFA154628EB004FF2A2 /* View.h */,
 				7AD45AEE15462561004FF2A2 /* ViewType.h */,
 				7AD45AEF15462562004FF2A2 /* ViewType.m */,
 				7AD45AF015462563004FF2A2 /* WorkContour.h */,
@@ -493,6 +500,7 @@
 				7AD45AF715462565004FF2A2 /* ViewType.m in Sources */,
 				7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */,
 				7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */,
+				7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
