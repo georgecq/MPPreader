@@ -8,7 +8,7 @@
 
 #import "Relation.h"
 #import "RelationType.h"
-#import "MPPViewerDuration.h"
+#import "MPPDuration.h"
 #import "TimeUnit.h"
 #import "Task.h"
 
@@ -23,7 +23,7 @@
  * @param lag relation lag
  */
 
--(id)init:sourceTask withTargetTask:(Task *)targetTask withType:(RelationType *)type withLag:(MPPViewerDuration *)lag
+-(id)init:sourceTask withTargetTask:(Task *)targetTask withType:(RelationType *)type withLag:(MPPDuration *)lag
 {
     self = [super init];
     if(self)
@@ -40,7 +40,7 @@
         
         if(_lag == nil)
         {
-            _lag = [MPPViewerDuration getInstance:0 withIntType:[TimeUnit DAYS]];
+            _lag = [MPPDuration getInstance:0 withIntType:[TimeUnit DAYS]];
         }
     }
     return self;
@@ -65,7 +65,7 @@
  * @return lag duration
  */
 
--(MPPViewerDuration *)getLag
+-(MPPDuration *)getLag
 {
     return _lag;
 }

@@ -27,11 +27,13 @@
 		5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E3152B6EFB0012148C /* ResourceAssignment.m */; };
 		5ED019F2152B6EFB0012148C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.m */; };
 		7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29EE211538DB1000958CB7 /* RecurringTask.m */; };
+		7A683817154718D60098FDF8 /* Priority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A683816154718D60098FDF8 /* Priority.m */; };
+		7A683819154761730098FDF8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A683818154761730098FDF8 /* CoreFoundation.framework */; };
 		7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFECFB153F529A00884FB3 /* ProjectEntity.m */; };
 		7ABCBC4B153388650006391D /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.m */; };
 		7ABCBC801533B2C40006391D /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.m */; };
 		7ABD8933153889340093112C /* TimeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD8932153889340093112C /* TimeUnit.m */; };
-		7ABD89391538B8670093112C /* MPPViewerDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD89381538B8670093112C /* MPPViewerDuration.m */; };
+		7ABD89391538B8670093112C /* MPPDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD89381538B8670093112C /* MPPDuration.m */; };
 		7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */; };
 		7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */; };
 		7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */; };
@@ -109,6 +111,9 @@
 		5ED019E5152B6EFB0012148C /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		7A29EE201538DB1000958CB7 /* RecurringTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecurringTask.h; sourceTree = "<group>"; };
 		7A29EE211538DB1000958CB7 /* RecurringTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecurringTask.m; sourceTree = "<group>"; };
+		7A683815154718D60098FDF8 /* Priority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priority.h; sourceTree = "<group>"; };
+		7A683816154718D60098FDF8 /* Priority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priority.m; sourceTree = "<group>"; };
+		7A683818154761730098FDF8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7AAFECFA153F529A00884FB3 /* ProjectEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectEntity.h; sourceTree = "<group>"; };
 		7AAFECFB153F529A00884FB3 /* ProjectEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectEntity.m; sourceTree = "<group>"; };
 		7ABCBC49153388640006391D /* DataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataType.h; sourceTree = "<group>"; };
@@ -117,8 +122,8 @@
 		7ABCBC7F1533B2C40006391D /* TaskField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskField.m; sourceTree = "<group>"; };
 		7ABD8931153889340093112C /* TimeUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeUnit.h; sourceTree = "<group>"; };
 		7ABD8932153889340093112C /* TimeUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUnit.m; sourceTree = "<group>"; };
-		7ABD89371538B8670093112C /* MPPViewerDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPViewerDuration.h; sourceTree = "<group>"; };
-		7ABD89381538B8670093112C /* MPPViewerDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPViewerDuration.m; sourceTree = "<group>"; };
+		7ABD89371538B8670093112C /* MPPDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPDuration.h; sourceTree = "<group>"; };
+		7ABD89381538B8670093112C /* MPPDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPDuration.m; sourceTree = "<group>"; };
 		7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecurrenceType.h; sourceTree = "<group>"; };
 		7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecurrenceType.m; sourceTree = "<group>"; };
 		7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceAssignmentWorkgroupFields.h; sourceTree = "<group>"; };
@@ -205,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A683819154761730098FDF8 /* CoreFoundation.framework in Frameworks */,
 				5ED0197E152B6D370012148C /* UIKit.framework in Frameworks */,
 				5ED01980152B6D370012148C /* Foundation.framework in Frameworks */,
 				5ED01982152B6D370012148C /* CoreGraphics.framework in Frameworks */,
@@ -267,9 +273,9 @@
 				7AD45AC5154617C2004FF2A2 /* LineStyle.m */,
 				7AD45AC6154617C2004FF2A2 /* LinkStyle.h */,
 				7AD45AC7154617C2004FF2A2 /* LinkStyle.m */,
+				7ABD89371538B8670093112C /* MPPDuration.h */,
+				7ABD89381538B8670093112C /* MPPDuration.m */,
 				5ED01983152B6D370012148C /* MppViewer */,
-				7ABD89371538B8670093112C /* MPPViewerDuration.h */,
-				7ABD89381538B8670093112C /* MPPViewerDuration.m */,
 				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
 				7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */,
 				7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */,
@@ -277,6 +283,8 @@
 				7AD45AD715461876004FF2A2 /* NumberUtility.m */,
 				7AD45AFB15462A60004FF2A2 /* Pair.h */,
 				7AD45AFC15462A61004FF2A2 /* Pair.m */,
+				7A683815154718D60098FDF8 /* Priority.h */,
+				7A683816154718D60098FDF8 /* Priority.m */,
 				5ED0197A152B6D370012148C /* Products */,
 				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
 				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
@@ -347,6 +355,7 @@
 		5ED0197C152B6D370012148C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A683818154761730098FDF8 /* CoreFoundation.framework */,
 				5ED0197D152B6D370012148C /* UIKit.framework */,
 				5ED0197F152B6D370012148C /* Foundation.framework */,
 				5ED01981152B6D370012148C /* CoreGraphics.framework */,
@@ -457,7 +466,7 @@
 				7ABCBC4B153388650006391D /* DataType.m in Sources */,
 				7ABCBC801533B2C40006391D /* TaskField.m in Sources */,
 				7ABD8933153889340093112C /* TimeUnit.m in Sources */,
-				7ABD89391538B8670093112C /* MPPViewerDuration.m in Sources */,
+				7ABD89391538B8670093112C /* MPPDuration.m in Sources */,
 				7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */,
 				7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */,
 				7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */,
@@ -497,6 +506,7 @@
 				7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */,
 				7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */,
 				7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */,
+				7A683817154718D60098FDF8 /* Priority.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

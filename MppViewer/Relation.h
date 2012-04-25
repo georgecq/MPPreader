@@ -10,21 +10,21 @@
 
 @class Task;
 @class RelationType;
-@class MPPViewerDuration;
+@class MPPDuration;
 
 @interface Relation : NSObject
 {
     Task *_sourceTask;
     Task *_targetTask;
     RelationType *_type;
-    MPPViewerDuration *_lag;
+    MPPDuration *_lag;
 }
 
--(id)init:sourceTask withTargetTask:(Task *)targetTask withType:(RelationType *)type withLag:(MPPViewerDuration *)lag;
+-(id)init:sourceTask withTargetTask:(Task *)targetTask withType:(RelationType *)type withLag:(MPPDuration *)lag;
 
 -(RelationType *)getType;
 
--(MPPViewerDuration *)getLag;
+-(MPPDuration *)getLag;
 
 -(Task *)getSourceTask;
 

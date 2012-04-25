@@ -18,6 +18,7 @@
 #import "ProjectHeader.h"
 #import "Relation.h"
 #import "TaskField.h"
+#import "NumberUtility.h"
 
 @implementation ProjectFile
 
@@ -68,7 +69,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     // Remove the task from the file and its parent task
     //
     [_allTasks removeObject:task];
-    int taskUniqueId = [task UniqueID];
+    int taskUniqueId = [task getUniqueID];
     [_taskUniqueIDMap removeObjectForKey:[[NSNumber alloc]initWithInt:taskUniqueId]];
     int taskId = [task getID];
     [_taskIDMap removeObjectForKey:[[NSNumber alloc]initWithInt:[task getID]]];
@@ -131,7 +132,10 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ID" ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         _allTasks = [[_allTasks sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
-        int Id = [[_allTasks objectAtIndex:0] getID];
+        
+        //NSInteger *integer = [[_allTasks objectAtIndex:0] getID];
+        #warning ReCheck with Task
+        int Id = 0;//[NumberUtility getInt:[];
         if (Id != 0)
         {
             Id = 1;
@@ -244,7 +248,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (Task *task in _allTasks)
         {
-            if ([task UniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([task getUniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberTaskIDs];
                 break;
@@ -899,7 +903,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     //
     for (Task *task in _allTasks)
     {
-        int uniqueID = [task UniqueID];
+        int uniqueID = [task getUniqueID];
         if (uniqueID > _taskUniqueID)
         {
             _taskUniqueID = uniqueID;
@@ -970,7 +974,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         //
         // If a hidden "summary" task is present we ignore it
         //
-        if ([task UniqueID] == 0)
+        if ([task getUniqueID] == 0)
         {
             continue;
         }
@@ -982,20 +986,20 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         // to reflect a missed deadline.
         //
         NSDate *taskStartDate;
-        if ([task Milestone] == true)
+        if ([task getMilestone] == true)
         {
-            taskStartDate = [task ActualFinish];
+            taskStartDate = [task getActualFinish];
             if (taskStartDate == nil)
             {
-                taskStartDate = [task Finish];
+                taskStartDate = [task getFinish];
             }
         }
         else
         {
-            taskStartDate = [task ActualStart];
+            taskStartDate = [task getActualStart];
             if (taskStartDate == nil)
             {
-                taskStartDate = [task Start];
+                taskStartDate = [task getStart];
             }
         }
         
@@ -1032,7 +1036,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         //
         // If a hidden "summary" task is present we ignore it
         //
-        if ([task UniqueID] == 0)
+        if ([task getUniqueID] == 0)
         {
             continue;
         }
@@ -1041,10 +1045,10 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         // Select the actual or forecast start date
         //
         NSDate *taskFinishDate;
-        taskFinishDate = [task ActualFinish];
+        taskFinishDate = [task getActualFinish];
         if (taskFinishDate == nil)
         {
-            taskFinishDate = [task Finish];
+            taskFinishDate = [task getFinish];
         }
         
         if (taskFinishDate != nil)

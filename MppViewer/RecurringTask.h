@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MPPViewerDuration;
+@class MPPDuration;
 @class RecurrenceType;
 @class Day;
 
@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) NSDate *FinishDate;
 
-@property (strong, nonatomic) MPPViewerDuration *Duration;
+@property (strong, nonatomic) MPPDuration *Duration;
 
 @property (nonatomic) int Ocurrences;
 

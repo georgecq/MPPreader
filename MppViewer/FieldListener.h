@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FieldContainer.h"
 #import "FieldType.h"
 
+@protocol FieldContainer;
 @protocol FieldListener <NSObject>
 
 /**

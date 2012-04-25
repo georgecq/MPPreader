@@ -1029,7 +1029,7 @@ static NSMutableArray *_TYPE_VALUES = nil;
 +(TaskField *)getInstance:(int) type
 {
     TaskField * result = nil;
-    if (type >= 0 || type < [[TaskField TYPE_VALUES]count])
+    if (type >= 0 && type < [[TaskField TYPE_VALUES]count])
     {
         result = [[TaskField TYPE_VALUES] objectAtIndex:type];
     }
