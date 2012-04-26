@@ -11,6 +11,8 @@
 
 @implementation ProjectHeader
 
+@synthesize defaultDurationUnits;
+
 -(id)init:(ProjectFile *)file
 {
     self= [super init];

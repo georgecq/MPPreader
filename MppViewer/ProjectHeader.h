@@ -15,6 +15,8 @@
 
 @interface ProjectHeader : ProjectEntity
 
+@property (strong, nonatomic) TimeUnit *defaultDurationUnits;
+
 -(id)init:(ProjectFile *)file;
 
 -(int)getMinutesPerDay;

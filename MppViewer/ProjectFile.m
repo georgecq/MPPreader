@@ -22,16 +22,16 @@
 
 @implementation ProjectFile
 
-@synthesize Delimiter;
-@synthesize AutoWBS;
-@synthesize AutoOutlineLevel;
-@synthesize AutoOutlineNumber;
-@synthesize AutoTaskUniqueID;
-@synthesize AutoCalendarUniqueID;
-@synthesize AutoAssignmentUniqueID;
-@synthesize AutoTaskID;
-@synthesize AutoResourceUniqueID;
-@synthesize AutoResourceID;
+@synthesize delimiter;
+@synthesize autoWBS;
+@synthesize autoOutlineLevel;
+@synthesize autoOutlineNumber;
+@synthesize autoTaskUniqueID;
+@synthesize autoCalendarUniqueID;
+@synthesize autoAssignmentUniqueID;
+@synthesize autoTaskID;
+@synthesize autoResourceUniqueID;
+@synthesize autoResourceID;
 
 int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
@@ -832,7 +832,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
             Task *parent = nil;
             if (![task getNull])
             {
-                int level = [task getOutlineLevel];
+                int level = [[task getOutlineLevel] intValue];
                 
                 if (lastTask != nil)
                 {
@@ -858,7 +858,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
                                     break;
                                 }
                                 
-                                lastLevel = [parent getOutlineLevel];
+                                lastLevel = [[parent getOutlineLevel] intValue];
                                 lastTask = parent;
                             }
                         }
@@ -868,12 +868,12 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
                 lastTask = task;
                 lastLevel = level;
                 
-                if (self.AutoWBS || [task getWBS] == nil)
+                if (self.autoWBS || [task getWBS] == nil)
                 {
                     [task generateWBS:parent];
                 }
                 
-                if (self.AutoOutlineNumber)
+                if (self.autoOutlineNumber)
                 {
                     [task generateOutlineNumber:parent];
                 }
@@ -903,7 +903,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     //
     for (Task *task in _allTasks)
     {
-        int uniqueID = [task getUniqueID];
+        int uniqueID = [[task getUniqueID]intValue];
         if (uniqueID > _taskUniqueID)
         {
             _taskUniqueID = uniqueID;

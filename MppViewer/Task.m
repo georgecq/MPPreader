@@ -21,8 +21,28 @@
 #import "Relation.h"
 #import "Priority.h"
 #import "BooleanUtility.h"
+#import "AccrueType.h"
+#import "ProjectCalendar.h"
+#import "ProjectHeader.h"
+#import "DateUtility.h"
+#import "SubProject.h"
 
 @implementation Task
+
+static NSMutableArray *_ENTERPRISE_COST_FIELDS = nil;
+static NSMutableArray *_ENTERPRISE_DATE_FIELDS = nil;
+static NSMutableArray *_ENTERPRISE_DURATION_FIELDS = nil;
+static NSMutableArray *_ENTERPRISE_FLAG_FIELDS = nil;
+static NSMutableArray *_ENTERPRISE_NUMBER_FIELDS = nil;
+static NSMutableArray *_ENTERPRISE_TEXT_FIELDS = nil;
+static NSMutableArray *_BASELINE_COSTS = nil;
+static NSMutableArray *_BASELINE_DURATIONS = nil;
+static NSMutableArray *_BASELINE_ESTIMATED_DURATIONS = nil;
+static NSMutableArray *_BASELINE_STARTS = nil;
+static NSMutableArray *_BASELINE_ESTIMATED_STARTS = nil;
+static NSMutableArray *_BASELINE_FINISHES = nil;
+static NSMutableArray *_BASELINE_ESTIMATED_FINISHES = nil;
+static NSMutableArray *_BASELINE_WORKS = nil;
 
 // Default constructor.
 //
@@ -41,7 +61,37 @@
         
         _parent = parent;
         
-        #warning ProjectFile incomplete
+        if([file autoTaskUniqueID])
+        {
+            [self setUniqueID:[NSNumber numberWithInt:[file getTaskUniqueID]]];
+        }
+        
+        if([file autoTaskID])
+        {
+            [self setID:[NSNumber numberWithInt:[file getTaskID]]];
+        }
+        
+        if([file autoWBS])
+        {
+            [self generateWBS:parent];
+        }
+        
+        if([file autoOutlineNumber])
+        {
+            [self generateOutlineNumber:parent];
+        }
+        
+        if([file autoOutlineLevel])
+        {
+            if(parent == nil)
+            {
+                [self setOutlineLevel:[NSNumber numberWithInt:1]];
+            }
+            else
+            {
+                [self setOutlineLevel:[NSNumber numberWithInt:[[parent getOutlineLevel] intValue] + 1]];
+            }
+        }
     }
     
     return self;
@@ -60,7 +110,7 @@
     
     if(parent == nil)
     {
-        if([NumberUtility getInt:[NSNumber numberWithInteger:[self getUniqueID]]] == 0)
+        if([NumberUtility getInt:[self getUniqueID]] == 0)
         {
             wbs = @"0";
         }
@@ -104,7 +154,7 @@
     
     if(parent == nil)
     {
-        if([NumberUtility getInt:[NSNumber numberWithInteger:[self getUniqueID]]] == 0)
+        if([NumberUtility getInt:[self getUniqueID]] == 0)
         {
             outline = @"0";
         }
@@ -177,7 +227,7 @@
 
 -(void)addChildTask:(Task *)child with:(int)childOutlineLevel
 {
-    int outlineLevel = [NumberUtility getInt:[NSNumber numberWithInteger:[self getOutlineLevel]]];
+    int outlineLevel = [NumberUtility getInt:[self getOutlineLevel]];
     
     if(outlineLevel + 1 == childOutlineLevel)
     {
@@ -208,7 +258,10 @@
     [_children addObject:child];
     [self setSummary:true];
     
-    #warning ProjectFile incomplete
+    if([[self getParentFile] autoOutlineLevel])
+    {
+        [child setOutlineLevel:[NSNumber numberWithInt:[[self getOutlineLevel]intValue] + 1]];
+    }
 }
 
 /**
@@ -754,7 +807,7 @@
 -(void)setID:(NSNumber *)val
 {
     ProjectFile *parent = [self getParentFile];
-    NSNumber *previous = [NSNumber numberWithInteger:[self getID]];
+    NSNumber *previous = [self getID];
     
     if(previous != nil)
     {
@@ -1003,7 +1056,7 @@
 -(void)setUniqueID:(NSNumber *)val
 {
     ProjectFile *parent = [self getParentFile];
-    NSNumber *previous = [NSNumber numberWithInteger:[self getUniqueID]];
+    NSNumber *previous = [self getUniqueID];
     
     if(previous != nil)
     {
@@ -1380,9 +1433,17 @@
     return (NSDate *)[self getCachedValue:[TaskField FINISH5]];
 }
 
--(NSDate *)getFinishVariance
+-(MPPDuration *)getFinishVariance
 {
-#warning Incomplete
+    MPPDuration *variance = (MPPDuration *)[self getCachedValue:[TaskField FINISH_VARIANCE]];
+    if(variance == nil)
+    {
+        TimeUnit *format = [[[self getParentFile] getProjectHeader] defaultDurationUnits];
+        variance = [DateUtility getVariance:self withDate1:[self getBaselineFinish] withDate2:[self getFinish] withFormat:format];
+        [self set:[TaskField FINISH_VARIANCE] withObject:variance];
+    }
+    
+    return variance;
 }
 
 -(NSNumber *)getFixedCost
@@ -1628,7 +1689,15 @@
 
 -(MPPDuration *)getStartVariance
 {
-#warning Incomplete
+    MPPDuration *variance = (MPPDuration *)[self getCachedValue:[TaskField START_VARIANCE]];
+    if(variance == nil)
+    {
+        TimeUnit *format = [[[self getParentFile] getProjectHeader] defaultDurationUnits];
+        variance = [DateUtility getVariance:self withDate1:[self getBaselineStart] withDate2:[self getStart] withFormat:format];
+        [self set:[TaskField START_VARIANCE] withObject:variance];
+    }
+    
+    return variance;
 }
 
 -(NSDate *)getStop
@@ -2314,782 +2383,804 @@
 
 -(void)setNumber6:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER6] withObject:val];
 }
 
 -(NSNumber *)getNumber6
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER6]];
 }
 
 -(void)setNumber7:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER7] withObject:val];
 }
 
 -(NSNumber *)getNumber7
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER7]];
 }
 
 -(void)setNumber8:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER8] withObject:val];
 }
 
 -(NSNumber *)getNumber8
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER8]];
 }
 
 -(void)setNumber9:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER9] withObject:val];
 }
 
 -(NSNumber *)getNumber9
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER9]];
 }
 
 -(void)setNumber10:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER10] withObject:val];
 }
 
 -(NSNumber *)getNumber10
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER10]];
 }
 
 -(void)setNumber11:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER11] withObject:val];
 }
 
 -(NSNumber *)getNumber11
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER11]];
 }
 
 -(void)setNumber12:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER12] withObject:val];
 }
 
 -(NSNumber *)getNumber12
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER12]];
 }
 
 -(void)setNumber13:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER13] withObject:val];
 }
 
 -(NSNumber *)getNumber13
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER13]];
 }
 
 -(void)setNumber14:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER14] withObject:val];
 }
 
 -(NSNumber *)getNumber14
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER14]];
 }
 
 -(void)setNumber15:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER15] withObject:val];
 }
 
 -(NSNumber *)getNumber15
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER15]];
 }
 
 -(void)setNumber16:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER16] withObject:val];
 }
 
 -(NSNumber *)getNumber16
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER16]];
 }
 
 -(void)setNumber17:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER17] withObject:val];
 }
 
 -(NSNumber *)getNumber17
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER17]];
 }
 
 -(void)setNumber18:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER18] withObject:val];
 }
 
 -(NSNumber *)getNumber18
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER18]];
 }
 
 -(void)setNumber19:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER19] withObject:val];
 }
 
 -(NSNumber *)getNumber19
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER19]];
 }
 
 -(void)setNumber20:(NSNumber *)val
 {
-#warning Incomplete
+    [self set:[TaskField NUMBER20] withObject:val];
 }
 
 -(NSNumber *)getNumber20
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField NUMBER20]];
 }
 
 -(MPPDuration *)getDuration10
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION10]];
 }
 
 -(MPPDuration *)getDuration4
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION4]];
 }
 
 -(MPPDuration *)getDuration5
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION5]];
 }
 
 -(MPPDuration *)getDuration6
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION6]];
 }
 
 -(MPPDuration *)getDuration7
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION7]];
 }
 
 -(MPPDuration *)getDuration8
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION8]];
 }
 
 -(MPPDuration *)getDuration9
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField DURATION9]];
 }
 
 -(void)setDuration10:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION10] withObject:duration];
 }
 
 -(void)setDuration4:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION4] withObject:duration];
 }
 
 -(void)setDuration5:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION5] withObject:duration];
 }
 
 -(void)setDuration6:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION6] withObject:duration];
 }
 
 -(void)setDuration7:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION7] withObject:duration];
 }
 
 -(void)setDuration8:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION8] withObject:duration];
 }
 
 -(void)setDuration9:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField DURATION9] withObject:duration];
 }
 
 -(NSDate *)getDate1
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE1]];
 }
 
 -(NSDate *)getDate10
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE10]];
 }
 
 -(NSDate *)getDate2
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE2]];
 }
 
 -(NSDate *)getDate3
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE3]];
 }
 
 -(NSDate *)getDate4
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE4]];
 }
 
 -(NSDate *)getDate5
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE5]];
 }
 
 -(NSDate *)getDate6
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE6]];
 }
 
 -(NSDate *)getDate7
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE7]];
 }
 
 -(NSDate *)getDate8
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE8]];
 }
 
 -(NSDate *)getDate9
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField DATE9]];
 }
 
 -(void)setDate1:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE1] withObject:date];
 }
 
 -(void)setDate10:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE10] withObject:date];
 }
 
 -(void)setDate2:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE2] withObject:date];
 }
 
 -(void)setDate3:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE3] withObject:date];
 }
 
 -(void)setDate4:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE4] withObject:date];
 }
 
 -(void)setDate5:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE5] withObject:date];
 }
 
 -(void)setDate6:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE6] withObject:date];
 }
 
 -(void)setDate7:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE7] withObject:date];
 }
 
 -(void)setDate8:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE8] withObject:date];
 }
 
 -(void)setDate9:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField DATE9] withObject:date];
 }
 
 -(NSNumber *)getCost10
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST10]];
 }
 
 -(NSNumber *)getCost4
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST4]];
 }
 
 -(NSNumber *)getCost5
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST5]];
 }
 
 -(NSNumber *)getCost6
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST6]];
 }
 
 -(NSNumber *)getCost7
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST7]];
 }
 
 -(NSNumber *)getCost8
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST8]];
 }
 
 -(NSNumber *)getCost9
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField COST9]];
 }
 
 -(void)setCost10:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST10] withObject:number];
 }
 
 -(void)setCost4:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST4] withObject:number];
 }
 
 -(void)setCost5:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST5] withObject:number];
 }
 
 -(void)setCost6:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST6] withObject:number];
 }
 
 -(void)setCost7:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST7] withObject:number];
 }
 
 -(void)setCost8:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST8] withObject:number];
 }
 
 -(void)setCost9:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField COST9] withObject:number];
 }
 
 -(NSDate *)getStart10
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField START10]];
 }
 
 -(NSDate *)getStart6
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField START6]];
 }
 
 -(NSDate *)getStart7
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField START7]];
 }
 
 -(NSDate *)getStart8
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField START8]];
 }
 
 -(NSDate *)getStart9
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField START9]];
 }
 
 -(void)setStart10:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField START10] withObject:date];
 }
 
 -(void)setStart6:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField START6] withObject:date];
 }
 
 -(void)setStart7:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField START7] withObject:date];
 }
 
 -(void)setStart8:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField START8] withObject:date];
 }
 
 -(void)setStart9:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField START9] withObject:date];
 }
 
 -(NSDate *)getFinish10
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField FINISH10]];
 }
 
 -(NSDate *)getFinish6
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField FINISH6]];
 }
 
 -(NSDate *)getFinish7
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField FINISH7]];
 }
 
 -(NSDate *)getFinish8
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField FINISH8]];
 }
 
 -(NSDate *)getFinish9
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField FINISH9]];
 }
 
 -(void)setFinish10:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField FINISH10] withObject:date];
 }
 
 -(void)setFinish6:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField FINISH6] withObject:date];
 }
 
 -(void)setFinish7:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField FINISH7] withObject:date];
 }
 
 -(void)setFinish8:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField FINISH8] withObject:date];
 }
 
 -(void)setFinish9:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField FINISH9] withObject:date];
 }
 
 -(NSNumber *)getOverTimeCost
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField OVERTIME_COST]];
 }
 
 -(void)setOverTimeCost:(NSNumber *)number
 {
-#warning Incomplete
+    [self set:[TaskField OVERTIME_COST] withObject:number];
 }
 
 -(void)setOutlineCode1:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE1] withObject:value];
 }
 
 -(NSString *)getOutlineCode1
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE1]];
 }
 
 -(void)setOutlineCode2:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE2] withObject:value];
 }
 
 -(NSString *)getOutlineCode2
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE2]];
 }
 
 -(void)setOutlineCode3:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE3] withObject:value];
 }
 
 -(NSString *)getOutlineCode3
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE3]];
 }
 
 -(void)setOutlineCode4:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE4] withObject:value];
 }
 
 -(NSString *)getOutlineCode4
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE4]];
 }
 
 -(void)setOutlineCode5:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE5] withObject:value];
 }
 
 -(NSString *)getOutlineCode5
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE5]];
 }
 
 -(void)setOutlineCode6:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE6] withObject:value];
 }
 
 -(NSString *)getOutlineCode6
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE6]];
 }
 
 -(void)setOutlineCode7:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE7] withObject:value];
 }
 
 -(NSString *)getOutlineCode7
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE7]];
 }
 
 -(void)setOutlineCode8:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE8] withObject:value];
 }
 
 -(NSString *)getOutlineCode8
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE8]];
 }
 
 -(void)setOutlineCode9:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE9] withObject:value];
 }
 
 -(NSString *)getOutlineCode9
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE9]];
 }
 
 -(void)setOutlineCode10:(NSString *)value
 {
-#warning Incomplete
+    [self set:[TaskField OUTLINE_CODE10] withObject:value];
 }
 
 -(NSString *)getOutlineCode10
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField OUTLINE_CODE10]];
 }
 
 -(NSNumber *)getActualOvertimeCost
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField ACTUAL_OVERTIME_COST]];
 }
 
 -(void)setActualOvertimeCost:(NSNumber *)cost
 {
-#warning Incomplete
+    [self set:[TaskField ACTUAL_OVERTIME_COST] withObject:cost];
 }
 
 -(MPPDuration *)getActualOvertimeWork
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField ACTUAL_OVERTIME_WORK]];
 }
 
 -(void)setActualOvertimeWork:(MPPDuration *)work
 {
-#warning Incomplete
+    [self set:[TaskField ACTUAL_OVERTIME_WORK] withObject:work];
 }
 
 -(AccrueType *)getFixedCostAccrual
 {
-#warning Incomplete
+    return (AccrueType *)[self getCachedValue:[TaskField FIXED_COST_ACCRUAL]];
 }
 
 -(void)setFixedCostAccural:(AccrueType *)type
 {
-#warning Incomplete
+    [self set:[TaskField FIXED_COST_ACCRUAL] withObject:type];
 }
 
 -(NSString *)getHyperlink
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField HYPERLINK]];
 }
 
 -(NSString *)getHyperlinkAddress
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField HYPERLINK_ADDRESS]];
 }
 
 -(NSString *)getHyperlinkSubAddress
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[TaskField HYPERLINK_SUBADDRESS]];
 }
 
 -(void)setHyperlink:(NSString *)text
 {
-#warning Incomplete
+    [self set:[TaskField HYPERLINK] withObject:text];
 }
 
 -(void)setHyperlinkAddress:(NSString *)text
 {
-#warning Incomplete
+    [self set:[TaskField HYPERLINK_ADDRESS] withObject:text];
 }
 
 -(void)setHyperlinkSubAddress:(NSString *)text
 {
-#warning Incomplete
+    [self set:[TaskField HYPERLINK_SUBADDRESS] withObject:text];
 }
 
 -(Boolean)getLevelAssignments
 {
-#warning Incomplete
+    return [BooleanUtility getBoolean:(NSNumber *)[self getCachedValue:[TaskField LEVEL_ASSIGNMENTS]]];
 }
 
 -(void)setLevelAssignments:(Boolean)flag
 {
-#warning Incomplete
+    [self set:[TaskField LEVEL_ASSIGNMENTS] withBoolean:flag];
 }
 
 -(Boolean)getLevelingCanSplit
 {
-#warning Incomplete
+    return [BooleanUtility getBoolean:(NSNumber *)[self getCachedValue:[TaskField LEVELING_CAN_SPLIT]]];
 }
 
 -(void)setLevelingCanSplit:(Boolean)flag
 {
-#warning Incomplete
+    [self set:[TaskField LEVELING_CAN_SPLIT] withBoolean:flag];
 }
 
 -(MPPDuration *)getOvertimeWork
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField OVERTIME_WORK]];
 }
 
 -(void)setOvertimeWork:(MPPDuration *)work
 {
-#warning Incomplete
+    [self set:[TaskField OVERTIME_WORK] withObject:work];
 }
 
 -(NSDate *)getPreleveledStart
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField PRELEVELED_START]];
 }
 
 -(NSDate *)getPreleveledFinish
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField PRELEVELED_FINISH]];
 }
 
 -(void)setPreleveledStart:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField PRELEVELED_START] withObject:date];
 }
 
 -(void)setPreleveledFinish:(NSDate *)date
 {
-#warning Incomplete
+    [self set:[TaskField PRELEVELED_FINISH] withObject:date];
 }
 
 -(MPPDuration *)getRemainingOvertimeWork
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[TaskField REMAINING_OVERTIME_WORK]];
 }
 
 -(void)setRemainingOvertimeWork:(MPPDuration *)work
 {
-#warning Incomplete
+    [self set:[TaskField REMAINING_OVERTIME_WORK] withObject:work];
 }
 
 -(NSNumber *)getRemainingOvertimeCost
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[TaskField REMAINING_OVERTIME_COST]];
 }
 
 -(void)setRemainingOvertimeCost:(NSNumber *)cost
 {
-#warning Incomplete
+    [self set:[TaskField REMAINING_OVERTIME_COST] withObject:cost];
 }
 
 -(ProjectCalendar *)getCalendar
 {
-#warning Incomplete
+    return (ProjectCalendar *)[self getCachedValue:[TaskField CALENDAR]];
 }
 
 -(void)setCalendar:(ProjectCalendar *)calendar
 {
-#warning Incomplete
+    [self set:[TaskField CALENDAR] withObject:calendar];
 }
 
 -(Boolean)getExpanded
 {
-#warning Incomplete
+    return _expanded;
 }
 
 -(void)setExpanded:(Boolean)expanded
 {
-#warning Incomplete
+    _expanded = expanded;
 }
 
 -(void)setStartSlack:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField START_SLACK] withObject:duration];
 }
 
 -(void)setFinishSlack:(MPPDuration *)duration
 {
-#warning Incomplete
+    [self set:[TaskField FINISH_SLACK] withObject:duration];
 }
 
 -(MPPDuration *)getStartSlack
 {
-#warning Incomplete
+    MPPDuration *startSlack = (MPPDuration *)[self getCachedValue:[TaskField START_SLACK]];
+    if(startSlack == nil)
+    {
+        MPPDuration *duration = [self getDuration];
+        if(duration != nil)
+        {
+            startSlack = [DateUtility getVariance:self withDate1:[self getLateStart] withDate2:[self getEarlyStart] withFormat:[duration getUnits]];
+            [self set:[TaskField START_SLACK] withObject:startSlack];
+        }
+    }
+    
+    return startSlack;
 }
 
 -(MPPDuration *)getFinishSlack
 {
-#warning Incomplete
+    MPPDuration *finishSlack = (MPPDuration *)[self getCachedValue:[TaskField FINISH_SLACK]];
+    if(finishSlack == nil)
+    {
+        MPPDuration *duration = [self getDuration];
+        if(duration != nil)
+        {
+            finishSlack = [DateUtility getVariance:self withDate1:[self getLateFinish] withDate2:[self getEarlyFinish] withFormat:[duration getUnits]];
+            [self set:[TaskField FINISH_SLACK] withObject:finishSlack];
+        }
+    }
+    
+    return finishSlack;
 }
 
 -(NSObject *)getFieldByAlias:(NSString *)alias
 {
-#warning Incomplete
+    return [self getCachedValue:[[self getParentFile] getAliasTaskField:alias]];
 }
 
 -(void)setFieldByAlias:(NSString *)alias withValue:(NSObject *)value
 {
-#warning Incomplete
+    [self set:[[self getParentFile] getAliasTaskField:alias] withObject:value];
 }
 
 -(NSMutableArray *)getSplits
@@ -3114,7 +3205,7 @@
 
 -(void)remove
 {
-#warning Incomplete
+    [[self getParentFile]removeTask:self];
 }
 
 -(SubProject *)getSubProject
@@ -3129,157 +3220,259 @@
 
 -(NSNumber *)getEnterpriseCost:(int)index
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[self selectField:[Task ENTERPRISE_COST_FIELDS] withIndex:index]];
 }
 
 -(void)setEnterpriseCost:(int)index withValue:(NSNumber *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_COST_FIELDS] withIndex:index] withObject:value];
 }
 
 -(NSDate *)getEnterpriseDate:(int)index
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[self selectField:[Task ENTERPRISE_DATE_FIELDS] withIndex:index]];
 }
 
 -(void)setEnterpriseDate:(int)index withValue:(NSDate *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_DATE_FIELDS] withIndex:index] withObject:value];
 }
 
 -(MPPDuration *)getEnterpriseDuration:(int)index
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[self selectField:[Task ENTERPRISE_DURATION_FIELDS] withIndex:index]];
 }
 
 -(void)setEnterpriseDuration:(int)index withValue:(MPPDuration *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_DURATION_FIELDS] withIndex:index] withObject:value];
 }
 
--(Boolean *)getEnterpriseFlag:(int)index
+-(Boolean)getEnterpriseFlag:(int)index
 {
-#warning Incomplete
+    return [BooleanUtility getBoolean:(NSNumber *)[self getCachedValue:[self selectField:[Task ENTERPRISE_FLAG_FIELDS] withIndex:index]]];
 }
 
--(void)setEnterpriseFlag:(int)index withValue:(Boolean *)value
+-(void)setEnterpriseFlag:(int)index withValue:(Boolean)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_FLAG_FIELDS] withIndex:index] withBoolean:value];
 }
 
 -(NSNumber *)getEnterpriseNumber:(int)index
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[self selectField:[Task ENTERPRISE_NUMBER_FIELDS] withIndex:index]];
 }
 
 -(void)setEnterpriseNumber:(int)index withValue:(NSNumber *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_NUMBER_FIELDS] withIndex:index] withObject:value];
 }
 
 -(NSString *)getEnterpriseText:(int)index
 {
-#warning Incomplete
+    return (NSString *)[self getCachedValue:[self selectField:[Task ENTERPRISE_TEXT_FIELDS] withIndex:index]];
 }
 
 -(void)setEnterpriseText:(int)index withValue:(NSString *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task ENTERPRISE_TEXT_FIELDS] withIndex:index] withObject:value];
 }
 
 -(void)setBaselineCost:(int)baselineNumber withValue:(NSNumber *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_COSTS] withIndex:baselineNumber] withObject:value];
 }
 
 -(void)setBaselineDuration:(int)baselineNumber withValue:(MPPDuration *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_DURATIONS] withIndex:baselineNumber] withObject:value];
 }
 
 -(void)setBaselineFinish:(int)baselineNumber withValue:(NSDate *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_FINISHES] withIndex:baselineNumber] withObject:value];
 }
 
 -(void)setBaselineStart:(int)baselineNumber withValue:(NSDate *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_STARTS] withIndex:baselineNumber] withObject:value];
 }
 
 -(void)setBaselineWork:(int)baselineNumber withValue:(MPPDuration *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_WORKS] withIndex:baselineNumber] withObject:value];
 }
 
 -(NSNumber *)getBaslineCost:(int)baseline
 {
-#warning Incomplete
+    return (NSNumber *)[self getCachedValue:[self selectField:[Task BASELINE_COSTS] withIndex:baseline]];
 }
 
 -(MPPDuration *)getBaslineDuration:(int)baseline
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_DURATIONS] withIndex:baseline]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_DURATIONS] withIndex:baseline]];
+    }
+    
+    if([result isKindOfClass:[MPPDuration class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (MPPDuration *)result;
 }
 
 -(NSString *)getBaslineDurationText:(int)baseline
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_DURATIONS] withIndex:baseline]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_DURATIONS] withIndex:baseline]];
+    }
+    
+    if([result isKindOfClass:[MPPDuration class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (NSString *)result;
 }
 
 -(void)setBaselineDurationText:(int)baselineNumber withValue:(NSString *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_DURATIONS] withIndex:baselineNumber] withObject:value];
 }
 
 -(NSDate *)getBaselineFinish:(int)baselineNumber
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_FINISHES] withIndex:baselineNumber]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_FINISHES] withIndex:baselineNumber]];
+    }
+    
+    if([result isKindOfClass:[NSDate class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (NSDate *)result;
 }
 
 -(NSString *)getBaselineFinishText:(int)baselineNumber
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_FINISHES] withIndex:baselineNumber]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_FINISHES] withIndex:baselineNumber]];
+    }
+    
+    if([result isKindOfClass:[NSString class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (NSString *)result;
 }
 
 -(void)setBaselineFinishText:(int)baselineNumber withValue:(NSString *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_FINISHES] withIndex:baselineNumber] withObject:value];
 }
 
 -(NSDate *)getBaselineStart:(int)baselineNumber
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_STARTS] withIndex:baselineNumber]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_STARTS] withIndex:baselineNumber]];
+    }
+    
+    if([result isKindOfClass:[NSDate class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (NSDate *)result;
 }
 
 -(NSString *)getBaselineStartText:(int)baselineNumber
 {
-#warning Incomplete
+    NSObject *result = [self getCachedValue:[self selectField:[Task BASELINE_STARTS] withIndex:baselineNumber]];
+    
+    if(result == nil)
+    {
+        result = [self getCachedValue:[self selectField:[Task BASELINE_ESTIMATED_STARTS] withIndex:baselineNumber]];
+    }
+    
+    if([result isKindOfClass:[NSString class]] == NO)
+    {
+        result = nil;
+    }
+    
+    return (NSString *)result;
 }
 
 -(void)setBaselineStartText:(int)baselineNumber withValue:(NSString *)value
 {
-#warning Incomplete
+    [self set:[self selectField:[Task BASELINE_STARTS] withIndex:baselineNumber] withObject:value];
 }
 
 -(MPPDuration *)getBaselineWork:(int)baselineNumber
 {
-#warning Incomplete
+    return (MPPDuration *)[self getCachedValue:[self selectField:[Task BASELINE_WORKS] withIndex:baselineNumber]];
 }
 
 -(NSDate *)getCompleteThrough
 {
-#warning Incomplete
+    NSDate *value = (NSDate *)[self getCachedValue:[TaskField COMPLETE_THROUGH]];
+    if(value == nil)
+    {
+        int percentComplete = [NumberUtility getInt:[self getPercentageComplete]];
+        switch (percentComplete) 
+        {
+            case 0:
+                break;
+            case 100:
+                value = [self getActualFinish];
+                break;
+            default:
+            {
+                MPPDuration *duration = [self getDuration]; 
+                double durationValue = ([duration getDuration] * percentComplete) / 100.0;
+                duration = [MPPDuration getInstance:durationValue withDoubleType:[duration getUnits]];
+                ProjectCalendar *calendar = [self getCalendar];
+                if(calendar == nil)
+                {
+                    calendar = [[self getParentFile]getCalendar];
+                }
+                
+                value = [calendar getDate:[self getActualStart] withDuration:duration withNextWorkStart:true];
+                break;
+            }   
+        }
+        
+        [self set:[TaskField COMPLETE_THROUGH] withObject:value];
+    }
+    
+    return value;
 }
 
 -(NSDate *)getSummaryProgress
 {
-#warning Incomplete
+    return (NSDate *)[self getCachedValue:[TaskField SUMMARY_PROGRESS]];
 }
 
 -(void)setSummaryProgress:(NSDate *)value
 {
-#warning Incomplete
+    [self set:[TaskField SUMMARY_PROGRESS] withObject:value];
 }
 
 -(CFUUIDRef *)getGUID
@@ -3289,42 +3482,157 @@
 
 -(void)setGUID:(CFUUIDRef *)value
 {
-#warning Incomplete
+    /////[self set:[TaskField SUMMARY_PROGRESS] withObject:value];
 }
 
 -(TaskMode *)getTaskMode
 {
-#warning Incomplete
+    return (TaskMode *)[self getCachedValue:[TaskField TASK_MODE]];
 }
 
 -(void)setTaskMode:(TaskMode *)mode
 {
-#warning Incomplete
+    [self set:[TaskField TASK_MODE] withObject:mode];
 }
 
 -(Boolean)getActive
 {
-#warning Incomplete
+    return [BooleanUtility getBoolean:(NSNumber *)[self getCachedValue:[TaskField SUMMARY_PROGRESS]]];
 }
 
 -(void)setActive:(Boolean)active
 {
-#warning Incomplete
+    [self set:[TaskField ACTIVE] withBoolean:active];
 }
 
 -(Boolean)removePredecessor:(Task *)targetTask withType:(RelationType *)type withLag:(MPPDuration *)lag
 {
-#warning Incomplete
+    Boolean matchFound = false;
+    
+    NSMutableArray *predecessorList = [self getPredecessors];
+    if(predecessorList != nil && [predecessorList count] > 0)
+    {
+        if(lag == nil)
+        {
+            lag = [MPPDuration getInstance:0 withIntType:[TimeUnit DAYS]];
+        }
+        
+        matchFound = [self removeRelation:predecessorList withTargetTask:targetTask withType:type withLag:lag];
+        
+        if(matchFound)
+        {
+            NSMutableArray *successorList = [targetTask getSuccessors];
+            if(successorList != nil && [successorList count] > 0)
+            {
+                [self removeRelation:successorList withTargetTask:self withType:type withLag:lag];
+            }
+        }
+    }
+    
+    return matchFound;
 }
 
--(NSObject *)getCachedValue:(id<FieldType>)type
+-(Boolean)removeRelation:(NSMutableArray *)relationList withTargetTask:(Task *)targetTask withType:(RelationType *)type withLag:(MPPDuration *)lag
 {
-#warning Incomplete
+    Boolean matchFound = false;
+    for(Relation *relation in relationList)
+    {
+        if([relation getTargetTask] == targetTask)
+        {
+            if([relation getType] == type && [[relation getLag]compareTo:lag] == 0)
+            {
+                [relationList removeObject:relation];
+                matchFound = true;
+                break;
+            }
+        }
+    }
+    
+    return matchFound;
 }
 
--(NSObject *)getCurrentValue:(id<FieldType>)type
+-(TaskField *)selectField:(NSMutableArray *)fields withIndex:(int)index
 {
-#warning Incomplete
+    if (index < 1 || index > [fields count]) {
+        [NSException raise:@"Invalid index" format:@"%d is not a valid field index", index];
+    }
+    
+    return (TaskField *)[fields objectAtIndex:index];
+}
+
+-(NSObject *)getCachedValue:(id<FieldType>)field
+{
+    return field == nil ? nil : [_array objectAtIndex:[field getValue]];
+}
+
+-(NSObject *)getCurrentValue:(id<FieldType>)field
+{
+    NSObject *result = nil;
+    if(field != nil)
+    {
+        Boolean found = false;
+        
+        if((TaskField *)field == [TaskField START_VARIANCE])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField COST_VARIANCE])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField DURATION_VARIANCE])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField WORK_VARIANCE])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField CV])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField SV])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField TOTAL_SLACK])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField CRITICAL])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if((TaskField *)field == [TaskField COMPLETE_THROUGH])
+        {
+            result = [self getStartVariance];
+            found = true;
+        }
+        
+        if(!found)
+        {
+            result = [_array objectAtIndex:[field getValue]];
+        }
+    }
+    
+    return result;
 }
 
 -(void)set:(id<FieldType>)field withObject:(NSObject *)value
@@ -3348,12 +3656,19 @@
 
 -(void)addFieldListener:(id<FieldListener>)listener
 {
-#warning Incomplete
+    if(_listeners == nil)
+    {
+        _listeners = [[NSMutableArray alloc]init];
+    }
+    [_listeners addObject:listener];
 }
 
 -(void)removeFieldListener:(id<FieldListener>)listener
 {
-#warning Incomplete
+    if(_listeners == nil)
+    {
+        [_listeners removeObject:listener];
+    }
 }
 
 -(void)set:(id<FieldType>)field withBoolean:(Boolean)value
@@ -3363,27 +3678,184 @@
 
 -(NSString *)toString
 {
-#warning Incomplete
+    NSString *project = [self getSubProject] == nil ? @"" : [NSString stringWithFormat:@" project=%@", [[self getSubProject]toString]];
+    
+    NSString *task = [NSString stringWithFormat:@"[Task id=%d uniqueID=%d name=%@", [self getID], [self getUniqueID], [self getName]];
+    
+    NSString *externalTask = [self getExternalTask] ? [NSString stringWithFormat:@" [EXTERNAL uid=%d id=%d]"] : @"]";
+    
+    NSString *result = [task stringByAppendingString:externalTask];
+    
+    if([project isEqualToString:@""] == NO)
+    {
+        result = [result stringByAppendingString:project];
+    } 
+    
+    return result;
 }
 
 -(Boolean)isPredecessor:(Task *)task
 {
-#warning Incomplete
+    return [self isRelated:task withList:[self getPredecessors]];
 }
 
 -(Boolean)isSuccessor:(Task *)task
 {
-#warning Incomplete
+    return [self isRelated:task withList:[self getSuccessors]];
+}
+
+-(Boolean)isRelated:(Task *)task withList:(NSMutableArray *)list
+{
+    Boolean result = false;
+    if(list != nil)
+    {
+        for(Relation *relation in list)
+        {
+            if([[relation getTargetTask]getUniqueID] == [task getUniqueID])
+            {
+                result = true;
+                break;
+            }
+        }
+    }
+    
+    return result;
 }
 
 -(void)disableEvents
 {
-#warning Incomplete
+    _eventsEnabled = false;
 }
 
 -(void)enableEvents
 {
-#warning Incomplete
+    _eventsEnabled = true;
+}
+
++(NSMutableArray *)ENTERPRISE_COST_FIELDS
+{
+    if(_ENTERPRISE_COST_FIELDS == nil)
+    {
+        _ENTERPRISE_COST_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_COST1], [TaskField ENTERPRISE_COST2], [TaskField ENTERPRISE_COST3], [TaskField ENTERPRISE_COST4], [TaskField ENTERPRISE_COST5], [TaskField ENTERPRISE_COST6], [TaskField ENTERPRISE_COST7], [TaskField ENTERPRISE_COST8], [TaskField ENTERPRISE_COST9], [TaskField ENTERPRISE_COST10], nil];
+    }
+    return _ENTERPRISE_COST_FIELDS;
+}
+
++(NSMutableArray *)ENTERPRISE_DATE_FIELDS 
+{
+    if(_ENTERPRISE_DATE_FIELDS == nil)
+    {
+        _ENTERPRISE_DATE_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_DATE1], [TaskField ENTERPRISE_DATE2], [TaskField ENTERPRISE_DATE3], [TaskField ENTERPRISE_DATE4], [TaskField ENTERPRISE_DATE5], [TaskField ENTERPRISE_DATE6], [TaskField ENTERPRISE_DATE7], [TaskField ENTERPRISE_DATE8], [TaskField ENTERPRISE_DATE9], [TaskField ENTERPRISE_DATE10], [TaskField ENTERPRISE_DATE11], [TaskField ENTERPRISE_DATE12], [TaskField ENTERPRISE_DATE13], [TaskField ENTERPRISE_DATE14], [TaskField ENTERPRISE_DATE15], [TaskField ENTERPRISE_DATE16], [TaskField ENTERPRISE_DATE17], [TaskField ENTERPRISE_DATE18], [TaskField ENTERPRISE_DATE19], [TaskField ENTERPRISE_DATE20], [TaskField ENTERPRISE_DATE21], [TaskField ENTERPRISE_DATE22], [TaskField ENTERPRISE_DATE23], [TaskField ENTERPRISE_DATE24], [TaskField ENTERPRISE_DATE25], [TaskField ENTERPRISE_DATE26], [TaskField ENTERPRISE_DATE27], [TaskField ENTERPRISE_DATE28], [TaskField ENTERPRISE_DATE29], [TaskField ENTERPRISE_DATE30], nil];
+    }
+    return _ENTERPRISE_DATE_FIELDS;
+}
+
++(NSMutableArray *)ENTERPRISE_DURATION_FIELDS 
+{
+    if(_ENTERPRISE_DURATION_FIELDS == nil)
+    {
+        _ENTERPRISE_DURATION_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_DURATION1], [TaskField ENTERPRISE_DURATION2], [TaskField ENTERPRISE_DURATION3], [TaskField ENTERPRISE_DURATION4], [TaskField ENTERPRISE_DURATION5], [TaskField ENTERPRISE_DURATION6], [TaskField ENTERPRISE_DURATION7], [TaskField ENTERPRISE_DURATION8], [TaskField ENTERPRISE_DURATION9], [TaskField ENTERPRISE_DURATION10], nil];
+    }
+    return _ENTERPRISE_DURATION_FIELDS;
+}
+
++(NSMutableArray *)ENTERPRISE_FLAG_FIELDS 
+{
+    if(_ENTERPRISE_FLAG_FIELDS == nil)
+    {
+        _ENTERPRISE_FLAG_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_FLAG1], [TaskField ENTERPRISE_FLAG2], [TaskField ENTERPRISE_FLAG3], [TaskField ENTERPRISE_FLAG4], [TaskField ENTERPRISE_FLAG5], [TaskField ENTERPRISE_FLAG6], [TaskField ENTERPRISE_FLAG7], [TaskField ENTERPRISE_FLAG8], [TaskField ENTERPRISE_FLAG9], [TaskField ENTERPRISE_FLAG10], [TaskField ENTERPRISE_FLAG11], [TaskField ENTERPRISE_FLAG12], [TaskField ENTERPRISE_FLAG13], [TaskField ENTERPRISE_FLAG14], [TaskField ENTERPRISE_FLAG15], [TaskField ENTERPRISE_FLAG16], [TaskField ENTERPRISE_FLAG17], [TaskField ENTERPRISE_FLAG18], [TaskField ENTERPRISE_FLAG19], [TaskField ENTERPRISE_FLAG20], nil];
+    }
+    return _ENTERPRISE_FLAG_FIELDS;
+}
+
++(NSMutableArray *)ENTERPRISE_NUMBER_FIELDS 
+{
+    if(_ENTERPRISE_NUMBER_FIELDS == nil)
+    {
+        _ENTERPRISE_NUMBER_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_NUMBER1], [TaskField ENTERPRISE_NUMBER2], [TaskField ENTERPRISE_NUMBER3], [TaskField ENTERPRISE_NUMBER4], [TaskField ENTERPRISE_NUMBER5], [TaskField ENTERPRISE_NUMBER6], [TaskField ENTERPRISE_NUMBER7], [TaskField ENTERPRISE_NUMBER8], [TaskField ENTERPRISE_NUMBER9], [TaskField ENTERPRISE_NUMBER10], [TaskField ENTERPRISE_NUMBER11], [TaskField ENTERPRISE_NUMBER12], [TaskField ENTERPRISE_NUMBER13], [TaskField ENTERPRISE_NUMBER14], [TaskField ENTERPRISE_NUMBER15], [TaskField ENTERPRISE_NUMBER16], [TaskField ENTERPRISE_NUMBER17], [TaskField ENTERPRISE_NUMBER18], [TaskField ENTERPRISE_NUMBER19], [TaskField ENTERPRISE_NUMBER20], [TaskField ENTERPRISE_NUMBER21], [TaskField ENTERPRISE_NUMBER22], [TaskField ENTERPRISE_NUMBER23], [TaskField ENTERPRISE_NUMBER24], [TaskField ENTERPRISE_NUMBER25], [TaskField ENTERPRISE_NUMBER26], [TaskField ENTERPRISE_NUMBER27], [TaskField ENTERPRISE_NUMBER28], [TaskField ENTERPRISE_NUMBER29], [TaskField ENTERPRISE_NUMBER30], [TaskField ENTERPRISE_NUMBER31], [TaskField ENTERPRISE_NUMBER32], [TaskField ENTERPRISE_NUMBER33], [TaskField ENTERPRISE_NUMBER34], [TaskField ENTERPRISE_NUMBER35], [TaskField ENTERPRISE_NUMBER36], [TaskField ENTERPRISE_NUMBER37], [TaskField ENTERPRISE_NUMBER38], [TaskField ENTERPRISE_NUMBER39], [TaskField ENTERPRISE_NUMBER40], nil];
+    }
+    return _ENTERPRISE_NUMBER_FIELDS;
+}
+
++(NSMutableArray *)ENTERPRISE_TEXT_FIELDS 
+{
+    if(_ENTERPRISE_TEXT_FIELDS == nil)
+    {
+        _ENTERPRISE_TEXT_FIELDS = [[NSMutableArray alloc]initWithObjects:[TaskField ENTERPRISE_TEXT1], [TaskField ENTERPRISE_TEXT2], [TaskField ENTERPRISE_TEXT3], [TaskField ENTERPRISE_TEXT4], [TaskField ENTERPRISE_TEXT5], [TaskField ENTERPRISE_TEXT6], [TaskField ENTERPRISE_TEXT7], [TaskField ENTERPRISE_TEXT8], [TaskField ENTERPRISE_TEXT9], [TaskField ENTERPRISE_TEXT10], [TaskField ENTERPRISE_TEXT11], [TaskField ENTERPRISE_TEXT12], [TaskField ENTERPRISE_TEXT13], [TaskField ENTERPRISE_TEXT14], [TaskField ENTERPRISE_TEXT15], [TaskField ENTERPRISE_TEXT16], [TaskField ENTERPRISE_TEXT17], [TaskField ENTERPRISE_TEXT18], [TaskField ENTERPRISE_TEXT19], [TaskField ENTERPRISE_TEXT20], [TaskField ENTERPRISE_TEXT21], [TaskField ENTERPRISE_TEXT22], [TaskField ENTERPRISE_TEXT23], [TaskField ENTERPRISE_TEXT24], [TaskField ENTERPRISE_TEXT25], [TaskField ENTERPRISE_TEXT26], [TaskField ENTERPRISE_TEXT27], [TaskField ENTERPRISE_TEXT28], [TaskField ENTERPRISE_TEXT29], [TaskField ENTERPRISE_TEXT30], [TaskField ENTERPRISE_TEXT31], [TaskField ENTERPRISE_TEXT32], [TaskField ENTERPRISE_TEXT33], [TaskField ENTERPRISE_TEXT34], [TaskField ENTERPRISE_TEXT35], [TaskField ENTERPRISE_TEXT36], [TaskField ENTERPRISE_TEXT37], [TaskField ENTERPRISE_TEXT38], [TaskField ENTERPRISE_TEXT39], [TaskField ENTERPRISE_TEXT40], nil];
+    }
+    return _ENTERPRISE_TEXT_FIELDS;
+}
+
++(NSMutableArray *)BASELINE_COSTS 
+{
+    if(_BASELINE_COSTS == nil)
+    {
+        _BASELINE_COSTS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_COST], [TaskField BASELINE2_COST], [TaskField BASELINE3_COST], [TaskField BASELINE4_COST], [TaskField BASELINE5_COST], [TaskField BASELINE6_COST], [TaskField BASELINE7_COST], [TaskField BASELINE8_COST], [TaskField BASELINE9_COST], [TaskField BASELINE10_COST], nil];
+    }
+    return _BASELINE_COSTS;
+}
+
++(NSMutableArray *)BASELINE_DURATIONS 
+{
+    if(_BASELINE_DURATIONS == nil)
+    {
+        _BASELINE_DURATIONS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_DURATION], [TaskField BASELINE2_DURATION], [TaskField BASELINE3_DURATION], [TaskField BASELINE4_DURATION], [TaskField BASELINE5_DURATION], [TaskField BASELINE6_DURATION], [TaskField BASELINE7_DURATION], [TaskField BASELINE8_DURATION], [TaskField BASELINE9_DURATION], [TaskField BASELINE10_DURATION], nil];
+    }
+    return _BASELINE_DURATIONS;
+}
+
++(NSMutableArray *)BASELINE_ESTIMATED_DURATIONS 
+{
+    if(_BASELINE_ESTIMATED_DURATIONS == nil)
+    {
+        _BASELINE_ESTIMATED_DURATIONS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_ESTIMATED_DURATION], [TaskField BASELINE2_ESTIMATED_DURATION], [TaskField BASELINE3_ESTIMATED_DURATION], [TaskField BASELINE4_ESTIMATED_DURATION], [TaskField BASELINE5_ESTIMATED_DURATION], [TaskField BASELINE6_ESTIMATED_DURATION], [TaskField BASELINE7_ESTIMATED_DURATION], [TaskField BASELINE8_ESTIMATED_DURATION], [TaskField BASELINE9_ESTIMATED_DURATION], [TaskField BASELINE10_ESTIMATED_DURATION], nil];
+    }
+    return _BASELINE_ESTIMATED_DURATIONS;
+}
+
++(NSMutableArray *)BASELINE_STARTS 
+{
+    if(_BASELINE_STARTS == nil)
+    {
+        _BASELINE_STARTS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_START], [TaskField BASELINE2_START], [TaskField BASELINE3_START], [TaskField BASELINE4_START], [TaskField BASELINE5_START], [TaskField BASELINE6_START], [TaskField BASELINE7_START], [TaskField BASELINE8_START], [TaskField BASELINE9_START], [TaskField BASELINE10_START], nil];
+    }
+    return _BASELINE_STARTS;
+}
+
++(NSMutableArray *)BASELINE_ESTIMATED_STARTS 
+{
+    if(_BASELINE_ESTIMATED_STARTS == nil)
+    {
+        _BASELINE_ESTIMATED_STARTS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_ESTIMATED_START], [TaskField BASELINE2_ESTIMATED_START], [TaskField BASELINE3_ESTIMATED_START], [TaskField BASELINE4_ESTIMATED_START], [TaskField BASELINE5_ESTIMATED_START], [TaskField BASELINE6_ESTIMATED_START], [TaskField BASELINE7_ESTIMATED_START], [TaskField BASELINE8_ESTIMATED_START], [TaskField BASELINE9_ESTIMATED_START], [TaskField BASELINE10_ESTIMATED_START], nil];
+    }
+    return _BASELINE_ESTIMATED_STARTS;
+}
+
++(NSMutableArray *)BASELINE_FINISHES 
+{
+    if(_BASELINE_FINISHES == nil)
+    {
+        _BASELINE_FINISHES = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_FINISH], [TaskField BASELINE2_FINISH], [TaskField BASELINE3_FINISH], [TaskField BASELINE4_FINISH], [TaskField BASELINE5_FINISH], [TaskField BASELINE6_FINISH], [TaskField BASELINE7_FINISH], [TaskField BASELINE8_FINISH], [TaskField BASELINE9_FINISH], [TaskField BASELINE10_FINISH], nil];
+    }
+    return _BASELINE_FINISHES;
+}
+
++(NSMutableArray *)BASELINE_ESTIMATED_FINISHES 
+{
+    if(_BASELINE_ESTIMATED_FINISHES == nil)
+    {
+        _BASELINE_ESTIMATED_FINISHES = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_ESTIMATED_FINISH], [TaskField BASELINE2_ESTIMATED_FINISH], [TaskField BASELINE3_ESTIMATED_FINISH], [TaskField BASELINE4_ESTIMATED_FINISH], [TaskField BASELINE5_ESTIMATED_FINISH], [TaskField BASELINE6_ESTIMATED_FINISH], [TaskField BASELINE7_ESTIMATED_FINISH], [TaskField BASELINE8_ESTIMATED_FINISH], [TaskField BASELINE9_ESTIMATED_FINISH], [TaskField BASELINE10_ESTIMATED_FINISH], nil];
+    }
+    return _BASELINE_ESTIMATED_FINISHES;
+}
+
++(NSMutableArray *)BASELINE_WORKS 
+{
+    if(_BASELINE_WORKS == nil)
+    {
+        _BASELINE_WORKS = [[NSMutableArray alloc]initWithObjects:[TaskField BASELINE1_WORK], [TaskField BASELINE2_WORK], [TaskField BASELINE3_WORK], [TaskField BASELINE4_WORK], [TaskField BASELINE5_WORK], [TaskField BASELINE6_WORK], [TaskField BASELINE7_WORK], [TaskField BASELINE8_WORK], [TaskField BASELINE9_WORK], [TaskField BASELINE10_WORK], nil];
+    }
+    return _BASELINE_WORKS;
 }
 
 @end

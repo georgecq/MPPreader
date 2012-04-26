@@ -70,6 +70,8 @@
 		7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.m */; };
 		7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.m */; };
 		7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.m */; };
+		C3854541154A00B50030B489 /* SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = C3854540154A00B50030B489 /* SubProject.m */; };
+		C3869F681549BE26000E8FBA /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3869F671549BE26000E8FBA /* DateUtility.m */; };
 		C3E418B21548A9C400B1CBA2 /* BooleanUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
 /* End PBXBuildFile section */
@@ -201,6 +203,10 @@
 		7AF9FE8815462CBA002AB0CF /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
 		7AF9FE8915462CBA002AB0CF /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
 		7AF9FE8C15462CDA002AB0CF /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
+		C385453F154A00B50030B489 /* SubProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubProject.h; sourceTree = "<group>"; };
+		C3854540154A00B50030B489 /* SubProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubProject.m; sourceTree = "<group>"; };
+		C3869F661549BE26000E8FBA /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
+		C3869F671549BE26000E8FBA /* DateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtility.m; sourceTree = "<group>"; };
 		C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanUtility.h; sourceTree = "<group>"; };
 		C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanUtility.m; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
@@ -226,6 +232,10 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
+				C385453F154A00B50030B489 /* SubProject.h */,
+				C3854540154A00B50030B489 /* SubProject.m */,
+				C3869F661549BE26000E8FBA /* DateUtility.h */,
+				C3869F671549BE26000E8FBA /* DateUtility.m */,
 				C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */,
 				C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */,
 				7AD45AA21546176B004FF2A2 /* AccrueType.h */,
@@ -513,6 +523,8 @@
 				7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */,
 				7A683817154718D60098FDF8 /* Priority.m in Sources */,
 				C3E418B21548A9C400B1CBA2 /* BooleanUtility.m in Sources */,
+				C3869F681549BE26000E8FBA /* DateUtility.m in Sources */,
+				C3854541154A00B50030B489 /* SubProject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

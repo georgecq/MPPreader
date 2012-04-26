@@ -1102,9 +1102,9 @@
 
 -(void)setEnterpriseDuration:(int)index withValue:(MPPDuration *)value;
 
--(Boolean *)getEnterpriseFlag:(int)index;
+-(Boolean)getEnterpriseFlag:(int)index;
 
--(void)setEnterpriseFlag:(int)index withValue:(Boolean *)value;
+-(void)setEnterpriseFlag:(int)index withValue:(Boolean)value;
 
 -(NSNumber *)getEnterpriseNumber:(int)index;
 
@@ -1166,15 +1166,7 @@
 
 -(Boolean)removePredecessor:(Task *)targetTask withType:(RelationType *)type withLag:(MPPDuration *)lag;
 
--(NSObject *)getCachedValue:(id<FieldType>)type;
-
--(NSObject *)getCurrentValue:(id<FieldType>)type;
-
--(void)set:(id<FieldType>)field withObject:(NSObject *)value;
-
--(void)addFieldListener:(id<FieldListener>)listener;
-
--(void)removeFieldListener:(id<FieldListener>)listener;
+-(NSObject *)getCachedValue:(id<FieldType>)field;
 
 -(void)set:(id<FieldType>)field withBoolean:(Boolean)value;
 

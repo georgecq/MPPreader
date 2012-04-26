@@ -16,8 +16,8 @@
 
 -(NSObject *)getCurrentValue:(id<FieldType>)field;
 
--(void)addListener:(id<FieldListener>)listener;
+-(void)addFieldListener:(id<FieldListener>)listener;
 
--(void)removeListener:(id<FieldListener>)listener;
+-(void)removeFieldListener:(id<FieldListener>)listener;
 
 @end

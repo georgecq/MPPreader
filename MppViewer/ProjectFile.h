@@ -48,34 +48,34 @@
 }
 
 // Gets or Sets the file delimiter character.
-@property (strong, nonatomic) NSString *Delimiter;
+@property (strong, nonatomic) NSString *delimiter;
 
 // Gets or Sets whether WBS numbers are automatically created.
-@property (nonatomic) Boolean AutoWBS;
+@property (nonatomic) Boolean autoWBS;
 
 // Gets or Sets whether outline level numbers are automatically created.
-@property (nonatomic) Boolean AutoOutlineLevel;
+@property (nonatomic) Boolean autoOutlineLevel;
 
 // Gets or Sets whether outline numbers are automatically created.
-@property (nonatomic) Boolean AutoOutlineNumber;
+@property (nonatomic) Boolean autoOutlineNumber;
 
 // Gets or Sets whether the task unique ID field is automatically populated.
-@property (nonatomic) Boolean AutoTaskUniqueID;
+@property (nonatomic) Boolean autoTaskUniqueID;
 
 // Gets or Sets whether the calendar unique ID field is automatically populated.
-@property (nonatomic) Boolean AutoCalendarUniqueID;
+@property (nonatomic) Boolean autoCalendarUniqueID;
 
 // Gets or Sets whether the assignment unique ID field is automatically populated.
-@property (nonatomic) Boolean AutoAssignmentUniqueID;
+@property (nonatomic) Boolean autoAssignmentUniqueID;
 
 // Gets or Sets whether the task ID field is automatically populated.
-@property (nonatomic) Boolean AutoTaskID;
+@property (nonatomic) Boolean autoTaskID;
 
 // Gets or Sets whether the resource unique ID field is automatically populated.
-@property (nonatomic) Boolean AutoResourceUniqueID;
+@property (nonatomic) Boolean autoResourceUniqueID;
 
 // Gets or Sets whether the resource ID field is automatically populated.
-@property (nonatomic) Boolean AutoResourceID;
+@property (nonatomic) Boolean autoResourceID;
 
 -(void)addTask:(Task *) task;
 
@@ -93,7 +93,7 @@
 
 -(void)renumberAssignmentUniqueIDs;
 
--(void) renumberCalendarUniqueIDs;
+-(void)renumberCalendarUniqueIDs;
 
 -(void)validateUniqueIDsForMicrosoftProject;
 
@@ -111,7 +111,7 @@
 
 -(int)getAssignmentUniqueID;
 
--(int) getTaskID;
+-(int)getTaskID;
 
 -(int)getResourceUniqueID;
 
@@ -212,5 +212,10 @@
 -(void)unmapTaskUniqueID:(NSNumber *)identifier;
 
 -(void)mapTaskUniqueID:(NSNumber *)identifier withTask:(Task *)task;
+
+-(ProjectCalendar *)getCalendar;
+
+
+
 
 @end
