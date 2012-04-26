@@ -205,4 +205,12 @@
 
 -(NSMutableArray *)getTaskFieldDescriptionList:(TaskField *)field;
 
+-(void)unmapTaskID:(NSNumber *)identifier;
+
+-(void)mapTaskID:(NSNumber *)identifier withTask:(Task *)task;
+
+-(void)unmapTaskUniqueID:(NSNumber *)identifier;
+
+-(void)mapTaskUniqueID:(NSNumber *)identifier withTask:(Task *)task;
+
 @end

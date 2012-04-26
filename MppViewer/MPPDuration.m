@@ -309,7 +309,7 @@ static NSMutableArray *_ZERO_DURATIONS = nil;
 {    
     if([otherObject isKindOfClass:[self class]])
     {
-        if([self getDuration] == [otherObject getDuration] && [self getUnits] == [otherObject getUnits])  
+        if([self getDuration] == [(MPPDuration *)otherObject getDuration] && [self getUnits] == [(MPPDuration *)otherObject getUnits])  
         {
             return YES;
         }

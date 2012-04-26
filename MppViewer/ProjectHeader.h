@@ -11,6 +11,7 @@
 
 @class ProjectFile;
 @class TimeUnit;
+@class MPPDuration;
 
 @interface ProjectHeader : ProjectEntity
 
@@ -21,5 +22,7 @@
 -(int)getMinutesPerWeek;
 
 -(int)getDaysPerMonth;
+
+-(MPPDuration *)getDuration;
 
 @end

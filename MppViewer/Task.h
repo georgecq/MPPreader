@@ -54,7 +54,7 @@
     NSMutableArray *_listeners;
 }
 
--(id)init:(ProjectFile *) file: (Task *) parent;
+-(id)init:(ProjectFile *)file withParent:(Task *)parent;
 
 -(void)generateWBS:(Task *)parent;
 
@@ -202,7 +202,7 @@
 
 -(void)setHideBar:(Boolean)flag;
 
--(void)setID:(NSInteger)val;
+-(void)setID:(NSNumber *)val;
 
 -(void)setLateFinish:(NSDate *)date;
 
@@ -226,9 +226,9 @@
 
 -(void)setNumber5:(NSNumber *)val;
 
--(void)setObjects:(NSInteger)val;
+-(void)setObjects:(NSNumber *)val;
 
--(void)setOutlineLevel:(NSInteger)val;
+-(void)setOutlineLevel:(NSNumber *)val;
 
 -(void)setOutlineNumber:(NSString *)val;
 
@@ -298,7 +298,7 @@
 
 -(void)setTotalSlack:(MPPDuration *)val;
 
--(void)setUniqueID:(NSInteger)val;
+-(void)setUniqueID:(NSNumber *)val;
 
 -(void)setUpdateNeeded:(Boolean)val;
 
@@ -432,7 +432,7 @@
 
 -(Boolean)getHideBar;
 
--(NSInteger)getID;
+-(NSNumber *)getID;
 
 -(NSDate *)getLateFinish;
 
@@ -458,9 +458,9 @@
 
 -(NSNumber *)getNumber5;
 
--(NSInteger)getObjects;
+-(NSNumber *)getObjects;
 
--(NSInteger)getOutlineLevel;
+-(NSNumber *)getOutlineLevel;
 
 -(NSString *)getOutlineNumber;
 
@@ -534,7 +534,7 @@
 
 -(MPPDuration *)getTotalSlack;
 
--(NSInteger)getUniqueID;
+-(NSNumber *)getUniqueID;
 
 -(Boolean)getUpdatedNeeded;
 
@@ -584,21 +584,21 @@
 
 -(void)setOverAllocated:(Boolean)overAllocated;
 
--(NSInteger)getSubprojectTaskUniqueID;
+-(NSNumber *)getSubprojectTaskUniqueID;
 
--(void)setSubprojectTaskUniqueID:(NSInteger)subprojectUniqueTaskID;
+-(void)setSubprojectTaskUniqueID:(NSNumber *)subprojectUniqueTaskID;
 
--(NSInteger)getSubprojectTaskID;
+-(NSNumber *)getSubprojectTaskID;
 
--(void)setSubprojectTaskID:(NSInteger)subprojectTaskID;
+-(void)setSubprojectTaskID:(NSNumber *)subprojectTaskID;
 
--(void)setSubprojectTaskUniqueIDOffset:(NSInteger)offset;
+-(void)setSubprojectTaskUniqueIDOffset:(NSNumber *)offset;
 
--(NSInteger)getSubprojectTaskUniqueIDOffset;
+-(NSNumber *)getSubprojectTaskUniqueIDOffset;
 
 -(Boolean)getSubprojectReadOnly;
 
--(void)setSubprojectReadOnly;
+-(void)setSubprojectReadOnly:(Boolean)subprojectReadOnly;
 
 -(Boolean)getExternalTask;
 
@@ -620,9 +620,9 @@
 
 -(void)setIgnoreResourceCalendar:(Boolean)ignoreResourceCalendar;
 
--(NSInteger)getPhysicalPercentComplete;
+-(NSNumber *)getPhysicalPercentComplete;
 
--(void)setPhysicalPercentComplete:(NSInteger)physicalPercentComplete;
+-(void)setPhysicalPercentComplete:(NSNumber *)physicalPercentComplete;
 
 -(EarnedValueMethod *)getEarnedValueMethod;
 

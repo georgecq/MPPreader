@@ -52,7 +52,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(Task *)addTask
 {
-    Task * task = [[Task alloc]init :self :nil];
+    Task * task = [[Task alloc]init:self withParent:nil];
     [_allTasks addObject:task];
     [_childTasks addObject:task];
     return task;
@@ -69,10 +69,10 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     // Remove the task from the file and its parent task
     //
     [_allTasks removeObject:task];
-    int taskUniqueId = [task getUniqueID];
+    int taskUniqueId = [[task getUniqueID]intValue];
     [_taskUniqueIDMap removeObjectForKey:[[NSNumber alloc]initWithInt:taskUniqueId]];
-    int taskId = [task getID];
-    [_taskIDMap removeObjectForKey:[[NSNumber alloc]initWithInt:[task getID]]];
+    int taskId = [[task getID]intValue];
+    [_taskIDMap removeObjectForKey:[task getID]];
     
     Task *parentTask = [task getParentTask];
     if (parentTask != nil)
@@ -88,7 +88,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     // Remove all resource assignments
     //
     for (ResourceAssignment *assignment in _allResourceAssignments) {
-        if (taskId == [[assignment getTask]getID])
+        if (taskId == [[[assignment getTask]getID] intValue])
         {
             Resource *rsc = [assignment getResource];
             if (rsc  != nil)
@@ -143,7 +143,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         
         for (Task *actTask in _allTasks)
         {
-            [actTask setID:Id++];
+            [actTask setID:[NSNumber numberWithInt:Id++]];
         }
     }
 }
@@ -188,7 +188,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     
     for (Task *task in _allTasks)
     {
-        [task setUniqueID:uid++];
+        [task setUniqueID:[NSNumber numberWithInt:uid++]];
     }
 }
 
@@ -248,7 +248,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (Task *task in _allTasks)
         {
-            if ([task getUniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([[task getUniqueID]intValue] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberTaskIDs];
                 break;
@@ -324,7 +324,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
     for (Task *task in _childTasks)
     {
-        [task setID:currentID++];
+        [task setID:[NSNumber numberWithInt:currentID++]];
         [_allTasks addObject:task];
         currentID = [self synchroizeTaskIDToHierarchy:task withId:currentID];
     }
@@ -341,7 +341,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 {
     for (Task *task in [parentTask getChildTasks])
     {
-        [task setID:currentID++];
+        [task setID:[NSNumber numberWithInt:currentID++]];
         [_allTasks addObject:task];
         currentID = [self synchroizeTaskIDToHierarchy:task withId:currentID];
     }

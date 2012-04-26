@@ -32,4 +32,6 @@
 
 -(ProjectCalendar *)getResourceCalendar;
 
+-(void)addResourceAssignment:(ResourceAssignment *)assignment;
+
 @end
