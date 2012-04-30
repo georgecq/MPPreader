@@ -1078,7 +1078,7 @@
 
 -(NSMutableArray *)getSplits;
 
--(void)setSplits:(NSMutableArray *)splts;
+-(void)setSplits:(NSMutableArray *)splits;
 
 -(NSDate *)getSplitCompleteDuration;
 
@@ -1152,9 +1152,9 @@
 
 -(void)setSummaryProgress:(NSDate *)value;
 
--(CFUUIDRef *)getGUID;
+-(NSString *)getGUID;
 
--(void)setGUID:(CFUUIDRef *)value;
+-(void)setGUID:(NSString *)value;
 
 -(TaskMode *)getTaskMode;
 

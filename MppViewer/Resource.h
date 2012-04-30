@@ -26,9 +26,9 @@
 
 -(void)setResourceCalendar:(ProjectCalendar *)calendar;
 
--(int)getUniqueID;
+-(NSNumber *)getUniqueID;
 
--(int)getID;
+-(NSNumber *)getID;
 
 -(ProjectCalendar *)getResourceCalendar;
 

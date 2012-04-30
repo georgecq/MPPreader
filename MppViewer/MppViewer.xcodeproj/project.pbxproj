@@ -12,68 +12,74 @@
 		5ED01982152B6D370012148C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED01981152B6D370012148C /* CoreGraphics.framework */; };
 		5ED01988152B6D370012148C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ED01986152B6D370012148C /* InfoPlist.strings */; };
 		5ED0198A152B6D370012148C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED01989152B6D370012148C /* main.m */; };
-		5ED0198E152B6D370012148C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0198D152B6D370012148C /* AppDelegate.m */; };
-		5ED01991152B6D370012148C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED01990152B6D370012148C /* ViewController.m */; };
+		5ED0198E152B6D370012148C /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0198D152B6D370012148C /* AppDelegate.mm */; };
+		5ED01991152B6D370012148C /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED01990152B6D370012148C /* ViewController.mm */; };
 		5ED01994152B6D370012148C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED01992152B6D370012148C /* ViewController.xib */; };
-		5ED019E8152B6EFB0012148C /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D1152B6EFB0012148C /* Day.m */; };
-		5ED019E9152B6EFB0012148C /* DayType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D3152B6EFB0012148C /* DayType.m */; };
-		5ED019EA152B6EFB0012148C /* FileCreationRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D5152B6EFB0012148C /* FileCreationRecord.m */; };
-		5ED019EB152B6EFB0012148C /* ProjectCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D7152B6EFB0012148C /* ProjectCalendar.m */; };
-		5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */; };
-		5ED019ED152B6EFB0012148C /* ProjectFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DB152B6EFB0012148C /* ProjectFile.m */; };
-		5ED019EE152B6EFB0012148C /* ProjectHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DD152B6EFB0012148C /* ProjectHeader.m */; };
-		5ED019EF152B6EFB0012148C /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DF152B6EFB0012148C /* Relation.m */; };
-		5ED019F0152B6EFB0012148C /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E1152B6EFB0012148C /* Resource.m */; };
-		5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E3152B6EFB0012148C /* ResourceAssignment.m */; };
-		5ED019F2152B6EFB0012148C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.m */; };
-		7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29EE211538DB1000958CB7 /* RecurringTask.m */; };
-		7A683817154718D60098FDF8 /* Priority.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A683816154718D60098FDF8 /* Priority.m */; };
+		5ED019E8152B6EFB0012148C /* Day.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D1152B6EFB0012148C /* Day.mm */; };
+		5ED019E9152B6EFB0012148C /* DayType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D3152B6EFB0012148C /* DayType.mm */; };
+		5ED019EA152B6EFB0012148C /* FileCreationRecord.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D5152B6EFB0012148C /* FileCreationRecord.mm */; };
+		5ED019EB152B6EFB0012148C /* ProjectCalendar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D7152B6EFB0012148C /* ProjectCalendar.mm */; };
+		5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.mm */; };
+		5ED019ED152B6EFB0012148C /* ProjectFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DB152B6EFB0012148C /* ProjectFile.mm */; };
+		5ED019EE152B6EFB0012148C /* ProjectHeader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DD152B6EFB0012148C /* ProjectHeader.mm */; };
+		5ED019EF152B6EFB0012148C /* Relation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019DF152B6EFB0012148C /* Relation.mm */; };
+		5ED019F0152B6EFB0012148C /* Resource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E1152B6EFB0012148C /* Resource.mm */; };
+		5ED019F1152B6EFB0012148C /* ResourceAssignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E3152B6EFB0012148C /* ResourceAssignment.mm */; };
+		5ED019F2152B6EFB0012148C /* Task.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED019E5152B6EFB0012148C /* Task.mm */; };
+		7A29EE221538DB1000958CB7 /* RecurringTask.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A29EE211538DB1000958CB7 /* RecurringTask.mm */; };
+		7A683817154718D60098FDF8 /* Priority.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A683816154718D60098FDF8 /* Priority.mm */; };
 		7A683819154761730098FDF8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A683818154761730098FDF8 /* CoreFoundation.framework */; };
-		7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFECFB153F529A00884FB3 /* ProjectEntity.m */; };
-		7ABCBC4B153388650006391D /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.m */; };
-		7ABCBC801533B2C40006391D /* TaskField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.m */; };
-		7ABD8933153889340093112C /* TimeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD8932153889340093112C /* TimeUnit.m */; };
-		7ABD89391538B8670093112C /* MPPDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD89381538B8670093112C /* MPPDuration.m */; };
-		7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */; };
-		7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */; };
-		7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */; };
-		7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */; };
-		7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */; };
-		7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA31546176B004FF2A2 /* AccrueType.m */; };
-		7AD45AAE15461789004FF2A2 /* BackgroundPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA715461789004FF2A2 /* BackgroundPattern.m */; };
-		7AD45AAF15461789004FF2A2 /* BookingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA915461789004FF2A2 /* BookingType.m */; };
-		7AD45AB015461789004FF2A2 /* ChartPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAB15461789004FF2A2 /* ChartPattern.m */; };
-		7AD45AB115461789004FF2A2 /* ColorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAD15461789004FF2A2 /* ColorType.m */; };
-		7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */; };
-		7AD45ACB154617C2004FF2A2 /* DateOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB5154617C2004FF2A2 /* DateOrder.m */; };
-		7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */; };
-		7AD45ACD154617C2004FF2A2 /* GanttBarDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */; };
-		7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */; };
-		7AD45ACF154617C2004FF2A2 /* GanttBarShowForTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */; };
-		7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */; };
-		7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */; };
-		7AD45AD2154617C2004FF2A2 /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC3154617C2004FF2A2 /* Interval.m */; };
-		7AD45AD3154617C2004FF2A2 /* LineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC5154617C2004FF2A2 /* LineStyle.m */; };
-		7AD45AD4154617C2004FF2A2 /* LinkStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC7154617C2004FF2A2 /* LinkStyle.m */; };
-		7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */; };
-		7AD45AD815461876004FF2A2 /* NumberUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AD715461876004FF2A2 /* NumberUtility.m */; };
-		7AD45AE01546224E004FF2A2 /* ProjectDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */; };
-		7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */; };
-		7AD45AE415462313004FF2A2 /* ResourceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE315462313004FF2A2 /* ResourceType.m */; };
-		7AD45AE715462369004FF2A2 /* ScheduleFrom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE615462368004FF2A2 /* ScheduleFrom.m */; };
-		7AD45AF415462565004FF2A2 /* TimescaleAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */; };
-		7AD45AF515462565004FF2A2 /* TimescaleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */; };
-		7AD45AF615462565004FF2A2 /* TimescaleUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AED15462561004FF2A2 /* TimescaleUnits.m */; };
-		7AD45AF715462565004FF2A2 /* ViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEF15462562004FF2A2 /* ViewType.m */; };
-		7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF115462563004FF2A2 /* WorkContour.m */; };
-		7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF315462565004FF2A2 /* WorkGroup.m */; };
-		7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.m */; };
-		7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.m */; };
-		7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.m */; };
-		C3854541154A00B50030B489 /* SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = C3854540154A00B50030B489 /* SubProject.m */; };
-		C3869F681549BE26000E8FBA /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3869F671549BE26000E8FBA /* DateUtility.m */; };
-		C3E418B21548A9C400B1CBA2 /* BooleanUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */; };
-		F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.m */; };
+		7AAFECFC153F529A00884FB3 /* ProjectEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFECFB153F529A00884FB3 /* ProjectEntity.mm */; };
+		7ABCBC4B153388650006391D /* DataType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC4A153388650006391D /* DataType.mm */; };
+		7ABCBC801533B2C40006391D /* TaskField.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABCBC7F1533B2C40006391D /* TaskField.mm */; };
+		7ABD8933153889340093112C /* TimeUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD8932153889340093112C /* TimeUnit.mm */; };
+		7ABD89391538B8670093112C /* MPPDuration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD89381538B8670093112C /* MPPDuration.mm */; };
+		7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.mm */; };
+		7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.mm */; };
+		7ABEB7F5153C8F20007E9B05 /* AssignmentField.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F4153C8F20007E9B05 /* AssignmentField.mm */; };
+		7ABEB7F8153CDF55007E9B05 /* ConstraintType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7F7153CDF55007E9B05 /* ConstraintType.mm */; };
+		7ABEB7FB153CE3B3007E9B05 /* TaskMode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7ABEB7FA153CE3B3007E9B05 /* TaskMode.mm */; };
+		7AD45AA41546176B004FF2A2 /* AccrueType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA31546176B004FF2A2 /* AccrueType.mm */; };
+		7AD45AAE15461789004FF2A2 /* BackgroundPattern.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AA715461789004FF2A2 /* BackgroundPattern.mm */; };
+		7AD45AB015461789004FF2A2 /* ChartPattern.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAB15461789004FF2A2 /* ChartPattern.mm */; };
+		7AD45AB115461789004FF2A2 /* ColorType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AAD15461789004FF2A2 /* ColorType.mm */; };
+		7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.mm */; };
+		7AD45ACB154617C2004FF2A2 /* DateOrder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB5154617C2004FF2A2 /* DateOrder.mm */; };
+		7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.mm */; };
+		7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.mm */; };
+		7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.mm */; };
+		7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.mm */; };
+		7AD45AD2154617C2004FF2A2 /* Interval.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC3154617C2004FF2A2 /* Interval.mm */; };
+		7AD45AD3154617C2004FF2A2 /* LineStyle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC5154617C2004FF2A2 /* LineStyle.mm */; };
+		7AD45AD4154617C2004FF2A2 /* LinkStyle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC7154617C2004FF2A2 /* LinkStyle.mm */; };
+		7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.mm */; };
+		7AD45AD815461876004FF2A2 /* NumberUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AD715461876004FF2A2 /* NumberUtility.mm */; };
+		7AD45AE01546224E004FF2A2 /* ProjectDateFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.mm */; };
+		7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.mm */; };
+		7AD45AE415462313004FF2A2 /* ResourceType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE315462313004FF2A2 /* ResourceType.mm */; };
+		7AD45AE715462369004FF2A2 /* ScheduleFrom.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE615462368004FF2A2 /* ScheduleFrom.mm */; };
+		7AD45AF415462565004FF2A2 /* TimescaleAlignment.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AE91546255F004FF2A2 /* TimescaleAlignment.mm */; };
+		7AD45AF515462565004FF2A2 /* TimescaleFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEB15462560004FF2A2 /* TimescaleFormat.mm */; };
+		7AD45AF615462565004FF2A2 /* TimescaleUnits.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AED15462561004FF2A2 /* TimescaleUnits.mm */; };
+		7AD45AF715462565004FF2A2 /* ViewType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AEF15462562004FF2A2 /* ViewType.mm */; };
+		7AD45AF815462565004FF2A2 /* WorkContour.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF115462563004FF2A2 /* WorkContour.mm */; };
+		7AD45AF915462565004FF2A2 /* WorkGroup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AF315462565004FF2A2 /* WorkGroup.mm */; };
+		7AD45AFD15462A61004FF2A2 /* Pair.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.mm */; };
+		7AF9FE8A15462CBA002AB0CF /* RelationType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.mm */; };
+		7AF9FE8B15462CBA002AB0CF /* TaskType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.mm */; };
+		C3852317154EF805002753C4 /* pole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3852315154EF803002753C4 /* pole.cpp */; };
+		C3852B91154EF871002753C4 /* Project.mpp in Resources */ = {isa = PBXBuildFile; fileRef = C3852B90154EF870002753C4 /* Project.mpp */; };
+		C3852B93154EFB23002753C4 /* BookingType.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B92154EFB1F002753C4 /* BookingType.mm */; };
+		C3852B97154EFB69002753C4 /* DateUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B94154EFB66002753C4 /* DateUtility.mm */; };
+		C3852B98154EFB69002753C4 /* GanttBarDateFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B95154EFB67002753C4 /* GanttBarDateFormat.mm */; };
+		C3852B99154EFB69002753C4 /* GanttBarShowForTasks.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B96154EFB68002753C4 /* GanttBarShowForTasks.mm */; };
+		C3852B9C154EFE12002753C4 /* CompObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B9B154EFE11002753C4 /* CompObj.mm */; };
+		C3852B9F154EFF3B002753C4 /* MPPComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B9E154EFF39002753C4 /* MPPComponent.mm */; };
+		C3852BA2154F002F002753C4 /* MPPUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852BA1154F002D002753C4 /* MPPUtility.mm */; };
+		C3854541154A00B50030B489 /* SubProject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854540154A00B50030B489 /* SubProject.mm */; };
+		C3854547154B168A0030B489 /* AbstractProjectReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854546154B168A0030B489 /* AbstractProjectReader.mm */; };
+		C3E418B21548A9C400B1CBA2 /* BooleanUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */; };
+		F594F6C21544EFDB00C1FF71 /* EnumUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,132 +92,145 @@
 		5ED01989152B6D370012148C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5ED0198B152B6D370012148C /* MppViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MppViewer-Prefix.pch"; sourceTree = "<group>"; };
 		5ED0198C152B6D370012148C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5ED0198D152B6D370012148C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5ED0198D152B6D370012148C /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		5ED0198F152B6D370012148C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5ED01990152B6D370012148C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5ED01990152B6D370012148C /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		5ED01993152B6D370012148C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		5ED019D0152B6EFB0012148C /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
-		5ED019D1152B6EFB0012148C /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		5ED019D1152B6EFB0012148C /* Day.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Day.mm; sourceTree = "<group>"; };
 		5ED019D2152B6EFB0012148C /* DayType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayType.h; sourceTree = "<group>"; };
-		5ED019D3152B6EFB0012148C /* DayType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayType.m; sourceTree = "<group>"; };
+		5ED019D3152B6EFB0012148C /* DayType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DayType.mm; sourceTree = "<group>"; };
 		5ED019D4152B6EFB0012148C /* FileCreationRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCreationRecord.h; sourceTree = "<group>"; };
-		5ED019D5152B6EFB0012148C /* FileCreationRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCreationRecord.m; sourceTree = "<group>"; };
+		5ED019D5152B6EFB0012148C /* FileCreationRecord.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FileCreationRecord.mm; sourceTree = "<group>"; };
 		5ED019D6152B6EFB0012148C /* ProjectCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCalendar.h; sourceTree = "<group>"; };
-		5ED019D7152B6EFB0012148C /* ProjectCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCalendar.m; sourceTree = "<group>"; };
+		5ED019D7152B6EFB0012148C /* ProjectCalendar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectCalendar.mm; sourceTree = "<group>"; };
 		5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCalendarWeek.h; sourceTree = "<group>"; };
-		5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCalendarWeek.m; sourceTree = "<group>"; };
+		5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectCalendarWeek.mm; sourceTree = "<group>"; };
 		5ED019DA152B6EFB0012148C /* ProjectFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectFile.h; sourceTree = "<group>"; };
-		5ED019DB152B6EFB0012148C /* ProjectFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectFile.m; sourceTree = "<group>"; };
+		5ED019DB152B6EFB0012148C /* ProjectFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectFile.mm; sourceTree = "<group>"; };
 		5ED019DC152B6EFB0012148C /* ProjectHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectHeader.h; sourceTree = "<group>"; };
-		5ED019DD152B6EFB0012148C /* ProjectHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectHeader.m; sourceTree = "<group>"; };
+		5ED019DD152B6EFB0012148C /* ProjectHeader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectHeader.mm; sourceTree = "<group>"; };
 		5ED019DE152B6EFB0012148C /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
-		5ED019DF152B6EFB0012148C /* Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relation.m; sourceTree = "<group>"; };
+		5ED019DF152B6EFB0012148C /* Relation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Relation.mm; sourceTree = "<group>"; };
 		5ED019E0152B6EFB0012148C /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
-		5ED019E1152B6EFB0012148C /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resource.m; sourceTree = "<group>"; };
+		5ED019E1152B6EFB0012148C /* Resource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Resource.mm; sourceTree = "<group>"; };
 		5ED019E2152B6EFB0012148C /* ResourceAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceAssignment.h; sourceTree = "<group>"; };
-		5ED019E3152B6EFB0012148C /* ResourceAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceAssignment.m; sourceTree = "<group>"; };
+		5ED019E3152B6EFB0012148C /* ResourceAssignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourceAssignment.mm; sourceTree = "<group>"; };
 		5ED019E4152B6EFB0012148C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
-		5ED019E5152B6EFB0012148C /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		5ED019E5152B6EFB0012148C /* Task.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Task.mm; sourceTree = "<group>"; };
 		7A29EE201538DB1000958CB7 /* RecurringTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecurringTask.h; sourceTree = "<group>"; };
-		7A29EE211538DB1000958CB7 /* RecurringTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecurringTask.m; sourceTree = "<group>"; };
+		7A29EE211538DB1000958CB7 /* RecurringTask.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecurringTask.mm; sourceTree = "<group>"; };
 		7A683815154718D60098FDF8 /* Priority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priority.h; sourceTree = "<group>"; };
-		7A683816154718D60098FDF8 /* Priority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priority.m; sourceTree = "<group>"; };
+		7A683816154718D60098FDF8 /* Priority.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Priority.mm; sourceTree = "<group>"; };
 		7A683818154761730098FDF8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7AAFECFA153F529A00884FB3 /* ProjectEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectEntity.h; sourceTree = "<group>"; };
-		7AAFECFB153F529A00884FB3 /* ProjectEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectEntity.m; sourceTree = "<group>"; };
+		7AAFECFB153F529A00884FB3 /* ProjectEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectEntity.mm; sourceTree = "<group>"; };
 		7ABCBC49153388640006391D /* DataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataType.h; sourceTree = "<group>"; };
-		7ABCBC4A153388650006391D /* DataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataType.m; sourceTree = "<group>"; };
+		7ABCBC4A153388650006391D /* DataType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataType.mm; sourceTree = "<group>"; };
 		7ABCBC7E1533B2C40006391D /* TaskField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskField.h; sourceTree = "<group>"; };
-		7ABCBC7F1533B2C40006391D /* TaskField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskField.m; sourceTree = "<group>"; };
+		7ABCBC7F1533B2C40006391D /* TaskField.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TaskField.mm; sourceTree = "<group>"; };
 		7ABD8931153889340093112C /* TimeUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeUnit.h; sourceTree = "<group>"; };
-		7ABD8932153889340093112C /* TimeUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUnit.m; sourceTree = "<group>"; };
+		7ABD8932153889340093112C /* TimeUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TimeUnit.mm; sourceTree = "<group>"; };
 		7ABD89371538B8670093112C /* MPPDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPDuration.h; sourceTree = "<group>"; };
-		7ABD89381538B8670093112C /* MPPDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPDuration.m; sourceTree = "<group>"; };
+		7ABD89381538B8670093112C /* MPPDuration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPPDuration.mm; sourceTree = "<group>"; };
 		7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecurrenceType.h; sourceTree = "<group>"; };
-		7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecurrenceType.m; sourceTree = "<group>"; };
+		7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecurrenceType.mm; sourceTree = "<group>"; };
 		7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceAssignmentWorkgroupFields.h; sourceTree = "<group>"; };
-		7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceAssignmentWorkgroupFields.m; sourceTree = "<group>"; };
+		7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourceAssignmentWorkgroupFields.mm; sourceTree = "<group>"; };
 		7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentField.h; sourceTree = "<group>"; };
-		7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentField.m; sourceTree = "<group>"; };
+		7ABEB7F4153C8F20007E9B05 /* AssignmentField.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentField.mm; sourceTree = "<group>"; };
 		7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstraintType.h; sourceTree = "<group>"; };
-		7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintType.m; sourceTree = "<group>"; };
+		7ABEB7F7153CDF55007E9B05 /* ConstraintType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConstraintType.mm; sourceTree = "<group>"; };
 		7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskMode.h; sourceTree = "<group>"; };
-		7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskMode.m; sourceTree = "<group>"; };
+		7ABEB7FA153CE3B3007E9B05 /* TaskMode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TaskMode.mm; sourceTree = "<group>"; };
 		7AD45AA21546176B004FF2A2 /* AccrueType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccrueType.h; sourceTree = "<group>"; };
-		7AD45AA31546176B004FF2A2 /* AccrueType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccrueType.m; sourceTree = "<group>"; };
+		7AD45AA31546176B004FF2A2 /* AccrueType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AccrueType.mm; sourceTree = "<group>"; };
 		7AD45AA615461789004FF2A2 /* BackgroundPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundPattern.h; sourceTree = "<group>"; };
-		7AD45AA715461789004FF2A2 /* BackgroundPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundPattern.m; sourceTree = "<group>"; };
+		7AD45AA715461789004FF2A2 /* BackgroundPattern.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundPattern.mm; sourceTree = "<group>"; };
 		7AD45AA815461789004FF2A2 /* BookingType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingType.h; sourceTree = "<group>"; };
-		7AD45AA915461789004FF2A2 /* BookingType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingType.m; sourceTree = "<group>"; };
 		7AD45AAA15461789004FF2A2 /* ChartPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPattern.h; sourceTree = "<group>"; };
-		7AD45AAB15461789004FF2A2 /* ChartPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPattern.m; sourceTree = "<group>"; };
+		7AD45AAB15461789004FF2A2 /* ChartPattern.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChartPattern.mm; sourceTree = "<group>"; };
 		7AD45AAC15461789004FF2A2 /* ColorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorType.h; sourceTree = "<group>"; };
-		7AD45AAD15461789004FF2A2 /* ColorType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorType.m; sourceTree = "<group>"; };
+		7AD45AAD15461789004FF2A2 /* ColorType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorType.mm; sourceTree = "<group>"; };
 		7AD45AB2154617C2004FF2A2 /* CurrencySymbolPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencySymbolPosition.h; sourceTree = "<group>"; };
-		7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencySymbolPosition.m; sourceTree = "<group>"; };
+		7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CurrencySymbolPosition.mm; sourceTree = "<group>"; };
 		7AD45AB4154617C2004FF2A2 /* DateOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateOrder.h; sourceTree = "<group>"; };
-		7AD45AB5154617C2004FF2A2 /* DateOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateOrder.m; sourceTree = "<group>"; };
+		7AD45AB5154617C2004FF2A2 /* DateOrder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DateOrder.mm; sourceTree = "<group>"; };
 		7AD45AB6154617C2004FF2A2 /* EarnedValueMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarnedValueMethod.h; sourceTree = "<group>"; };
-		7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarnedValueMethod.m; sourceTree = "<group>"; };
+		7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EarnedValueMethod.mm; sourceTree = "<group>"; };
 		7AD45AB8154617C2004FF2A2 /* GanttBarDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarDateFormat.h; sourceTree = "<group>"; };
-		7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarDateFormat.m; sourceTree = "<group>"; };
 		7AD45ABA154617C2004FF2A2 /* GanttBarMiddleShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarMiddleShape.h; sourceTree = "<group>"; };
-		7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarMiddleShape.m; sourceTree = "<group>"; };
+		7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GanttBarMiddleShape.mm; sourceTree = "<group>"; };
 		7AD45ABC154617C2004FF2A2 /* GanttBarShowForTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarShowForTasks.h; sourceTree = "<group>"; };
-		7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarShowForTasks.m; sourceTree = "<group>"; };
 		7AD45ABE154617C2004FF2A2 /* GanttBarStartEndShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarStartEndShape.h; sourceTree = "<group>"; };
-		7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarStartEndShape.m; sourceTree = "<group>"; };
+		7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GanttBarStartEndShape.mm; sourceTree = "<group>"; };
 		7AD45AC0154617C2004FF2A2 /* GanttBarStartEndType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttBarStartEndType.h; sourceTree = "<group>"; };
-		7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttBarStartEndType.m; sourceTree = "<group>"; };
+		7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GanttBarStartEndType.mm; sourceTree = "<group>"; };
 		7AD45AC2154617C2004FF2A2 /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
-		7AD45AC3154617C2004FF2A2 /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interval.m; sourceTree = "<group>"; };
+		7AD45AC3154617C2004FF2A2 /* Interval.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Interval.mm; sourceTree = "<group>"; };
 		7AD45AC4154617C2004FF2A2 /* LineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStyle.h; sourceTree = "<group>"; };
-		7AD45AC5154617C2004FF2A2 /* LineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineStyle.m; sourceTree = "<group>"; };
+		7AD45AC5154617C2004FF2A2 /* LineStyle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LineStyle.mm; sourceTree = "<group>"; };
 		7AD45AC6154617C2004FF2A2 /* LinkStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkStyle.h; sourceTree = "<group>"; };
-		7AD45AC7154617C2004FF2A2 /* LinkStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkStyle.m; sourceTree = "<group>"; };
+		7AD45AC7154617C2004FF2A2 /* LinkStyle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LinkStyle.mm; sourceTree = "<group>"; };
 		7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonWorkingTimeStyle.h; sourceTree = "<group>"; };
-		7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonWorkingTimeStyle.m; sourceTree = "<group>"; };
+		7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NonWorkingTimeStyle.mm; sourceTree = "<group>"; };
 		7AD45AD615461876004FF2A2 /* NumberUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberUtility.h; sourceTree = "<group>"; };
-		7AD45AD715461876004FF2A2 /* NumberUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberUtility.m; sourceTree = "<group>"; };
+		7AD45AD715461876004FF2A2 /* NumberUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumberUtility.mm; sourceTree = "<group>"; };
 		7AD45AD915461ECD004FF2A2 /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
 		7AD45ADA154620C1004FF2A2 /* FieldListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldListener.h; sourceTree = "<group>"; };
 		7AD45ADB154620F6004FF2A2 /* FieldContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldContainer.h; sourceTree = "<group>"; };
 		7AD45ADC1546224D004FF2A2 /* ProjectDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDateFormat.h; sourceTree = "<group>"; };
-		7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDateFormat.m; sourceTree = "<group>"; };
+		7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectDateFormat.mm; sourceTree = "<group>"; };
 		7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectTimeFormat.h; sourceTree = "<group>"; };
-		7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectTimeFormat.m; sourceTree = "<group>"; };
+		7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProjectTimeFormat.mm; sourceTree = "<group>"; };
 		7AD45AE215462313004FF2A2 /* ResourceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceType.h; sourceTree = "<group>"; };
-		7AD45AE315462313004FF2A2 /* ResourceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceType.m; sourceTree = "<group>"; };
+		7AD45AE315462313004FF2A2 /* ResourceType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourceType.mm; sourceTree = "<group>"; };
 		7AD45AE515462368004FF2A2 /* ScheduleFrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleFrom.h; sourceTree = "<group>"; };
-		7AD45AE615462368004FF2A2 /* ScheduleFrom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleFrom.m; sourceTree = "<group>"; };
+		7AD45AE615462368004FF2A2 /* ScheduleFrom.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScheduleFrom.mm; sourceTree = "<group>"; };
 		7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleAlignment.h; sourceTree = "<group>"; };
-		7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleAlignment.m; sourceTree = "<group>"; };
+		7AD45AE91546255F004FF2A2 /* TimescaleAlignment.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TimescaleAlignment.mm; sourceTree = "<group>"; };
 		7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleFormat.h; sourceTree = "<group>"; };
-		7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleFormat.m; sourceTree = "<group>"; };
+		7AD45AEB15462560004FF2A2 /* TimescaleFormat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TimescaleFormat.mm; sourceTree = "<group>"; };
 		7AD45AEC15462561004FF2A2 /* TimescaleUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimescaleUnits.h; sourceTree = "<group>"; };
-		7AD45AED15462561004FF2A2 /* TimescaleUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimescaleUnits.m; sourceTree = "<group>"; };
+		7AD45AED15462561004FF2A2 /* TimescaleUnits.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TimescaleUnits.mm; sourceTree = "<group>"; };
 		7AD45AEE15462561004FF2A2 /* ViewType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewType.h; sourceTree = "<group>"; };
-		7AD45AEF15462562004FF2A2 /* ViewType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewType.m; sourceTree = "<group>"; };
+		7AD45AEF15462562004FF2A2 /* ViewType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewType.mm; sourceTree = "<group>"; };
 		7AD45AF015462563004FF2A2 /* WorkContour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkContour.h; sourceTree = "<group>"; };
-		7AD45AF115462563004FF2A2 /* WorkContour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkContour.m; sourceTree = "<group>"; };
+		7AD45AF115462563004FF2A2 /* WorkContour.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WorkContour.mm; sourceTree = "<group>"; };
 		7AD45AF215462564004FF2A2 /* WorkGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkGroup.h; sourceTree = "<group>"; };
-		7AD45AF315462565004FF2A2 /* WorkGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkGroup.m; sourceTree = "<group>"; };
+		7AD45AF315462565004FF2A2 /* WorkGroup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WorkGroup.mm; sourceTree = "<group>"; };
 		7AD45AFA154628EB004FF2A2 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		7AD45AFB15462A60004FF2A2 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
-		7AD45AFC15462A61004FF2A2 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
+		7AD45AFC15462A61004FF2A2 /* Pair.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Pair.mm; sourceTree = "<group>"; };
 		7AF9FE8715462CBA002AB0CF /* TaskType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskType.h; sourceTree = "<group>"; };
-		7AF9FE8815462CBA002AB0CF /* RelationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationType.m; sourceTree = "<group>"; };
-		7AF9FE8915462CBA002AB0CF /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
+		7AF9FE8815462CBA002AB0CF /* RelationType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RelationType.mm; sourceTree = "<group>"; };
+		7AF9FE8915462CBA002AB0CF /* TaskType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TaskType.mm; sourceTree = "<group>"; };
 		7AF9FE8C15462CDA002AB0CF /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
+		C3852315154EF803002753C4 /* pole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pole.cpp; sourceTree = "<group>"; };
+		C3852316154EF804002753C4 /* pole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pole.h; sourceTree = "<group>"; };
+		C3852B90154EF870002753C4 /* Project.mpp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Project.mpp; sourceTree = "<group>"; };
+		C3852B92154EFB1F002753C4 /* BookingType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BookingType.mm; sourceTree = "<group>"; };
+		C3852B94154EFB66002753C4 /* DateUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DateUtility.mm; sourceTree = "<group>"; };
+		C3852B95154EFB67002753C4 /* GanttBarDateFormat.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GanttBarDateFormat.mm; sourceTree = "<group>"; };
+		C3852B96154EFB68002753C4 /* GanttBarShowForTasks.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GanttBarShowForTasks.mm; sourceTree = "<group>"; };
+		C3852B9A154EFE10002753C4 /* CompObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompObj.h; sourceTree = "<group>"; };
+		C3852B9B154EFE11002753C4 /* CompObj.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CompObj.mm; sourceTree = "<group>"; };
+		C3852B9D154EFF38002753C4 /* MPPComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPComponent.h; sourceTree = "<group>"; };
+		C3852B9E154EFF39002753C4 /* MPPComponent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPPComponent.mm; sourceTree = "<group>"; };
+		C3852BA0154F002C002753C4 /* MPPUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPUtility.h; sourceTree = "<group>"; };
+		C3852BA1154F002D002753C4 /* MPPUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPPUtility.mm; sourceTree = "<group>"; };
 		C385453F154A00B50030B489 /* SubProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubProject.h; sourceTree = "<group>"; };
-		C3854540154A00B50030B489 /* SubProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubProject.m; sourceTree = "<group>"; };
+		C3854540154A00B50030B489 /* SubProject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubProject.mm; sourceTree = "<group>"; };
+		C3854543154B12060030B489 /* ProjectReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectReader.h; sourceTree = "<group>"; };
+		C3854544154B12370030B489 /* ProjectListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListener.h; sourceTree = "<group>"; };
+		C3854545154B168A0030B489 /* AbstractProjectReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjectReader.h; sourceTree = "<group>"; };
+		C3854546154B168A0030B489 /* AbstractProjectReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractProjectReader.mm; sourceTree = "<group>"; };
 		C3869F661549BE26000E8FBA /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
-		C3869F671549BE26000E8FBA /* DateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtility.m; sourceTree = "<group>"; };
 		C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanUtility.h; sourceTree = "<group>"; };
-		C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanUtility.m; sourceTree = "<group>"; };
+		C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BooleanUtility.mm; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
 		F594F6C01544EFDB00C1FF71 /* EnumUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumUtility.h; sourceTree = "<group>"; };
-		F594F6C11544EFDB00C1FF71 /* EnumUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumUtility.m; sourceTree = "<group>"; };
+		F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnumUtility.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,130 +251,143 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
-				C385453F154A00B50030B489 /* SubProject.h */,
-				C3854540154A00B50030B489 /* SubProject.m */,
-				C3869F661549BE26000E8FBA /* DateUtility.h */,
-				C3869F671549BE26000E8FBA /* DateUtility.m */,
-				C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */,
-				C3E418B11548A9C300B1CBA2 /* BooleanUtility.m */,
+				C3854545154B168A0030B489 /* AbstractProjectReader.h */,
+				C3854546154B168A0030B489 /* AbstractProjectReader.mm */,
 				7AD45AA21546176B004FF2A2 /* AccrueType.h */,
-				7AD45AA31546176B004FF2A2 /* AccrueType.m */,
+				7AD45AA31546176B004FF2A2 /* AccrueType.mm */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
-				7ABEB7F4153C8F20007E9B05 /* AssignmentField.m */,
+				7ABEB7F4153C8F20007E9B05 /* AssignmentField.mm */,
 				7AD45AA615461789004FF2A2 /* BackgroundPattern.h */,
-				7AD45AA715461789004FF2A2 /* BackgroundPattern.m */,
+				7AD45AA715461789004FF2A2 /* BackgroundPattern.mm */,
 				7AD45AA815461789004FF2A2 /* BookingType.h */,
-				7AD45AA915461789004FF2A2 /* BookingType.m */,
+				C3852B92154EFB1F002753C4 /* BookingType.mm */,
+				C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */,
+				C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */,
 				7AD45AAA15461789004FF2A2 /* ChartPattern.h */,
-				7AD45AAB15461789004FF2A2 /* ChartPattern.m */,
+				7AD45AAB15461789004FF2A2 /* ChartPattern.mm */,
 				7AD45AAC15461789004FF2A2 /* ColorType.h */,
-				7AD45AAD15461789004FF2A2 /* ColorType.m */,
+				7AD45AAD15461789004FF2A2 /* ColorType.mm */,
+				C3852B9A154EFE10002753C4 /* CompObj.h */,
+				C3852B9B154EFE11002753C4 /* CompObj.mm */,
 				7ABEB7F6153CDF55007E9B05 /* ConstraintType.h */,
-				7ABEB7F7153CDF55007E9B05 /* ConstraintType.m */,
+				7ABEB7F7153CDF55007E9B05 /* ConstraintType.mm */,
 				7AD45AB2154617C2004FF2A2 /* CurrencySymbolPosition.h */,
-				7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.m */,
+				7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.mm */,
 				7ABCBC49153388640006391D /* DataType.h */,
-				7ABCBC4A153388650006391D /* DataType.m */,
+				7ABCBC4A153388650006391D /* DataType.mm */,
 				7AD45AB4154617C2004FF2A2 /* DateOrder.h */,
-				7AD45AB5154617C2004FF2A2 /* DateOrder.m */,
+				7AD45AB5154617C2004FF2A2 /* DateOrder.mm */,
+				C3869F661549BE26000E8FBA /* DateUtility.h */,
+				C3852B94154EFB66002753C4 /* DateUtility.mm */,
 				5ED019D0152B6EFB0012148C /* Day.h */,
-				5ED019D1152B6EFB0012148C /* Day.m */,
+				5ED019D1152B6EFB0012148C /* Day.mm */,
 				5ED019D2152B6EFB0012148C /* DayType.h */,
-				5ED019D3152B6EFB0012148C /* DayType.m */,
+				5ED019D3152B6EFB0012148C /* DayType.mm */,
 				7AD45AB6154617C2004FF2A2 /* EarnedValueMethod.h */,
-				7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.m */,
+				7AD45AB7154617C2004FF2A2 /* EarnedValueMethod.mm */,
 				F594F6C01544EFDB00C1FF71 /* EnumUtility.h */,
-				F594F6C11544EFDB00C1FF71 /* EnumUtility.m */,
+				F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */,
 				7AD45ADB154620F6004FF2A2 /* FieldContainer.h */,
 				7AD45ADA154620C1004FF2A2 /* FieldListener.h */,
 				7AD45AD915461ECD004FF2A2 /* FieldType.h */,
 				5ED019D4152B6EFB0012148C /* FileCreationRecord.h */,
-				5ED019D5152B6EFB0012148C /* FileCreationRecord.m */,
+				5ED019D5152B6EFB0012148C /* FileCreationRecord.mm */,
 				5ED0197C152B6D370012148C /* Frameworks */,
 				7AD45AB8154617C2004FF2A2 /* GanttBarDateFormat.h */,
-				7AD45AB9154617C2004FF2A2 /* GanttBarDateFormat.m */,
+				C3852B95154EFB67002753C4 /* GanttBarDateFormat.mm */,
 				7AD45ABA154617C2004FF2A2 /* GanttBarMiddleShape.h */,
-				7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.m */,
+				7AD45ABB154617C2004FF2A2 /* GanttBarMiddleShape.mm */,
 				7AD45ABC154617C2004FF2A2 /* GanttBarShowForTasks.h */,
-				7AD45ABD154617C2004FF2A2 /* GanttBarShowForTasks.m */,
+				C3852B96154EFB68002753C4 /* GanttBarShowForTasks.mm */,
 				7AD45ABE154617C2004FF2A2 /* GanttBarStartEndShape.h */,
-				7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.m */,
+				7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.mm */,
 				7AD45AC0154617C2004FF2A2 /* GanttBarStartEndType.h */,
-				7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.m */,
+				7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.mm */,
 				7AD45AC2154617C2004FF2A2 /* Interval.h */,
-				7AD45AC3154617C2004FF2A2 /* Interval.m */,
+				7AD45AC3154617C2004FF2A2 /* Interval.mm */,
 				7AD45AC4154617C2004FF2A2 /* LineStyle.h */,
-				7AD45AC5154617C2004FF2A2 /* LineStyle.m */,
+				7AD45AC5154617C2004FF2A2 /* LineStyle.mm */,
 				7AD45AC6154617C2004FF2A2 /* LinkStyle.h */,
-				7AD45AC7154617C2004FF2A2 /* LinkStyle.m */,
+				7AD45AC7154617C2004FF2A2 /* LinkStyle.mm */,
+				C3852B9D154EFF38002753C4 /* MPPComponent.h */,
+				C3852B9E154EFF39002753C4 /* MPPComponent.mm */,
 				7ABD89371538B8670093112C /* MPPDuration.h */,
-				7ABD89381538B8670093112C /* MPPDuration.m */,
+				7ABD89381538B8670093112C /* MPPDuration.mm */,
+				C3852BA0154F002C002753C4 /* MPPUtility.h */,
+				C3852BA1154F002D002753C4 /* MPPUtility.mm */,
 				5ED01983152B6D370012148C /* MppViewer */,
 				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
 				7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */,
-				7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.m */,
+				7AD45AC9154617C2004FF2A2 /* NonWorkingTimeStyle.mm */,
 				7AD45AD615461876004FF2A2 /* NumberUtility.h */,
-				7AD45AD715461876004FF2A2 /* NumberUtility.m */,
+				7AD45AD715461876004FF2A2 /* NumberUtility.mm */,
 				7AD45AFB15462A60004FF2A2 /* Pair.h */,
-				7AD45AFC15462A61004FF2A2 /* Pair.m */,
+				7AD45AFC15462A61004FF2A2 /* Pair.mm */,
+				C3852315154EF803002753C4 /* pole.cpp */,
+				C3852316154EF804002753C4 /* pole.h */,
 				7A683815154718D60098FDF8 /* Priority.h */,
-				7A683816154718D60098FDF8 /* Priority.m */,
+				7A683816154718D60098FDF8 /* Priority.mm */,
 				5ED0197A152B6D370012148C /* Products */,
+				C3852B90154EF870002753C4 /* Project.mpp */,
 				5ED019D6152B6EFB0012148C /* ProjectCalendar.h */,
-				5ED019D7152B6EFB0012148C /* ProjectCalendar.m */,
+				5ED019D7152B6EFB0012148C /* ProjectCalendar.mm */,
 				5ED019D8152B6EFB0012148C /* ProjectCalendarWeek.h */,
-				5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.m */,
+				5ED019D9152B6EFB0012148C /* ProjectCalendarWeek.mm */,
 				7AD45ADC1546224D004FF2A2 /* ProjectDateFormat.h */,
-				7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.m */,
+				7AD45ADD1546224D004FF2A2 /* ProjectDateFormat.mm */,
 				7AAFECFA153F529A00884FB3 /* ProjectEntity.h */,
-				7AAFECFB153F529A00884FB3 /* ProjectEntity.m */,
+				7AAFECFB153F529A00884FB3 /* ProjectEntity.mm */,
 				5ED019DA152B6EFB0012148C /* ProjectFile.h */,
-				5ED019DB152B6EFB0012148C /* ProjectFile.m */,
+				5ED019DB152B6EFB0012148C /* ProjectFile.mm */,
 				5ED019DC152B6EFB0012148C /* ProjectHeader.h */,
-				5ED019DD152B6EFB0012148C /* ProjectHeader.m */,
+				5ED019DD152B6EFB0012148C /* ProjectHeader.mm */,
+				C3854544154B12370030B489 /* ProjectListener.h */,
+				C3854543154B12060030B489 /* ProjectReader.h */,
 				7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */,
-				7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.m */,
+				7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.mm */,
 				7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */,
-				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.m */,
+				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.mm */,
 				7A29EE201538DB1000958CB7 /* RecurringTask.h */,
-				7A29EE211538DB1000958CB7 /* RecurringTask.m */,
+				7A29EE211538DB1000958CB7 /* RecurringTask.mm */,
 				5ED019DE152B6EFB0012148C /* Relation.h */,
-				5ED019DF152B6EFB0012148C /* Relation.m */,
+				5ED019DF152B6EFB0012148C /* Relation.mm */,
 				7AF9FE8C15462CDA002AB0CF /* RelationType.h */,
-				7AF9FE8815462CBA002AB0CF /* RelationType.m */,
+				7AF9FE8815462CBA002AB0CF /* RelationType.mm */,
 				5ED019E0152B6EFB0012148C /* Resource.h */,
-				5ED019E1152B6EFB0012148C /* Resource.m */,
+				5ED019E1152B6EFB0012148C /* Resource.mm */,
 				5ED019E2152B6EFB0012148C /* ResourceAssignment.h */,
-				5ED019E3152B6EFB0012148C /* ResourceAssignment.m */,
+				5ED019E3152B6EFB0012148C /* ResourceAssignment.mm */,
 				7ABEB7F0153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.h */,
-				7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m */,
+				7ABEB7F1153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.mm */,
 				7AD45AE215462313004FF2A2 /* ResourceType.h */,
-				7AD45AE315462313004FF2A2 /* ResourceType.m */,
+				7AD45AE315462313004FF2A2 /* ResourceType.mm */,
 				7AD45AE515462368004FF2A2 /* ScheduleFrom.h */,
-				7AD45AE615462368004FF2A2 /* ScheduleFrom.m */,
+				7AD45AE615462368004FF2A2 /* ScheduleFrom.mm */,
+				C385453F154A00B50030B489 /* SubProject.h */,
+				C3854540154A00B50030B489 /* SubProject.mm */,
 				5ED019E4152B6EFB0012148C /* Task.h */,
-				5ED019E5152B6EFB0012148C /* Task.m */,
+				5ED019E5152B6EFB0012148C /* Task.mm */,
 				7ABCBC7E1533B2C40006391D /* TaskField.h */,
-				7ABCBC7F1533B2C40006391D /* TaskField.m */,
+				7ABCBC7F1533B2C40006391D /* TaskField.mm */,
 				7ABEB7F9153CE3B3007E9B05 /* TaskMode.h */,
-				7ABEB7FA153CE3B3007E9B05 /* TaskMode.m */,
+				7ABEB7FA153CE3B3007E9B05 /* TaskMode.mm */,
 				7AF9FE8715462CBA002AB0CF /* TaskType.h */,
-				7AF9FE8915462CBA002AB0CF /* TaskType.m */,
+				7AF9FE8915462CBA002AB0CF /* TaskType.mm */,
 				7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */,
-				7AD45AE91546255F004FF2A2 /* TimescaleAlignment.m */,
+				7AD45AE91546255F004FF2A2 /* TimescaleAlignment.mm */,
 				7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */,
-				7AD45AEB15462560004FF2A2 /* TimescaleFormat.m */,
+				7AD45AEB15462560004FF2A2 /* TimescaleFormat.mm */,
 				7AD45AEC15462561004FF2A2 /* TimescaleUnits.h */,
-				7AD45AED15462561004FF2A2 /* TimescaleUnits.m */,
+				7AD45AED15462561004FF2A2 /* TimescaleUnits.mm */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
-				7ABD8932153889340093112C /* TimeUnit.m */,
+				7ABD8932153889340093112C /* TimeUnit.mm */,
 				7AD45AFA154628EB004FF2A2 /* View.h */,
 				7AD45AEE15462561004FF2A2 /* ViewType.h */,
-				7AD45AEF15462562004FF2A2 /* ViewType.m */,
+				7AD45AEF15462562004FF2A2 /* ViewType.mm */,
 				7AD45AF015462563004FF2A2 /* WorkContour.h */,
-				7AD45AF115462563004FF2A2 /* WorkContour.m */,
+				7AD45AF115462563004FF2A2 /* WorkContour.mm */,
 				7AD45AF215462564004FF2A2 /* WorkGroup.h */,
-				7AD45AF315462565004FF2A2 /* WorkGroup.m */,
+				7AD45AF315462565004FF2A2 /* WorkGroup.mm */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,9 +414,9 @@
 			isa = PBXGroup;
 			children = (
 				5ED0198C152B6D370012148C /* AppDelegate.h */,
-				5ED0198D152B6D370012148C /* AppDelegate.m */,
+				5ED0198D152B6D370012148C /* AppDelegate.mm */,
 				5ED0198F152B6D370012148C /* ViewController.h */,
-				5ED01990152B6D370012148C /* ViewController.m */,
+				5ED01990152B6D370012148C /* ViewController.mm */,
 				5ED01992152B6D370012148C /* ViewController.xib */,
 				5ED01984152B6D370012148C /* Supporting Files */,
 			);
@@ -454,6 +486,7 @@
 			files = (
 				5ED01988152B6D370012148C /* InfoPlist.strings in Resources */,
 				5ED01994152B6D370012148C /* ViewController.xib in Resources */,
+				C3852B91154EF871002753C4 /* Project.mpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,66 +498,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED0198A152B6D370012148C /* main.m in Sources */,
-				5ED0198E152B6D370012148C /* AppDelegate.m in Sources */,
-				5ED01991152B6D370012148C /* ViewController.m in Sources */,
-				5ED019E8152B6EFB0012148C /* Day.m in Sources */,
-				5ED019E9152B6EFB0012148C /* DayType.m in Sources */,
-				5ED019EA152B6EFB0012148C /* FileCreationRecord.m in Sources */,
-				5ED019EB152B6EFB0012148C /* ProjectCalendar.m in Sources */,
-				5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.m in Sources */,
-				5ED019ED152B6EFB0012148C /* ProjectFile.m in Sources */,
-				5ED019EE152B6EFB0012148C /* ProjectHeader.m in Sources */,
-				5ED019EF152B6EFB0012148C /* Relation.m in Sources */,
-				5ED019F0152B6EFB0012148C /* Resource.m in Sources */,
-				5ED019F1152B6EFB0012148C /* ResourceAssignment.m in Sources */,
-				5ED019F2152B6EFB0012148C /* Task.m in Sources */,
-				7ABCBC4B153388650006391D /* DataType.m in Sources */,
-				7ABCBC801533B2C40006391D /* TaskField.m in Sources */,
-				7ABD8933153889340093112C /* TimeUnit.m in Sources */,
-				7ABD89391538B8670093112C /* MPPDuration.m in Sources */,
-				7A29EE221538DB1000958CB7 /* RecurringTask.m in Sources */,
-				7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.m in Sources */,
-				7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.m in Sources */,
-				7ABEB7F5153C8F20007E9B05 /* AssignmentField.m in Sources */,
-				7ABEB7F8153CDF55007E9B05 /* ConstraintType.m in Sources */,
-				7ABEB7FB153CE3B3007E9B05 /* TaskMode.m in Sources */,
-				7AAFECFC153F529A00884FB3 /* ProjectEntity.m in Sources */,
-				F594F6C21544EFDB00C1FF71 /* EnumUtility.m in Sources */,
-				7AD45AA41546176B004FF2A2 /* AccrueType.m in Sources */,
-				7AD45AAE15461789004FF2A2 /* BackgroundPattern.m in Sources */,
-				7AD45AAF15461789004FF2A2 /* BookingType.m in Sources */,
-				7AD45AB015461789004FF2A2 /* ChartPattern.m in Sources */,
-				7AD45AB115461789004FF2A2 /* ColorType.m in Sources */,
-				7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.m in Sources */,
-				7AD45ACB154617C2004FF2A2 /* DateOrder.m in Sources */,
-				7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.m in Sources */,
-				7AD45ACD154617C2004FF2A2 /* GanttBarDateFormat.m in Sources */,
-				7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.m in Sources */,
-				7AD45ACF154617C2004FF2A2 /* GanttBarShowForTasks.m in Sources */,
-				7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.m in Sources */,
-				7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.m in Sources */,
-				7AD45AD2154617C2004FF2A2 /* Interval.m in Sources */,
-				7AD45AD3154617C2004FF2A2 /* LineStyle.m in Sources */,
-				7AD45AD4154617C2004FF2A2 /* LinkStyle.m in Sources */,
-				7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.m in Sources */,
-				7AD45AD815461876004FF2A2 /* NumberUtility.m in Sources */,
-				7AD45AE01546224E004FF2A2 /* ProjectDateFormat.m in Sources */,
-				7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.m in Sources */,
-				7AD45AE415462313004FF2A2 /* ResourceType.m in Sources */,
-				7AD45AE715462369004FF2A2 /* ScheduleFrom.m in Sources */,
-				7AD45AF415462565004FF2A2 /* TimescaleAlignment.m in Sources */,
-				7AD45AF515462565004FF2A2 /* TimescaleFormat.m in Sources */,
-				7AD45AF615462565004FF2A2 /* TimescaleUnits.m in Sources */,
-				7AD45AF715462565004FF2A2 /* ViewType.m in Sources */,
-				7AD45AF815462565004FF2A2 /* WorkContour.m in Sources */,
-				7AD45AF915462565004FF2A2 /* WorkGroup.m in Sources */,
-				7AD45AFD15462A61004FF2A2 /* Pair.m in Sources */,
-				7AF9FE8A15462CBA002AB0CF /* RelationType.m in Sources */,
-				7AF9FE8B15462CBA002AB0CF /* TaskType.m in Sources */,
-				7A683817154718D60098FDF8 /* Priority.m in Sources */,
-				C3E418B21548A9C400B1CBA2 /* BooleanUtility.m in Sources */,
-				C3869F681549BE26000E8FBA /* DateUtility.m in Sources */,
-				C3854541154A00B50030B489 /* SubProject.m in Sources */,
+				5ED0198E152B6D370012148C /* AppDelegate.mm in Sources */,
+				5ED01991152B6D370012148C /* ViewController.mm in Sources */,
+				5ED019E8152B6EFB0012148C /* Day.mm in Sources */,
+				5ED019E9152B6EFB0012148C /* DayType.mm in Sources */,
+				5ED019EA152B6EFB0012148C /* FileCreationRecord.mm in Sources */,
+				5ED019EB152B6EFB0012148C /* ProjectCalendar.mm in Sources */,
+				5ED019EC152B6EFB0012148C /* ProjectCalendarWeek.mm in Sources */,
+				5ED019ED152B6EFB0012148C /* ProjectFile.mm in Sources */,
+				5ED019EE152B6EFB0012148C /* ProjectHeader.mm in Sources */,
+				5ED019EF152B6EFB0012148C /* Relation.mm in Sources */,
+				5ED019F0152B6EFB0012148C /* Resource.mm in Sources */,
+				5ED019F1152B6EFB0012148C /* ResourceAssignment.mm in Sources */,
+				5ED019F2152B6EFB0012148C /* Task.mm in Sources */,
+				7ABCBC4B153388650006391D /* DataType.mm in Sources */,
+				7ABCBC801533B2C40006391D /* TaskField.mm in Sources */,
+				7ABD8933153889340093112C /* TimeUnit.mm in Sources */,
+				7ABD89391538B8670093112C /* MPPDuration.mm in Sources */,
+				7A29EE221538DB1000958CB7 /* RecurringTask.mm in Sources */,
+				7ABEB7EE153C7C7C007E9B05 /* RecurrenceType.mm in Sources */,
+				7ABEB7F2153C8ACE007E9B05 /* ResourceAssignmentWorkgroupFields.mm in Sources */,
+				7ABEB7F5153C8F20007E9B05 /* AssignmentField.mm in Sources */,
+				7ABEB7F8153CDF55007E9B05 /* ConstraintType.mm in Sources */,
+				7ABEB7FB153CE3B3007E9B05 /* TaskMode.mm in Sources */,
+				7AAFECFC153F529A00884FB3 /* ProjectEntity.mm in Sources */,
+				F594F6C21544EFDB00C1FF71 /* EnumUtility.mm in Sources */,
+				7AD45AA41546176B004FF2A2 /* AccrueType.mm in Sources */,
+				7AD45AAE15461789004FF2A2 /* BackgroundPattern.mm in Sources */,
+				7AD45AB015461789004FF2A2 /* ChartPattern.mm in Sources */,
+				7AD45AB115461789004FF2A2 /* ColorType.mm in Sources */,
+				7AD45ACA154617C2004FF2A2 /* CurrencySymbolPosition.mm in Sources */,
+				7AD45ACB154617C2004FF2A2 /* DateOrder.mm in Sources */,
+				7AD45ACC154617C2004FF2A2 /* EarnedValueMethod.mm in Sources */,
+				7AD45ACE154617C2004FF2A2 /* GanttBarMiddleShape.mm in Sources */,
+				7AD45AD0154617C2004FF2A2 /* GanttBarStartEndShape.mm in Sources */,
+				7AD45AD1154617C2004FF2A2 /* GanttBarStartEndType.mm in Sources */,
+				7AD45AD2154617C2004FF2A2 /* Interval.mm in Sources */,
+				7AD45AD3154617C2004FF2A2 /* LineStyle.mm in Sources */,
+				7AD45AD4154617C2004FF2A2 /* LinkStyle.mm in Sources */,
+				7AD45AD5154617C2004FF2A2 /* NonWorkingTimeStyle.mm in Sources */,
+				7AD45AD815461876004FF2A2 /* NumberUtility.mm in Sources */,
+				7AD45AE01546224E004FF2A2 /* ProjectDateFormat.mm in Sources */,
+				7AD45AE11546224E004FF2A2 /* ProjectTimeFormat.mm in Sources */,
+				7AD45AE415462313004FF2A2 /* ResourceType.mm in Sources */,
+				7AD45AE715462369004FF2A2 /* ScheduleFrom.mm in Sources */,
+				7AD45AF415462565004FF2A2 /* TimescaleAlignment.mm in Sources */,
+				7AD45AF515462565004FF2A2 /* TimescaleFormat.mm in Sources */,
+				7AD45AF615462565004FF2A2 /* TimescaleUnits.mm in Sources */,
+				7AD45AF715462565004FF2A2 /* ViewType.mm in Sources */,
+				7AD45AF815462565004FF2A2 /* WorkContour.mm in Sources */,
+				7AD45AF915462565004FF2A2 /* WorkGroup.mm in Sources */,
+				7AD45AFD15462A61004FF2A2 /* Pair.mm in Sources */,
+				7AF9FE8A15462CBA002AB0CF /* RelationType.mm in Sources */,
+				7AF9FE8B15462CBA002AB0CF /* TaskType.mm in Sources */,
+				7A683817154718D60098FDF8 /* Priority.mm in Sources */,
+				C3E418B21548A9C400B1CBA2 /* BooleanUtility.mm in Sources */,
+				C3854541154A00B50030B489 /* SubProject.mm in Sources */,
+				C3854547154B168A0030B489 /* AbstractProjectReader.mm in Sources */,
+				C3852317154EF805002753C4 /* pole.cpp in Sources */,
+				C3852B93154EFB23002753C4 /* BookingType.mm in Sources */,
+				C3852B97154EFB69002753C4 /* DateUtility.mm in Sources */,
+				C3852B98154EFB69002753C4 /* GanttBarDateFormat.mm in Sources */,
+				C3852B99154EFB69002753C4 /* GanttBarShowForTasks.mm in Sources */,
+				C3852B9C154EFE12002753C4 /* CompObj.mm in Sources */,
+				C3852B9F154EFF3B002753C4 /* MPPComponent.mm in Sources */,
+				C3852BA2154F002F002753C4 /* MPPUtility.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

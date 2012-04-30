@@ -11,6 +11,7 @@
 @class Task;
 @class Resource;
 @class ProjectFile;
+@class MPPDuration;
 
 @interface ResourceAssignment : NSObject
 
@@ -23,6 +24,16 @@
 
 -(Resource*)getResource;
 
--(int)getResourceUniqueID;
+-(NSNumber *)getResourceUniqueID;
+
+-(void)setTaskUniqueID:(NSNumber *)val;
+
+-(void)setUnits:(NSNumber *)val;
+
+-(void)setWork:(MPPDuration *)dur;
+
+-(void)setResourceUniqueID:(NSNumber *)val;
+
++(double)DEFAULT_UNITS;
 
 @end
