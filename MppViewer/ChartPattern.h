@@ -21,7 +21,7 @@
 
 -(NSString *)getName;
 
--(NSString *)toString;
+-(NSString *)toString; 
 
 +(ChartPattern *)TRANSPARENT;
 +(ChartPattern *)SOLID;
