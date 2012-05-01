@@ -67,6 +67,11 @@
 		7AD45AFD15462A61004FF2A2 /* Pair.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.mm */; };
 		7AF9FE8A15462CBA002AB0CF /* RelationType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.mm */; };
 		7AF9FE8B15462CBA002AB0CF /* TaskType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.mm */; };
+		C3842B15154F44DA00C716F3 /* Props.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B14154F44DA00C716F3 /* Props.mm */; };
+		C3842B19154F44EA00C716F3 /* Props14.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B18154F44EA00C716F3 /* Props14.mm */; };
+		C3842B1D154F65AB00C716F3 /* FieldMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B1C154F65AB00C716F3 /* FieldMap.mm */; };
+		C3842B20154F661000C716F3 /* AbstractVarMeta.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */; };
+		C3842B23154F6BBF00C716F3 /* VarMeta12.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B22154F6BBF00C716F3 /* VarMeta12.mm */; };
 		C3852317154EF805002753C4 /* pole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3852315154EF803002753C4 /* pole.cpp */; };
 		C3852B91154EF871002753C4 /* Project.mpp in Resources */ = {isa = PBXBuildFile; fileRef = C3852B90154EF870002753C4 /* Project.mpp */; };
 		C3852B93154EFB23002753C4 /* BookingType.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B92154EFB1F002753C4 /* BookingType.mm */; };
@@ -206,6 +211,17 @@
 		7AF9FE8815462CBA002AB0CF /* RelationType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RelationType.mm; sourceTree = "<group>"; };
 		7AF9FE8915462CBA002AB0CF /* TaskType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TaskType.mm; sourceTree = "<group>"; };
 		7AF9FE8C15462CDA002AB0CF /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
+		C3842B13154F44DA00C716F3 /* Props.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Props.h; sourceTree = "<group>"; };
+		C3842B14154F44DA00C716F3 /* Props.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Props.mm; sourceTree = "<group>"; };
+		C3842B17154F44EA00C716F3 /* Props14.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Props14.h; sourceTree = "<group>"; };
+		C3842B18154F44EA00C716F3 /* Props14.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Props14.mm; sourceTree = "<group>"; };
+		C3842B1A154F64A300C716F3 /* VarMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarMeta.h; sourceTree = "<group>"; };
+		C3842B1B154F65AB00C716F3 /* FieldMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldMap.h; sourceTree = "<group>"; };
+		C3842B1C154F65AB00C716F3 /* FieldMap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FieldMap.mm; sourceTree = "<group>"; };
+		C3842B1E154F660F00C716F3 /* AbstractVarMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractVarMeta.h; sourceTree = "<group>"; };
+		C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractVarMeta.mm; sourceTree = "<group>"; };
+		C3842B21154F6BBF00C716F3 /* VarMeta12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarMeta12.h; sourceTree = "<group>"; };
+		C3842B22154F6BBF00C716F3 /* VarMeta12.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VarMeta12.mm; sourceTree = "<group>"; };
 		C3852315154EF803002753C4 /* pole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pole.cpp; sourceTree = "<group>"; };
 		C3852316154EF804002753C4 /* pole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pole.h; sourceTree = "<group>"; };
 		C3852B90154EF870002753C4 /* Project.mpp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Project.mpp; sourceTree = "<group>"; };
@@ -253,6 +269,8 @@
 			children = (
 				C3854545154B168A0030B489 /* AbstractProjectReader.h */,
 				C3854546154B168A0030B489 /* AbstractProjectReader.mm */,
+				C3842B1E154F660F00C716F3 /* AbstractVarMeta.h */,
+				C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */,
 				7AD45AA21546176B004FF2A2 /* AccrueType.h */,
 				7AD45AA31546176B004FF2A2 /* AccrueType.mm */,
 				7ABEB7F3153C8F20007E9B05 /* AssignmentField.h */,
@@ -289,6 +307,8 @@
 				F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */,
 				7AD45ADB154620F6004FF2A2 /* FieldContainer.h */,
 				7AD45ADA154620C1004FF2A2 /* FieldListener.h */,
+				C3842B1B154F65AB00C716F3 /* FieldMap.h */,
+				C3842B1C154F65AB00C716F3 /* FieldMap.mm */,
 				7AD45AD915461ECD004FF2A2 /* FieldType.h */,
 				5ED019D4152B6EFB0012148C /* FileCreationRecord.h */,
 				5ED019D5152B6EFB0012148C /* FileCreationRecord.mm */,
@@ -345,6 +365,10 @@
 				C3854543154B12060030B489 /* ProjectReader.h */,
 				7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */,
 				7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.mm */,
+				C3842B13154F44DA00C716F3 /* Props.h */,
+				C3842B14154F44DA00C716F3 /* Props.mm */,
+				C3842B17154F44EA00C716F3 /* Props14.h */,
+				C3842B18154F44EA00C716F3 /* Props14.mm */,
 				7ABEB7EC153C7C7C007E9B05 /* RecurrenceType.h */,
 				7ABEB7ED153C7C7C007E9B05 /* RecurrenceType.mm */,
 				7A29EE201538DB1000958CB7 /* RecurringTask.h */,
@@ -381,6 +405,9 @@
 				7AD45AED15462561004FF2A2 /* TimescaleUnits.mm */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.mm */,
+				C3842B1A154F64A300C716F3 /* VarMeta.h */,
+				C3842B21154F6BBF00C716F3 /* VarMeta12.h */,
+				C3842B22154F6BBF00C716F3 /* VarMeta12.mm */,
 				7AD45AFA154628EB004FF2A2 /* View.h */,
 				7AD45AEE15462561004FF2A2 /* ViewType.h */,
 				7AD45AEF15462562004FF2A2 /* ViewType.mm */,
@@ -563,6 +590,11 @@
 				C3852B9C154EFE12002753C4 /* CompObj.mm in Sources */,
 				C3852B9F154EFF3B002753C4 /* MPPComponent.mm in Sources */,
 				C3852BA2154F002F002753C4 /* MPPUtility.mm in Sources */,
+				C3842B15154F44DA00C716F3 /* Props.mm in Sources */,
+				C3842B19154F44EA00C716F3 /* Props14.mm in Sources */,
+				C3842B1D154F65AB00C716F3 /* FieldMap.mm in Sources */,
+				C3842B20154F661000C716F3 /* AbstractVarMeta.mm in Sources */,
+				C3842B23154F6BBF00C716F3 /* VarMeta12.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

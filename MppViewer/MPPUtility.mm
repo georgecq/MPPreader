@@ -10,6 +10,11 @@
 
 @implementation MPPUtility
 
++(int)getInt:(unsigned char[])data
+{
+    return [self getInt:data withOffSet:0];
+}
+
 +(int)getInt:(unsigned char[])data withOffSet:(int)offSet
 {
     int result = 0;
@@ -23,9 +28,22 @@
     return result;
 }
 
-+(int)getInt:(unsigned char[])data
++(int)getShort:(unsigned char[])data
 {
-    return [self getInt:data withOffSet:0];
+    return [self getShort:data withOffSet:0];
+}
+
++(int)getShort:(unsigned char[])data withOffSet:(int)offSet
+{
+    int result = 0;
+    int i = offSet;
+    for(int shiftBy = 0; shiftBy < 16; shiftBy += 8)
+    {
+        result |= ((data[i] & 0xff)) << shiftBy;
+        ++i;
+    }
+    
+    return result;
 }
 
 @end

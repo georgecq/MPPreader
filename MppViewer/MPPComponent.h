@@ -15,4 +15,6 @@
 
 -(unsigned char*)readByteArray:(POLE::Stream *)is withSize:(int)size;
 
+-(int)readShort:(POLE::Stream *)is;
+
 @end

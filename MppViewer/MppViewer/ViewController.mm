@@ -9,13 +9,17 @@
 #import "ViewController.h"
 #import "RecurrenceType.h"
 #import "CoreFoundation/CoreFoundation.h"
-#import "CompObj.h"
+
 #import <fstream>
 #import <iostream>
 #import <list>
 #import <string>
 #import <vector>
 #import "pole.h"
+
+#import "CompObj.h"
+#import "Props14.h"
+#import "VarMeta12.h"
 
 @interface ViewController ()
 
@@ -59,13 +63,21 @@
     }
     
     visit( 0, storage, "/" );
-    POLE::Stream *stream = dump( storage, "CompObj" );
-    CompObj * compObj = [[CompObj alloc]init:stream];
-    //std::cout << "\n \n Props14 \n \n ";
-    //dump( storage, "Props14" );
+    POLE::Stream *stream = dump(storage, "/   114/TBkndOutlCode/VarMeta");
+    if(stream)
+    {
+        VarMeta12 *var = [[VarMeta12 alloc]init:stream];
+    }
+    
+    //POLE::Stream *stream = dump(storage, "CompObj");
+    //CompObj * compObj = [[CompObj alloc]init:stream];
     
     
-    //dump( storage, "CompObj/   214");
+    //POLE::Stream *streamProps = dump( storage, "Props14" );
+    //if(streamProps)
+    //{
+    //    Props14 *p = [[Props14 alloc]init:streamProps];
+    //}
 }
 
 void extract( POLE::Storage* storage, char* stream_name, char* outfile )
@@ -99,11 +111,9 @@ void visit( int indent, POLE::Storage* storage, std::string path )
     {
         std::string name = *it;
         std::string fullname = path + name;
-        //std::cout << fullname;
         for( int j = 0; j < indent; j++ ) std::cout << "    ";
         POLE::Stream* ss = new POLE::Stream( storage, fullname );
-        
-        std::cout << "|" << name;
+        std::cout << name;
         if( ss ) if( !ss->fail() )std::cout << "  (" << ss->size() << ")";
         std::cout << std::endl;
         delete ss;

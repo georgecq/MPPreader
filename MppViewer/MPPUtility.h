@@ -15,4 +15,8 @@
 
 +(int)getInt:(unsigned char[])data withOffSet:(int)offSet;
 
++(int)getShort:(unsigned char[])data;
+
++(int)getShort:(unsigned char[])data withOffSet:(int)offSet;
+
 @end

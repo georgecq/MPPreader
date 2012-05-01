@@ -34,4 +34,15 @@
     return buffer;
 }
 
+-(int)readShort:(POLE::Stream *)is
+{
+    unsigned char data[2];
+    if(is->read(data, sizeof(data)) != 2)
+    {
+        #warning Throw Exception
+    }
+    
+    return [MPPUtility getShort:data];
+}
+
 @end

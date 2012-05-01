@@ -562,6 +562,7 @@ DirEntry* DirTree::entry( const std::string& name, bool create )
      end = name.find_first_of( '/', start );
      if( end == std::string::npos ) end = name.length();
      names.push_back( name.substr( start, end-start ) );
+     //std::cout << name.substr( start, end-start ) << std::endl;
      start = end+1;
    }
   
@@ -581,6 +582,8 @@ DirEntry* DirTree::entry( const std::string& name, bool create )
        DirEntry* ce = entry( chi[i] );
        if( ce ) 
        if( ce->valid && ( ce->name.length()>1 ) )
+           //std::cout << ce->name << std::endl;
+           //std::cout << *it << std::endl;
        if( ce->name == *it )
              child = chi[i];
      }
@@ -974,8 +977,12 @@ StreamIO* StorageIO::streamIO( const std::string& name )
   DirEntry* entry = dirtree->entry( name );
   //if( entry) std::cout << "FOUND\n";
   if( !entry ) return (StreamIO*)0;
+    
+
   //if( !entry->dir ) std::cout << "  NOT DIR\n";
-  if( entry->dir ) return (StreamIO*)0;
+    
+  #warning Commented line
+  //if( entry->dir ) return (StreamIO*)0;
 
   StreamIO* result = new StreamIO( this, entry );
   result->fullName = name;
