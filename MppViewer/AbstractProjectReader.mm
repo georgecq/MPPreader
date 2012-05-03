@@ -11,13 +11,15 @@
 
 @implementation AbstractProjectReader
 
--(ProjectFile *)read:(NSString *)fileName
+/*-(ProjectFile *)read:(NSString *)fileName
 {
     NSInputStream *fis = nil;
     
-    @try {
+    @try 
+    {
         fis = [[NSInputStream alloc]initWithFileAtPath:fileName];
         #warning Incomplete
+        return nil;
     }
     @catch (NSException *exception) {
         
@@ -33,6 +35,6 @@
             }
         }
     }
-}
+}*/
 
 @end

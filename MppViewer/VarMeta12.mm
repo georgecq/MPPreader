@@ -17,7 +17,7 @@ static int MAGIC = 0xFADFADBA;
     self = [super init];
     if(self)
     {
-    
+        _table = [[NSMutableDictionary alloc]init];
         if([self readInt:is] != MAGIC)
         {
             #warning throw exception
@@ -49,7 +49,7 @@ static int MAGIC = 0xFADFADBA;
                 [_table setValue:map forKey:uniqueID];
             }
         
-            [map setValue:type forKey:type];
+            [map setValue:offset forKey:type];
             [_offsets addObject:offset];
         }
     }

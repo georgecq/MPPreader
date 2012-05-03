@@ -20,6 +20,11 @@
 #import "CompObj.h"
 #import "Props14.h"
 #import "VarMeta12.h"
+#import "StreamHelper.h"
+#import "MPP14Reader.h"
+
+#import "ProjectReaderUtility.h"
+#import "ProjectReader.h"
 
 @interface ViewController ()
 
@@ -30,6 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *filename = [[NSBundle mainBundle] pathForResource:@"Project" ofType:@"mpp"];
+    id<ProjectReader> reader = [ProjectReaderUtility getProjectReader:filename];
+    ProjectFile *mpx = [reader read:filename];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
     //NSString *guid = [self stringWithUUID];
@@ -52,34 +62,38 @@
      */
     
 
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"Project" ofType:@"mpp"];
-    const char* filename = [file UTF8String];   
-    POLE::Storage* storage = new POLE::Storage(filename);
+    /*NSString *filename = [[NSBundle mainBundle] pathForResource:@"Project" ofType:@"mpp"];
+    const char* file = [filename UTF8String];   
+    POLE::Storage* storage = new POLE::Storage(file);
     storage->open();
     if( storage->result() != POLE::Storage::Ok )
     {
         std::cout << "Error on file " << filename << std::endl;
         return;
-    }
+    }*/
     
-    visit( 0, storage, "/" );
-    POLE::Stream *stream = dump(storage, "/   114/TBkndOutlCode/VarMeta");
+    /*visit( 0, storage, "/" );
+    POLE::Stream *stream = StreamHelper::getStream(storage, "/   114/TBkndOutlCode/VarMeta");
     if(stream)
     {
         VarMeta12 *var = [[VarMeta12 alloc]init:stream];
-    }
+    }*/
     
     //POLE::Stream *stream = dump(storage, "CompObj");
     //CompObj * compObj = [[CompObj alloc]init:stream];
     
     
-    //POLE::Stream *streamProps = dump( storage, "Props14" );
-    //if(streamProps)
-    //{
-    //    Props14 *p = [[Props14 alloc]init:streamProps];
-    //}
+    /*POLE::Stream *streamProps = dump( storage, "Props14" );
+    if(streamProps)
+    {
+        Props14 *p = [[Props14 alloc]init:streamProps];
+    }*/
+    
+    /*MPP14Reader *reader = [[MPP14Reader alloc]init];
+    [reader process:nil withProjectFile:nil withStorage:storage];*/
 }
 
+/*
 void extract( POLE::Storage* storage, char* stream_name, char* outfile )
 {
     POLE::Stream* stream = new POLE::Stream(storage, stream_name);
@@ -123,31 +137,7 @@ void visit( int indent, POLE::Storage* storage, std::string path )
     }
 }
 
-POLE::Stream* dump( POLE::Storage* storage, char* stream_name )
-{
-    POLE::Stream* stream = new POLE::Stream( storage, stream_name );
-    if( !stream ) return NULL;
-    if( stream->fail() ) return NULL;
-    
-    // std::cout << "Size: " << stream->size() << " bytes" << std::endl;
-    /*unsigned char buffer[28];
-    for( ;; )
-    {
-        unsigned read = stream->read( buffer, sizeof( buffer ) );
-        //for( unsigned i = 0; i < read; i++ )
-        //    printf( "%02x ", buffer[i] );
-        std::cout << "    ";
-        for( unsigned i = 0; i < read; i++ )
-            printf( "%c", ((buffer[i]>=32)&&(buffer[i]<128)) ? buffer[i] : '.' );
-        std::cout << std::endl;      
-        if( read < sizeof( buffer ) ) break;
-    }*/
-    
-    //delete stream;
-    return stream;
-}
 
-/*
  -(NSString*) stringWithUUID {
  CFUUIDRef uuidObj = CFUUIDCreate(kCFAllocatorDefault);//create a new UUID
  //get the string representation of the UUID

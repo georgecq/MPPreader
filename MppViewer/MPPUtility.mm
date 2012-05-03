@@ -7,6 +7,7 @@
 //
 
 #import "MPPUtility.h"
+#import <string>
 
 @implementation MPPUtility
 
@@ -44,6 +45,29 @@
     }
     
     return result;
+}
+
++(NSString *)getUnicodeString:(unsigned char[])data withSize:(int)size
+{
+    return [self getUnicodeString:data withSize:size withOffSet:0];
+}
+
++(NSString *)getUnicodeString:(unsigned char[])data withSize:(int)size withOffSet:(int)offSet
+{
+    NSString *buffer = [[NSString alloc]init];
+    char c;
+    for(int loop = offSet; loop < size - 1; loop += 2)
+    {
+        c = (char)[self getShort:data withOffSet:loop];
+        if(c == 0)
+        {
+            break;
+        }
+        
+        buffer = [buffer stringByAppendingFormat:@"%c", c];
+    }
+    
+    return buffer;
 }
 
 @end

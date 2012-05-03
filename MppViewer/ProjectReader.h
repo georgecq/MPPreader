@@ -46,6 +46,6 @@
  * @return ProjectFile instance
  * @throws MPXJException
  */
--(ProjectFile *)readWithStream:(NSInputStream *)inputStream;
+//-(ProjectFile *)readWithStream:(NSInputStream *)inputStream;
 
 @end

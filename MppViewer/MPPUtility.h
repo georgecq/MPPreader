@@ -19,4 +19,8 @@
 
 +(int)getShort:(unsigned char[])data withOffSet:(int)offSet;
 
++(NSString *)getUnicodeString:(unsigned char[])data withSize:(int)size;
+
++(NSString *)getUnicodeString:(unsigned char[])data withSize:(int)size withOffSet:(int)offSet;
+
 @end

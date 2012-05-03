@@ -8,6 +8,7 @@
 //
 
 #import "CompObj.h"
+#import "MPPUtility.h"
 #import <fstream>
 #import <iostream>
 
@@ -27,7 +28,7 @@
     {   
         int length;
         unsigned char buffer[28];
-        is->read(buffer, sizeof( buffer ));
+        is->read(buffer, sizeof(buffer));
         length = [self readInt:is];
         
         unsigned char *array = [self readByteArray:is withSize:length];

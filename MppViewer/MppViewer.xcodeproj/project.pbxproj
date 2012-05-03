@@ -72,6 +72,11 @@
 		C3842B1D154F65AB00C716F3 /* FieldMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B1C154F65AB00C716F3 /* FieldMap.mm */; };
 		C3842B20154F661000C716F3 /* AbstractVarMeta.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */; };
 		C3842B23154F6BBF00C716F3 /* VarMeta12.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B22154F6BBF00C716F3 /* VarMeta12.mm */; };
+		C3842B2A1551928300C716F3 /* MPPReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B291551928300C716F3 /* MPPReader.mm */; };
+		C3842B2D1551933300C716F3 /* MPP14Reader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B2C1551933200C716F3 /* MPP14Reader.mm */; };
+		C3842B301551943A00C716F3 /* Var2Data.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B2F1551943A00C716F3 /* Var2Data.mm */; };
+		C3842B321551992000C716F3 /* StreamHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3842B311551991F00C716F3 /* StreamHelper.cpp */; };
+		C3842B361551CEE700C716F3 /* ProjectReaderUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C3842B351551CEE700C716F3 /* ProjectReaderUtility.m */; };
 		C3852317154EF805002753C4 /* pole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3852315154EF803002753C4 /* pole.cpp */; };
 		C3852B91154EF871002753C4 /* Project.mpp in Resources */ = {isa = PBXBuildFile; fileRef = C3852B90154EF870002753C4 /* Project.mpp */; };
 		C3852B93154EFB23002753C4 /* BookingType.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B92154EFB1F002753C4 /* BookingType.mm */; };
@@ -83,6 +88,7 @@
 		C3852BA2154F002F002753C4 /* MPPUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852BA1154F002D002753C4 /* MPPUtility.mm */; };
 		C3854541154A00B50030B489 /* SubProject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854540154A00B50030B489 /* SubProject.mm */; };
 		C3854547154B168A0030B489 /* AbstractProjectReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854546154B168A0030B489 /* AbstractProjectReader.mm */; };
+		C3BDEE541552067A00A366E4 /* CustomFieldValueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDEE531552067A00A366E4 /* CustomFieldValueItem.m */; };
 		C3E418B21548A9C400B1CBA2 /* BooleanUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */; };
 /* End PBXBuildFile section */
@@ -222,6 +228,17 @@
 		C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractVarMeta.mm; sourceTree = "<group>"; };
 		C3842B21154F6BBF00C716F3 /* VarMeta12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarMeta12.h; sourceTree = "<group>"; };
 		C3842B22154F6BBF00C716F3 /* VarMeta12.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VarMeta12.mm; sourceTree = "<group>"; };
+		C3842B2715518D3C00C716F3 /* MPPVariantReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPVariantReader.h; sourceTree = "<group>"; };
+		C3842B281551928300C716F3 /* MPPReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPReader.h; sourceTree = "<group>"; };
+		C3842B291551928300C716F3 /* MPPReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPPReader.mm; sourceTree = "<group>"; };
+		C3842B2B1551933200C716F3 /* MPP14Reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPP14Reader.h; sourceTree = "<group>"; };
+		C3842B2C1551933200C716F3 /* MPP14Reader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPP14Reader.mm; sourceTree = "<group>"; };
+		C3842B2E1551943A00C716F3 /* Var2Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Var2Data.h; sourceTree = "<group>"; };
+		C3842B2F1551943A00C716F3 /* Var2Data.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Var2Data.mm; sourceTree = "<group>"; };
+		C3842B311551991F00C716F3 /* StreamHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StreamHelper.cpp; sourceTree = "<group>"; };
+		C3842B331551992C00C716F3 /* StreamHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamHelper.h; sourceTree = "<group>"; };
+		C3842B341551CEE700C716F3 /* ProjectReaderUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectReaderUtility.h; sourceTree = "<group>"; };
+		C3842B351551CEE700C716F3 /* ProjectReaderUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectReaderUtility.m; sourceTree = "<group>"; };
 		C3852315154EF803002753C4 /* pole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pole.cpp; sourceTree = "<group>"; };
 		C3852316154EF804002753C4 /* pole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pole.h; sourceTree = "<group>"; };
 		C3852B90154EF870002753C4 /* Project.mpp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Project.mpp; sourceTree = "<group>"; };
@@ -242,6 +259,8 @@
 		C3854545154B168A0030B489 /* AbstractProjectReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjectReader.h; sourceTree = "<group>"; };
 		C3854546154B168A0030B489 /* AbstractProjectReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractProjectReader.mm; sourceTree = "<group>"; };
 		C3869F661549BE26000E8FBA /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
+		C3BDEE521552067A00A366E4 /* CustomFieldValueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFieldValueItem.h; sourceTree = "<group>"; };
+		C3BDEE531552067A00A366E4 /* CustomFieldValueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFieldValueItem.m; sourceTree = "<group>"; };
 		C3E418B01548A9C200B1CBA2 /* BooleanUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanUtility.h; sourceTree = "<group>"; };
 		C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BooleanUtility.mm; sourceTree = "<group>"; };
 		F594F6BE1544C24700C1FF71 /* MpxjEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MpxjEnum.h; sourceTree = "<group>"; };
@@ -291,6 +310,8 @@
 				7ABEB7F7153CDF55007E9B05 /* ConstraintType.mm */,
 				7AD45AB2154617C2004FF2A2 /* CurrencySymbolPosition.h */,
 				7AD45AB3154617C2004FF2A2 /* CurrencySymbolPosition.mm */,
+				C3BDEE521552067A00A366E4 /* CustomFieldValueItem.h */,
+				C3BDEE531552067A00A366E4 /* CustomFieldValueItem.m */,
 				7ABCBC49153388640006391D /* DataType.h */,
 				7ABCBC4A153388650006391D /* DataType.mm */,
 				7AD45AB4154617C2004FF2A2 /* DateOrder.h */,
@@ -329,12 +350,17 @@
 				7AD45AC5154617C2004FF2A2 /* LineStyle.mm */,
 				7AD45AC6154617C2004FF2A2 /* LinkStyle.h */,
 				7AD45AC7154617C2004FF2A2 /* LinkStyle.mm */,
+				C3842B2B1551933200C716F3 /* MPP14Reader.h */,
+				C3842B2C1551933200C716F3 /* MPP14Reader.mm */,
 				C3852B9D154EFF38002753C4 /* MPPComponent.h */,
 				C3852B9E154EFF39002753C4 /* MPPComponent.mm */,
 				7ABD89371538B8670093112C /* MPPDuration.h */,
 				7ABD89381538B8670093112C /* MPPDuration.mm */,
+				C3842B281551928300C716F3 /* MPPReader.h */,
+				C3842B291551928300C716F3 /* MPPReader.mm */,
 				C3852BA0154F002C002753C4 /* MPPUtility.h */,
 				C3852BA1154F002D002753C4 /* MPPUtility.mm */,
+				C3842B2715518D3C00C716F3 /* MPPVariantReader.h */,
 				5ED01983152B6D370012148C /* MppViewer */,
 				F594F6BE1544C24700C1FF71 /* MpxjEnum.h */,
 				7AD45AC8154617C2004FF2A2 /* NonWorkingTimeStyle.h */,
@@ -363,6 +389,8 @@
 				5ED019DD152B6EFB0012148C /* ProjectHeader.mm */,
 				C3854544154B12370030B489 /* ProjectListener.h */,
 				C3854543154B12060030B489 /* ProjectReader.h */,
+				C3842B341551CEE700C716F3 /* ProjectReaderUtility.h */,
+				C3842B351551CEE700C716F3 /* ProjectReaderUtility.m */,
 				7AD45ADE1546224D004FF2A2 /* ProjectTimeFormat.h */,
 				7AD45ADF1546224D004FF2A2 /* ProjectTimeFormat.mm */,
 				C3842B13154F44DA00C716F3 /* Props.h */,
@@ -387,6 +415,8 @@
 				7AD45AE315462313004FF2A2 /* ResourceType.mm */,
 				7AD45AE515462368004FF2A2 /* ScheduleFrom.h */,
 				7AD45AE615462368004FF2A2 /* ScheduleFrom.mm */,
+				C3842B311551991F00C716F3 /* StreamHelper.cpp */,
+				C3842B331551992C00C716F3 /* StreamHelper.h */,
 				C385453F154A00B50030B489 /* SubProject.h */,
 				C3854540154A00B50030B489 /* SubProject.mm */,
 				5ED019E4152B6EFB0012148C /* Task.h */,
@@ -405,6 +435,8 @@
 				7AD45AED15462561004FF2A2 /* TimescaleUnits.mm */,
 				7ABD8931153889340093112C /* TimeUnit.h */,
 				7ABD8932153889340093112C /* TimeUnit.mm */,
+				C3842B2E1551943A00C716F3 /* Var2Data.h */,
+				C3842B2F1551943A00C716F3 /* Var2Data.mm */,
 				C3842B1A154F64A300C716F3 /* VarMeta.h */,
 				C3842B21154F6BBF00C716F3 /* VarMeta12.h */,
 				C3842B22154F6BBF00C716F3 /* VarMeta12.mm */,
@@ -595,6 +627,12 @@
 				C3842B1D154F65AB00C716F3 /* FieldMap.mm in Sources */,
 				C3842B20154F661000C716F3 /* AbstractVarMeta.mm in Sources */,
 				C3842B23154F6BBF00C716F3 /* VarMeta12.mm in Sources */,
+				C3842B2A1551928300C716F3 /* MPPReader.mm in Sources */,
+				C3842B2D1551933300C716F3 /* MPP14Reader.mm in Sources */,
+				C3842B301551943A00C716F3 /* Var2Data.mm in Sources */,
+				C3842B321551992000C716F3 /* StreamHelper.cpp in Sources */,
+				C3842B361551CEE700C716F3 /* ProjectReaderUtility.m in Sources */,
+				C3BDEE541552067A00A366E4 /* CustomFieldValueItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

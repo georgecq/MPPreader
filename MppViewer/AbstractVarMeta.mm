@@ -38,11 +38,11 @@
 -(NSNumber *)getOffset:(NSNumber *)identifier withType:(NSNumber *)type
 {
     NSNumber *result = nil;
-    NSString *identifierKey = [NSString stringWithFormat:@"%d", identifier];
+    NSString *identifierKey = [NSString stringWithFormat:@"%d", [identifier intValue]];
     NSMutableDictionary *map = [_table objectForKey:identifierKey];
     if(map != nil && type != nil)
     {
-        NSString *typeString = [NSString stringWithFormat:@"%d", type];
+        NSString *typeString = [NSString stringWithFormat:@"%d", [type intValue]];
         result = (NSNumber *)[map objectForKey:typeString];
     }
     
@@ -57,7 +57,7 @@
 -(NSMutableArray *)getTypes:(NSNumber *)identifier
 {
     NSMutableArray *result = nil;
-    NSString *identifierKey = [NSString stringWithFormat:@"%d", identifier];
+    NSString *identifierKey = [NSString stringWithFormat:@"%d", [identifier intValue]];
     NSMutableDictionary *map = [_table objectForKey:identifierKey];
     if(map != nil)
     {
@@ -73,7 +73,7 @@
 
 -(Boolean)containsKey:(NSNumber *)key
 {
-    NSString *identifierKey = [NSString stringWithFormat:@"%d", key];
+    NSString *identifierKey = [NSString stringWithFormat:@"%d", [key intValue]];
     if([_table objectForKey:identifierKey])
     {
         return true;
