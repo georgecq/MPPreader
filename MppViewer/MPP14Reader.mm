@@ -8,6 +8,7 @@
 
 #import "MPP14Reader.h"
 
+#import "ProjectFile.h"
 #import "CustomFieldValueItem.h"
 #import "Props14.h"
 #import "VarMeta12.h"
@@ -67,14 +68,10 @@ static NSMutableArray *DEFAULT_WORKING_WEEK = [[NSMutableArray alloc]initWithObj
     {
         Props14 *props14 = [[Props14 alloc]init:(StreamHelper::getStream(storage, (char *)"Props14"))];
 
-        #warning Incomplete
+        [file setProjectFilePath:[props14 getUnicodeString:[Props PROJECT_FILE_PATH]]];
+        [file setEncoded:([props14 getByte:[Props PASSWORD_FLAG]] != 0)];
+        [file setEncryptionCode:[props14 getByte:[Props ENCRYPTION_CODE]]];
         
-        NSString *name = [props14 getUnicodeString:[Props PROJECT_FILE_PATH]];
-        
-        //Byte b1 = [props14 getByte:[Props PASSWORD_FLAG]];
-        //Byte b2 = [props14 getByte:[Props ENCRYPTION_CODE]];
-        
-        #warning Incomplete
         if (([props14 getByte:[Props PASSWORD_FLAG]] & 0x01) != 0) 
         {
             #warning throw exception
@@ -109,15 +106,11 @@ static NSMutableArray *DEFAULT_WORKING_WEEK = [[NSMutableArray alloc]initWithObj
         _taskOrder = [[NSMutableDictionary alloc]init];
         _nullTaskOrder = [[NSMutableDictionary alloc]init];
         
-        #warning Incomplete
+        [_file setMppFileType:14];
         
         [self processCustomValueLists];
         
         #warning Incomplete
-    }
-    @catch (NSException *exception) 
-    {
-        
     }
     @finally 
     {
@@ -147,17 +140,15 @@ static NSMutableArray *DEFAULT_WORKING_WEEK = [[NSMutableArray alloc]initWithObj
         identifier = [uniqueid objectAtIndex:loop];
         
         item = [[CustomFieldValueItem alloc]init:identifier];
-        /*
-        unsigned char *test = [_outlineCodeVarData getByteArray:identifier withType:VALUE_LIST_VALUE];
-        unsigned char *test1 = [_outlineCodeVarData getByteArray:identifier withType:VALUE_LIST_UNKNOWN];
-        NSString *test2 = [_outlineCodeVarData getUnicodeString:identifier withType:VALUE_LIST_DESCRIPTION];
-        */
+
         [item setValue:[_outlineCodeVarData getByteArray:identifier withType:VALUE_LIST_VALUE]];
         [item setDescription:[_outlineCodeVarData getUnicodeString:identifier withType:VALUE_LIST_DESCRIPTION]];
         [item setUnknown:[_outlineCodeVarData getByteArray:identifier withType:VALUE_LIST_UNKNOWN]];
 
-        #warning Incomplete add custom fields to projectFile
+        [_file addCustomFieldValue:item];
     }
 }
+
+
 
 @end

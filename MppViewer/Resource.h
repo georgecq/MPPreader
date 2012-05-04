@@ -14,12 +14,6 @@
 
 @interface Resource : NSObject
 
-// Gets or Sets the resource Id.
-@property (readwrite, assign) int ID;
-
-// Gets or Sets the resource Unique Id.
-@property (readwrite, assign) int UniqueID;
-
 -(id)init:(ProjectFile *)file;
 
 -(void)removeResourceAssignment:(ResourceAssignment *)assignment;
@@ -29,6 +23,10 @@
 -(NSNumber *)getUniqueID;
 
 -(NSNumber *)getID;
+
+-(void)setID:(NSNumber *)val;
+
+-(void)setUniqueID:(NSNumber *)val;
 
 -(ProjectCalendar *)getResourceCalendar;
 

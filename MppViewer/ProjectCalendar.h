@@ -16,9 +16,6 @@
 
 @interface ProjectCalendar : ProjectCalendarWeek
 
-// Gets or Sets the resource Unique Id.
-@property (readwrite, assign) int UniqueID;
-
 -(id)init:(ProjectFile *)file;
 
 -(Resource *)getResource;
@@ -29,10 +26,14 @@
 
 +(NSString *)DEFAULT_BASE_CALENDAR_NAME;
 
--(Duration)getDuration:(NSDate *)startDate to:(NSDate *)endDate;
+-(MPPDuration *)getDuration:(NSDate *)startDate to:(NSDate *)endDate;
 
 -(MPPDuration *)getWork:(NSDate *)startDate withEndDate:(NSDate *)endDate withFormat:(TimeUnit *)format;
 
 -(NSDate *)getDate:(NSDate *)startDate withDuration:(MPPDuration *)duration withNextWorkStart:(Boolean)returnNextWorkStart;
+
+-(NSNumber *)getUniqueID;
+
+-(void)setUniqueID:(NSNumber *)uniqueID;
 
 @end

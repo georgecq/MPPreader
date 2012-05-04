@@ -13,8 +13,6 @@
 
 @implementation ResourceAssignment
 
-@synthesize UniqueID;
-
 // Constructor.
 //
 // @param file The parent file to which this record belongs.

@@ -13,9 +13,6 @@
 
 @implementation Resource
 
-@synthesize ID;
-@synthesize UniqueID;
-
 -(id)init:(ProjectFile *)file
 {
     self= [super init];
@@ -53,21 +50,30 @@
 // 
 // @return value
 
--(int)getUniqueID
+-(NSNumber *)getUniqueID
 {
 #warning Incomplete
     return 0;
 }
 
+-(void)setUniqueID:(NSNumber *)val
+{
+#warning Incomplete
+}
 
 // Gets ID field value.
 // 
 // @return value
 
--(int)getID
+-(NSNumber *)getID
 {
 #warning Incomplete
     return 0;
+}
+
+-(void)setID:(NSNumber *)val
+{
+#warning Incomplete
 }
 
 

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AbstractProjectReader.h"
+#import "ProjectReader.h"
 
-@interface MPPReader : AbstractProjectReader
+@interface MPPReader : NSObject <ProjectReader>
 {
     NSMutableArray *_projectListener;
 }

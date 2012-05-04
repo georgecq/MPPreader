@@ -12,8 +12,6 @@
 
 @implementation ProjectCalendar
 
-@synthesize UniqueID;
-
 -(id)init:(ProjectFile *)file
 {
     self= [super init];
@@ -71,7 +69,7 @@
 // @param endDate end of the period
 // @return new Duration object
 
--(Duration)getDuration:(NSDate *)startDate to:(NSDate *)endDate
+-(MPPDuration *)getDuration:(NSDate *)startDate to:(NSDate *)endDate
 {
 #warning Incomplete
     return nil;

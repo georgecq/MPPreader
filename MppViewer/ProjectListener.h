@@ -21,7 +21,7 @@
  *
  * @param task task instance
  */
--(void)taskRead:(task *)task;
+-(void)taskRead:(Task *)task;
 
 /**
  * This method is called when a task is written to a file.

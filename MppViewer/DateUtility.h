@@ -16,4 +16,6 @@
 
 +(MPPDuration *)getVariance:(Task *)task withDate1:(NSDate *)date1 withDate2:(NSDate *)date2 withFormat:(TimeUnit *)format;
 
++(NSDate *)getDayStartDate:(NSDate *)date;
+
 @end

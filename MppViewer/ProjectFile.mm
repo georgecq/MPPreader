@@ -9,16 +9,20 @@
 #import "ProjectFile.h"
 
 #import "Task.h"
+#import "Table.h"
 #import "ResourceAssignment.h"
 #import "Resource.h"
 #import "ProjectCalendar.h"
 #import "FileCreationRecord.h"
 #import "Day.h"
 #import "DayType.h"
+#import "Filter.h"
 #import "ProjectHeader.h"
 #import "Relation.h"
 #import "TaskField.h"
 #import "NumberUtility.h"
+#import "MPPDuration.h"
+#import "ProjectListener.h"
 
 @implementation ProjectFile
 
@@ -32,8 +36,68 @@
 @synthesize autoTaskID;
 @synthesize autoResourceUniqueID;
 @synthesize autoResourceID;
+@synthesize projectFilePath;
+@synthesize autoFilter;
+@synthesize viewState;
+@synthesize resourceSubProject;
+@synthesize mppFileType;
 
 int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
+
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        _allResources = [[NSMutableArray alloc]init];
+        _allTasks = [[NSMutableArray alloc]init];
+        _childTasks = [[NSMutableArray alloc]init];
+        _allResourceAssignments = [[NSMutableArray alloc]init];
+        _baseCalendars = [[NSMutableArray alloc]init];
+        _resourceCalendars = [[NSMutableArray alloc]init];
+        _views = [[NSMutableArray alloc]init];
+        _tables = [[NSMutableArray alloc]init];
+        _taskFilters = [[NSMutableArray alloc]init];
+        _resourceFilters = [[NSMutableArray alloc]init];
+        _groups = [[NSMutableArray alloc]init];
+        _allsubProjects = [[NSMutableArray alloc]init];
+        
+        _fileCreationRecord = [[FileCreationRecord alloc]init:self];
+        _projectHeader = [[ProjectHeader alloc]init:self];
+        
+        self.delimiter = @",";
+        self.autoWBS = true;
+        self.autoOutlineLevel = true;
+        self.autoOutlineNumber = true;
+        self.autoTaskUniqueID = true;
+        self.autoCalendarUniqueID = true;
+        self.autoAssignmentUniqueID = true;
+        self.autoTaskID = true;
+        self.autoResourceUniqueID = true;
+        self.autoResourceID = true;
+        
+        _taskFieldAlias = [[NSMutableDictionary alloc]init];
+        _taskFieldValueList = [[NSMutableDictionary alloc]init];
+        _taskFieldDescriptionList = [[NSMutableDictionary alloc]init];
+        _aliasTaskField = [[NSMutableDictionary alloc]init];
+        _resourceFieldAlias = [[NSMutableDictionary alloc]init];
+        _aliasResourceField = [[NSMutableDictionary alloc]init];
+        _taskUniqueIDMap = [[NSMutableDictionary alloc]init];
+        _taskIDMap = [[NSMutableDictionary alloc]init];
+        _resourceUniqueIDMap = [[NSMutableDictionary alloc]init];
+        _resourceIDMap = [[NSMutableDictionary alloc]init];
+        _calendarUniqueIDMap = [[NSMutableDictionary alloc]init];
+        _graphicalIndicators = [[NSMutableDictionary alloc]init];
+        _taskTablesByName = [[NSMutableDictionary alloc]init];
+        _resourceTablesByName = [[NSMutableDictionary alloc]init];
+        _filtersByName = [[NSMutableDictionary alloc]init];
+        _filtersByID = [[NSMutableDictionary alloc]init];
+        _groupsByName = [[NSMutableDictionary alloc]init];
+        _customFieldValueItems = [[NSMutableDictionary alloc]init];
+    }
+    return self;
+}
+
 
 // This method is provided to allow child tasks that have been created
 // programmatically to be added as a record to the main file.
@@ -69,10 +133,8 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     // Remove the task from the file and its parent task
     //
     [_allTasks removeObject:task];
-    int taskUniqueId = [[task getUniqueID]intValue];
-    [_taskUniqueIDMap removeObjectForKey:[[NSNumber alloc]initWithInt:taskUniqueId]];
-    int taskId = [[task getID]intValue];
-    [_taskIDMap removeObjectForKey:[task getID]];
+    [_taskUniqueIDMap removeObjectForKey:[NSString stringWithFormat:@"%d", [[task getUniqueID]intValue]]];
+    [_taskIDMap removeObjectForKey:[NSString stringWithFormat:@"%d", [[task getID]intValue]]];
     
     Task *parentTask = [task getParentTask];
     if (parentTask != nil)
@@ -88,7 +150,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     // Remove all resource assignments
     //
     for (ResourceAssignment *assignment in _allResourceAssignments) {
-        if (taskId == [[[assignment getTask]getID] intValue])
+        if ([[task getID]intValue] == [[[assignment getTask]getID] intValue])
         {
             Resource *rsc = [assignment getResource];
             if (rsc  != nil)
@@ -125,30 +187,25 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 {
     if ([_allTasks count] != 0)
     {
-        //
-        //Sort the task by Id
-        //
+        #warning sort using CompareTo of Task
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ID" ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         _allTasks = [[_allTasks sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
         
-        //NSInteger *integer = [[_allTasks objectAtIndex:0] getID];
-        #warning ReCheck with Task
-        int Id = 0;//[NumberUtility getInt:[];
-        if (Id != 0)
+        Task *firstTask = [_allTasks objectAtIndex:0];
+        int identifier = [NumberUtility getInt:[firstTask getID]];
+        if (identifier != 0)
         {
-            Id = 1;
+            identifier = 1;
         }
         
         for (Task *actTask in _allTasks)
         {
-            [actTask setID:[NSNumber numberWithInt:Id++]];
+            [actTask setID:[NSNumber numberWithInt:identifier++]];
         }
     }
 }
-
-
 
 // This method can be called to ensure that the IDs of all
 // resources in this project are sequential, and start from an
@@ -161,15 +218,16 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 {
     if ([_allResources count] != 0)
     {
+        #warning sort using CompareTo of Resource
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ID" ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         _allResources = [[_allResources sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
-        int Id = 1;
         
+        int identifier = 1;
         for (Resource *rsc in _allResources)
         {
-            [rsc setID:Id++];
+            [rsc setID:[NSNumber numberWithInt:identifier++]];
         }
     }
 }
@@ -180,11 +238,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)renumberTaskUniqueIDs
 {
     Task *firstTask = [self getTaskByID:0];
-    int uid = 0;
-    if (firstTask == nil)
-    {
-        uid = 1;
-    }
+    int uid = firstTask == nil ? 1: 0;
     
     for (Task *task in _allTasks)
     {
@@ -198,10 +252,9 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)renumberResourceUniqueIDs
 {
     int uid = 1;
-    
     for (Resource *rsc in _allResources)
     {
-        [rsc setUniqueID:uid++];
+        [rsc setUniqueID:[NSNumber numberWithInt:uid++]];
     }
 }
 
@@ -211,10 +264,9 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)renumberAssignmentUniqueIDs
 {
     int uid = 1;
-    
     for (ResourceAssignment *assignment in _allResourceAssignments)
     {
-        [assignment setUniqueID:uid++];
+        [assignment setUniqueID:[NSNumber numberWithInt:uid++]];
     }
 }
 
@@ -224,15 +276,14 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)renumberCalendarUniqueIDs
 {
     int uid = 1;
-    
     for (ProjectCalendar *calendar in _baseCalendars)
     {
-        [calendar setUniqueID:uid++];
+        [calendar setUniqueID:[NSNumber numberWithInt:uid++]];
     }
     
     for (ProjectCalendar *calendar in _resourceCalendars)
     {
-        [calendar setUniqueID:uid++];
+        [calendar setUniqueID:[NSNumber numberWithInt:uid++]];
     }
 }
 
@@ -248,7 +299,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (Task *task in _allTasks)
         {
-            if ([[task getUniqueID]intValue] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([NumberUtility getInt:[task getUniqueID]] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberTaskIDs];
                 break;
@@ -260,7 +311,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (Resource *resource in _allResources)
         {
-            if ([resource UniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([NumberUtility getInt:[resource getUniqueID]] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberResourceUniqueIDs];
                 break;
@@ -272,7 +323,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (ResourceAssignment *assignment in _allResourceAssignments)
         {
-            if ([assignment UniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([NumberUtility getInt:[assignment getUniqueID]] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberAssignmentUniqueIDs];
                 break;
@@ -284,7 +335,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (ProjectCalendar *calendar in _baseCalendars)
         {
-            if ([calendar UniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([NumberUtility getInt:[calendar getUniqueID]] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberCalendarUniqueIDs];
                 break;
@@ -296,7 +347,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     {
         for (ProjectCalendar *calendar in _resourceCalendars)
         {
-            if ([calendar UniqueID] > MS_PROJECT_MAX_UNIQUE_ID)
+            if ([NumberUtility getInt:[calendar getUniqueID]] > MS_PROJECT_MAX_UNIQUE_ID)
             {
                 [self renumberCalendarUniqueIDs];
                 break;
@@ -316,12 +367,8 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)synchronizeTaskIDToHierarchy
 {
     [_allTasks removeAllObjects];
-    int currentID = 0;
-    if ([self getTaskByID:0] == nil)
-    {
-        currentID = 1;
-    }
-
+    
+    int currentID = [self getTaskByID:0] == nil ? 1: 0;
     for (Task *task in _childTasks)
     {
         [task setID:[NSNumber numberWithInt:currentID++]];
@@ -409,6 +456,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 {
     return ++_taskID;
 }
+
 
 
 // This method is used to retrieve the next unique ID for a resource.
@@ -590,11 +638,12 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 -(void)removeResource:(Resource *)resource
 {
     [_allResources removeObject:resource];
-    [_resourceUniqueIDMap removeObjectForKey:[resource getUniqueID]];
-    [_resourceIDMap removeObjectForKey:[resource getID]];
+    [_resourceUniqueIDMap removeObjectForKey:[NSString stringWithFormat:@"%d" , [[resource getUniqueID]intValue]]];
+    [_resourceIDMap removeObjectForKey:[NSString stringWithFormat:@"%d" , [[resource getID]intValue]]];
     
     NSNumber *resourceUniqueID = [resource getUniqueID];
-    for (ResourceAssignment * rscAssig in _allResourceAssignments) {
+    for (ResourceAssignment * rscAssig in _allResourceAssignments) 
+    {
         if ([resourceUniqueID intValue] == [[rscAssig getResourceUniqueID] intValue])
         {
             [[rscAssig getTask] removeResourceAssignment:rscAssig];
@@ -684,7 +733,8 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     
     if (calendarName != nil && [calendarName length] != 0)
     {
-        for (calendar in _baseCalendars) {
+        for (calendar in _baseCalendars) 
+        {
             NSString *name = [calendar Name];
             
             if ((name != nil) && ([name compare:calendarName options:NSCaseInsensitiveSearch] == NSOrderedSame))
@@ -708,7 +758,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(ProjectCalendar *)getBaseCalendarByUniqueID:(int)calendarID
 {
-    return [_calendarUniqueIDMap objectForKey:[[NSNumber alloc]initWithInt:calendarID]];
+    return [_calendarUniqueIDMap objectForKey:[NSString stringWithFormat:@"%d", calendarID]];
 }
 
 
@@ -733,7 +783,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 // @param endDate end of the period
 // @return new Duration object
 
--(Duration)getDuration:(NSDate *)startDate to:(NSDate *)endDate
+-(MPPDuration *)getDuration:(NSDate *)startDate to:(NSDate *)endDate
 {
     return [self getDuration:@"Standard" starting:startDate ending:endDate];
 }
@@ -748,7 +798,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 // @param endDate end of the period
 // @return new Duration object
 
--(Duration)getDuration:(NSString *)calendarName starting:(NSDate *)startDate ending:(NSDate *)endDate
+-(MPPDuration *)getDuration:(NSString *)calendarName starting:(NSDate *)startDate ending:(NSDate *)endDate
 {
     ProjectCalendar *calendar = [self getBaseCalendar:calendarName];
 
@@ -769,7 +819,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(Task *)getTaskByID:(int)iD
 {
-    return [_taskIDMap objectForKey:[[NSNumber alloc]initWithInt:iD]];
+    return [_taskIDMap objectForKey:[NSString stringWithFormat:@"%d", iD]];
 }
 
 
@@ -781,7 +831,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(Task *)getTaskByUniqueID:(int) iD
 {
-    return [_taskUniqueIDMap objectForKey:[[NSNumber alloc]initWithInt:iD]];
+    return [_taskUniqueIDMap objectForKey:[NSString stringWithFormat:@"%d", iD]];
 }
 
 
@@ -793,7 +843,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(Resource *)getResourceByID:(int)iD
 {
-    return [_resourceIDMap objectForKey:[[NSNumber alloc]initWithInt:iD]];
+    return [_resourceIDMap objectForKey:[NSString stringWithFormat:@"%d", iD]];
 }
 
 
@@ -805,7 +855,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(Resource *)getResourceByUniqueID:(int) iD
 {
-    return [_resourceUniqueIDMap objectForKey:[[NSNumber alloc]initWithInt:iD]];
+    return [_resourceUniqueIDMap objectForKey:[NSString stringWithFormat:@"%d",iD]];
 }
 
 
@@ -818,10 +868,12 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 {
     if ([_allTasks count] > 1)
     {
+        #warning sort Task using CompareTo
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ID" ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         _allTasks = [[_allTasks sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+        
         [_childTasks removeAllObjects];
         
         Task *lastTask = nil;
@@ -927,7 +979,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     //
     for (ProjectCalendar *calendar in _baseCalendars)
     {
-        int uniqueID = [calendar UniqueID];
+        int uniqueID = [[calendar getUniqueID]intValue];
         if (uniqueID > _calendarUniqueID)
         {
             _calendarUniqueID = uniqueID;
@@ -939,7 +991,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     //
     for (ProjectCalendar *calendar in _resourceCalendars)
     {
-        int uniqueID = [calendar UniqueID];
+        int uniqueID = [[calendar getUniqueID]intValue];
         if (uniqueID > _calendarUniqueID)
         {
             _calendarUniqueID = uniqueID;
@@ -951,7 +1003,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     //
     for (ResourceAssignment *assignment in _allResourceAssignments)
     {
-        int uniqueID = [assignment UniqueID];
+        int uniqueID = [[assignment getUniqueID]intValue];
         if (uniqueID > _assignmentUniqueID)
         {
             _assignmentUniqueID = uniqueID;
@@ -1036,7 +1088,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         //
         // If a hidden "summary" task is present we ignore it
         //
-        if ([task getUniqueID] == 0)
+        if ([[task getUniqueID]intValue] == 0)
         {
             continue;
         }
@@ -1078,16 +1130,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireTaskReadEvent:(Task *)task
 {
-#warning Incomplete 
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.taskRead(task);
+            [listener taskRead:task];
         }
     }
-     */
 }
 
 
@@ -1098,16 +1147,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireTaskWrittenEvent:(Task *)task
 {
- #warning Incomplete   
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.taskWritten(task);
+            [listener taskWritten:task];
         }
     }
-     */
 }
 
 
@@ -1118,16 +1164,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireResourceReadEvent:(Resource *)resource
 {
- #warning Incomplete 
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.resourceRead(resource);
+            [listener resourceRead:resource];
         }
     }
-     */
 }
 
 // This method is called to alert project listeners to the fact that
@@ -1137,16 +1180,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireResourceWrittenEvent:(Resource *)resource
 {
-#warning Incomplete 
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.resourceWritten(resource);
+            [listener resourceWritten:resource];
         }
     }
-     */
 }
 
 // This method is called to alert project listeners to the fact that
@@ -1156,16 +1196,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireCalendarReadEvent:(ProjectCalendar *)calendar
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.calendarRead(calendar);
+            [listener calendarRead:calendar];
         }
     }
-     */
 }
 
 
@@ -1176,16 +1213,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireAssignmentReadEvent:(ResourceAssignment *)resourceAssignment
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.assignmentRead(resourceAssignment);
+            [listener assignmentRead:resourceAssignment];
         }
     }
-     */
 }
 
 
@@ -1196,16 +1230,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireAssignmentWrittenEvent:(ResourceAssignment *)resourceAssignment
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.assignmentWritten(resourceAssignment);
+            [listener assignmentWritten:resourceAssignment];
         }
     }
-     */
 }
 
 // This method is called to alert project listeners to the fact that
@@ -1215,16 +1246,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireRelationReadEvent:(Relation *)relation
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.relationRead(relation);
+            [listener relationRead:relation];
         }
     }
-     */
 }
 
 
@@ -1235,16 +1263,13 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireRelationWrittenEvent:(Relation *)relation
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.relationWritten(relation);
+            [listener relationWritten:relation];
         }
     }
-     */
 }
 
 
@@ -1255,16 +1280,41 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
 -(void)fireCalendarWrittenEvent:(ProjectCalendar *)calendar
 {
-#warning Incomplete
-    /*
-    if (m_projectListeners != null)
+    if (_projectListeners != nil)
     {
-        for (ProjectListener listener : m_projectListeners)
+        for (id<ProjectListener> listener in _projectListeners)
         {
-            listener.calendarWritten(calendar);
+            [listener calendarWritten:calendar];
         }
     }
-     */
+}
+
+-(void)addProjectListener:(id<ProjectListener>)listener
+{
+    if (_projectListeners != nil)
+    {
+        _projectListeners = [[NSMutableArray alloc]init];
+    }
+    [_projectListeners addObject:listener];
+}
+
+-(void)addProjectListeners:(NSMutableArray *)listeners
+{
+    if (_projectListeners != nil)
+    {
+        for (id<ProjectListener> listener in listeners)
+        {
+            [_projectListeners addObject:listener];
+        }
+    }
+}
+
+-(void)removeProjectListener:(id<ProjectListener>)listener
+{
+    if (_projectListeners != nil)
+    {
+        [_projectListeners removeObject:listener];
+    }
 }
 
 
@@ -1362,18 +1412,202 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 }
 
 
-// Associates an alias with a custom resource field number.
-//
-// @param field custom field number
-// @param alias alias text
-#warning Incomplete
-/*-(void)setResourceFieldAlias:(ResourceField *)field withAlias:(NSString *)alias
+-(void)setResourceFieldAlias:(ResourceField *)field withAlias:(NSString *)alias
 {
-    if ((alias != null) && (alias.length() != 0))
+    if (alias != nil && [alias length] != 0)
     {
-        m_resourceFieldAlias.put(field, alias);
-        m_aliasResourceField.put(alias, field);
+        [_resourceFieldAlias setObject:field forKey:alias];
+        [_aliasResourceField setObject:alias forKey:field];
     }
-}*/
+}
+
+-(NSString *)getResourceFieldAlias:(ResourceField *)filed
+{
+    return (NSString *)[_resourceFieldAlias objectForKey:filed];
+}
+
+-(ResourceField *)getAliasResourceField:(NSString *)alias
+{
+    return (ResourceField *)[_aliasResourceField objectForKey:alias];
+}
+
+-(NSMutableDictionary *)getTaskFieldAliasMap
+{
+    return _taskFieldAlias;
+}
+
+-(NSMutableDictionary *)getResourceFieldAliasMap
+{
+    return _resourceFieldAlias;
+}
+
+-(void)unmapTaskUniqueID:(NSNumber *)identifier
+{
+    [_taskUniqueIDMap removeObjectForKey:identifier];
+}
+
+-(void)mapTaskUniqueID:(NSNumber *)identifier withTask:(Task *)task
+{
+    [_taskUniqueIDMap setObject:identifier forKey:task];
+}
+
+-(void)unmapTaskID:(NSNumber *)identifier
+{
+    [_taskIDMap removeObjectForKey:identifier];
+}
+
+-(void)mapTaskID:(NSNumber *)identifier withTask:(Task *)task
+{
+    [_taskIDMap setObject:identifier forKey:task];
+}
+
+-(void)unmapResourceUniqueID:(NSNumber *)identifier
+{
+    [_resourceUniqueIDMap removeObjectForKey:identifier];
+}
+
+-(void)mapResourceUniqueID:(NSNumber *)identifier withResource:(Resource *)resource
+{
+    [_resourceUniqueIDMap setObject:identifier forKey:resource];
+}
+
+-(void)unmapResourceID:(NSNumber *)identifier
+{
+    [_resourceIDMap removeObjectForKey:identifier];
+}
+
+-(void)mapResourceID:(NSNumber *)identifier withResource:(Resource *)resource
+{
+    [_resourceIDMap setObject:identifier forKey:resource];
+}
+
+-(void)unmapCalendarUniqueID:(NSNumber *)identifier
+{
+    [_calendarUniqueIDMap removeObjectForKey:identifier];
+}
+
+-(void)mapCalendarUniqueID:(NSNumber *)identifier withResource:(ProjectCalendar *)resource
+{
+    [_calendarUniqueIDMap setObject:identifier forKey:resource];
+}
+
+-(void)addView:(View *)view
+{
+    [_views addObject:view];
+}
+
+-(NSMutableArray *)getViews
+{
+    return _views;
+}
+
+-(void)addTable:(Table *)table
+{
+    [_tables addObject:table];
+    if ([table resourceFlag] == false) 
+    {
+        [_taskTablesByName setObject:[table name] forKey:table];
+    }
+    else
+    {
+        [_resourceTablesByName setObject:[table name] forKey:table];
+    }
+}
+
+-(NSMutableArray *)getTables
+{
+    return _tables;
+}
+
+-(void)addFilter:(Filter *)filter
+{
+    if ([filter isTaskFilter]) 
+    {
+        [_taskFilters addObject:filter];
+    }
+    
+    if ([filter isResourceFilter]) 
+    {
+        [_resourceFilters addObject:filter];
+    }
+    
+    [_filtersByName setObject:filter forKey:[filter name]];
+    [_filtersByID setObject:filter forKey:[filter ID]]; 
+}
+
+-(void)removeFilter:(NSString *)filterName
+{
+    Filter *filter = [_filtersByName objectForKey:filterName];
+    if(filter != nil)
+    {
+        if ([filter isTaskFilter]) 
+        {
+            [_taskFilters removeObject:filter];
+        }
+        
+        if ([filter isResourceFilter]) 
+        {
+            [_resourceFilters removeObject:filter];
+        }
+        
+        [_filtersByName removeObjectForKey:filterName];
+        [_filtersByID removeObjectForKey:[filter ID]];
+    }
+}
+
+-(NSMutableArray *)getAllResourceFilters
+{
+    return _resourceFilters;
+}
+
+-(NSMutableArray *)getAllTaskFilters
+{
+    return _taskFilters;
+}
+
+-(Filter *)getFilterByName:(NSString *)name
+{
+    return [_filtersByName objectForKey:name];
+}
+
+-(Filter *)getFilterByID:(NSNumber *)identifier
+{
+    return [_filtersByID objectForKey:identifier];
+}
+
+-(NSMutableArray *)getAllGroups
+{
+    return _groups;
+}
+
+-(Group *)getGroupByName:(NSString *)name{}
+
+-(void)addGroup:(Group *)group{}
+
+-(void)addGraphicalIndicator:(id<FieldType>)field withIndicator:(GraphicalIndicator *)indicator{}
+
+-(GraphicalIndicator *)getGraphicalIndicator:(id<FieldType>)field{}
+
+-(Table *)getTaskTableByName:(NSString *)name{}
+
+-(Table *)getResourceTableByName:(NSString *)name{}
+
+-(void)addSubProject:(SubProject *)project{}
+
+-(NSMutableArray *)getAllSubProjects{}
+
+-(void)setEncryptionCode:(Byte)encriptionKey{}
+
+-(Byte)getEncryptionCode{}
+
+-(void)addCustomFieldValue:(CustomFieldValueItem *)item{}
+
+-(CustomFieldValueItem *)getCustomFieldValueItem:(NSNumber *)uniqueID{}
+
+-(ProjectCalendar *)getCalendar{}
+
+-(void)setCalendar:(ProjectCalendar *)calendar{}
+
+-(ProjectCalendar *)getBaseCalendar{}
 
 @end

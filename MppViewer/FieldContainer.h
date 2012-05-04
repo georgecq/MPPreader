@@ -14,6 +14,8 @@
 
 -(void)set:(id<FieldType>)field withObject:(NSObject *)value;
 
+-(NSObject *)getCachedValue:(id<FieldType>)field;
+
 -(NSObject *)getCurrentValue:(id<FieldType>)field;
 
 -(void)addFieldListener:(id<FieldListener>)listener;

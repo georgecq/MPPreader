@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectListener.h"
 
 @class Task;
 @class FileCreationRecord;
@@ -16,15 +17,35 @@
 @class ResourceAssignment;
 @class Relation;
 @class TaskField;
+@class MPPDuration;
+@class ResourceField;
+@class View;
+@class Table;
+@class Filter;
+@class Group;
+@class GraphicalIndicator;
+@class SubProject;
+@class ViewState;
+@class CustomFieldValueItem;
+
+@protocol FieldType;
 
 @interface ProjectFile : NSObject
 {
+    NSMutableArray *_allResources;
     NSMutableArray *_allTasks;
     NSMutableArray *_childTasks;
     NSMutableArray *_allResourceAssignments;
-    NSMutableArray *_allResources;
     NSMutableArray *_baseCalendars;
     NSMutableArray *_resourceCalendars;
+    NSMutableArray *_projectListeners;
+    
+    NSMutableArray *_views;
+    NSMutableArray *_tables;
+    NSMutableArray *_taskFilters;
+    NSMutableArray *_resourceFilters;
+    NSMutableArray *_groups;
+    NSMutableArray *_allsubProjects;
     
     NSMutableDictionary *_taskUniqueIDMap;
     NSMutableDictionary *_taskIDMap;
@@ -35,6 +56,15 @@
     NSMutableDictionary *_aliasTaskField;
     NSMutableDictionary *_taskFieldValueList;
     NSMutableDictionary *_taskFieldDescriptionList;
+    NSMutableDictionary *_resourceFieldAlias;
+    NSMutableDictionary *_aliasResourceField;
+    NSMutableDictionary *_graphicalIndicators;
+    NSMutableDictionary *_taskTablesByName;
+    NSMutableDictionary *_resourceTablesByName;
+    NSMutableDictionary *_filtersByName;
+    NSMutableDictionary *_filtersByID;
+    NSMutableDictionary *_groupsByName;
+    NSMutableDictionary *_customFieldValueItems;
     
     int _taskUniqueID;
     int _calendarUniqueID;
@@ -42,6 +72,9 @@
     int _taskID;
     int _resourceUniqueID;
     int _resourceID;
+    int _mppFileType;
+    
+    Byte _encryptionKey;
     
     FileCreationRecord *_fileCreationRecord;
     ProjectHeader *_projectHeader;
@@ -76,6 +109,24 @@
 
 // Gets or Sets whether the resource ID field is automatically populated.
 @property (nonatomic) Boolean autoResourceID;
+
+// Gets or sets the details of the sub project file used as a resource pool.
+@property (strong, nonatomic) SubProject *resourceSubProject;
+
+// Gets or Sets whether the auto filter is enabled.
+@property (nonatomic) Boolean autoFilter;
+
+// Gets or Sets the saved view state associated with this file.
+@property (strong, nonatomic) ViewState *viewState;
+
+// Gets or Sets whether the data is encoded in the file.
+@property (nonatomic) Boolean encoded;
+
+// Gets or Sets the project file path.
+@property (strong, nonatomic) NSString *projectFilePath;
+
+// Gets or Sets the file type.
+@property (nonatomic) int mppFileType;
 
 -(void)addTask:(Task *) task;
 
@@ -137,6 +188,8 @@
 
 -(Resource *)addResource;
 
+-(void)removeResource:(Resource *)resource;
+
 -(NSMutableArray *)getAllResources;
 
 -(NSMutableArray *)getAllResourceAssignments;
@@ -153,17 +206,17 @@
 
 -(int)getChildTaskCount;
 
--(Duration)getDuration:(NSDate *)startDate to:(NSDate *)endDate;
+-(MPPDuration *)getDuration:(NSDate *)startDate to:(NSDate *)endDate;
 
--(Duration)getDuration:(NSString *)calendarName starting:(NSDate *)startDate ending:(NSDate *)endDate;
+-(MPPDuration *)getDuration:(NSString *)calendarName starting:(NSDate *)startDate ending:(NSDate *)endDate;
 
 -(Task *)getTaskByID:(int)iD;
 
--(Task *)getTaskByUniqueID:(int) iD;
+-(Task *)getTaskByUniqueID:(int)iD;
 
 -(Resource *)getResourceByID:(int)iD;
 
--(Resource *)getResourceByUniqueID:(int) iD;
+-(Resource *)getResourceByUniqueID:(int)iD;
 
 -(void)updateStructure;
 
@@ -183,6 +236,8 @@
 
 -(void)fireCalendarReadEvent:(ProjectCalendar *)calendar;
 
+-(void)fireAssignmentReadEvent:(ResourceAssignment *)resourceAssignment;
+
 -(void)fireAssignmentWrittenEvent:(ResourceAssignment *)resourceAssignment;
 
 -(void)fireRelationReadEvent:(Relation *)relation;
@@ -190,6 +245,12 @@
 -(void)fireRelationWrittenEvent:(Relation *)relation;
 
 -(void)fireCalendarWrittenEvent:(ProjectCalendar *)calendar;
+
+-(void)addProjectListener:(id<ProjectListener>)listener;
+
+-(void)addProjectListeners:(NSMutableArray *)listeners;
+
+-(void)removeProjectListener:(id<ProjectListener>)listener;
 
 -(void)setTaskFieldAlias:(TaskField *)field with:(NSString *)alias;
 
@@ -205,17 +266,90 @@
 
 -(NSMutableArray *)getTaskFieldDescriptionList:(TaskField *)field;
 
--(void)unmapTaskID:(NSNumber *)identifier;
+-(void)setResourceFieldAlias:(ResourceField *)field withAlias:(NSString *)alias;
 
--(void)mapTaskID:(NSNumber *)identifier withTask:(Task *)task;
+-(NSString *)getResourceFieldAlias:(ResourceField *)filed;
+
+-(ResourceField *)getAliasResourceField:(NSString *)alias;
+
+-(NSMutableDictionary *)getTaskFieldAliasMap;
+
+-(NSMutableDictionary *)getResourceFieldAliasMap;
 
 -(void)unmapTaskUniqueID:(NSNumber *)identifier;
 
 -(void)mapTaskUniqueID:(NSNumber *)identifier withTask:(Task *)task;
 
+-(void)unmapTaskID:(NSNumber *)identifier;
+
+-(void)mapTaskID:(NSNumber *)identifier withTask:(Task *)task;
+
+-(void)unmapResourceUniqueID:(NSNumber *)identifier;
+
+-(void)mapResourceUniqueID:(NSNumber *)identifier withResource:(Resource *)resource;
+
+-(void)unmapResourceID:(NSNumber *)identifier;
+
+-(void)mapResourceID:(NSNumber *)identifier withResource:(Resource *)resource;
+
+-(void)unmapCalendarUniqueID:(NSNumber *)identifier;
+
+-(void)mapCalendarUniqueID:(NSNumber *)identifier withResource:(ProjectCalendar *)resource;
+
+-(int)getMppFileType;
+
+-(void)setMppFileType:(int)fileType;
+
+-(void)addView:(View *)view;
+
+-(NSMutableArray *)getViews;
+
+-(void)addTable:(Table *)table;
+
+-(NSMutableArray *)getTables;
+
+-(void)addFilter:(Filter *)filter;
+
+-(void)removeFilter:(NSString *)filterName;
+
+-(NSMutableArray *)getAllResourceFilters;
+
+-(NSMutableArray *)getAllTaskFilters;
+
+-(Filter *)getFilterByName:(NSString *)name;
+
+-(Filter *)getFilterByID:(NSNumber *)identifier;
+
+-(NSMutableArray *)getAllGroups;
+
+-(Group *)getGroupByName:(NSString *)name;
+
+-(void)addGroup:(Group *)group;
+
+-(void)addGraphicalIndicator:(id<FieldType>)field withIndicator:(GraphicalIndicator *)indicator;
+
+-(GraphicalIndicator *)getGraphicalIndicator:(id<FieldType>)field;
+
+-(Table *)getTaskTableByName:(NSString *)name;
+
+-(Table *)getResourceTableByName:(NSString *)name;
+
+-(void)addSubProject:(SubProject *)project;
+
+-(NSMutableArray *)getAllSubProjects;
+
+-(void)setEncryptionCode:(Byte)encriptionKey;
+
+-(Byte)getEncryptionCode;
+
+-(void)addCustomFieldValue:(CustomFieldValueItem *)item;
+
+-(CustomFieldValueItem *)getCustomFieldValueItem:(NSNumber *)uniqueID;
+
 -(ProjectCalendar *)getCalendar;
 
+-(void)setCalendar:(ProjectCalendar *)calendar;
 
-
+-(ProjectCalendar *)getBaseCalendar;
 
 @end

@@ -67,6 +67,11 @@
 		7AD45AFD15462A61004FF2A2 /* Pair.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD45AFC15462A61004FF2A2 /* Pair.mm */; };
 		7AF9FE8A15462CBA002AB0CF /* RelationType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8815462CBA002AB0CF /* RelationType.mm */; };
 		7AF9FE8B15462CBA002AB0CF /* TaskType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9FE8915462CBA002AB0CF /* TaskType.mm */; };
+		C327F81D155333E700666710 /* Table.mm in Sources */ = {isa = PBXBuildFile; fileRef = C327F81C155333E600666710 /* Table.mm */; };
+		C327F821155337F500666710 /* GenericCriteriaPrompt.mm in Sources */ = {isa = PBXBuildFile; fileRef = C327F820155337F500666710 /* GenericCriteriaPrompt.mm */; };
+		C327F824155339C000666710 /* GenericCriteria.mm in Sources */ = {isa = PBXBuildFile; fileRef = C327F823155339C000666710 /* GenericCriteria.mm */; };
+		C327F827155349B200666710 /* TestOperator.mm in Sources */ = {isa = PBXBuildFile; fileRef = C327F826155349B100666710 /* TestOperator.mm */; };
+		C327F82A155357B500666710 /* Filter.mm in Sources */ = {isa = PBXBuildFile; fileRef = C327F829155357B500666710 /* Filter.mm */; };
 		C3842B15154F44DA00C716F3 /* Props.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B14154F44DA00C716F3 /* Props.mm */; };
 		C3842B19154F44EA00C716F3 /* Props14.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B18154F44EA00C716F3 /* Props14.mm */; };
 		C3842B1D154F65AB00C716F3 /* FieldMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3842B1C154F65AB00C716F3 /* FieldMap.mm */; };
@@ -87,7 +92,6 @@
 		C3852B9F154EFF3B002753C4 /* MPPComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852B9E154EFF39002753C4 /* MPPComponent.mm */; };
 		C3852BA2154F002F002753C4 /* MPPUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3852BA1154F002D002753C4 /* MPPUtility.mm */; };
 		C3854541154A00B50030B489 /* SubProject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854540154A00B50030B489 /* SubProject.mm */; };
-		C3854547154B168A0030B489 /* AbstractProjectReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3854546154B168A0030B489 /* AbstractProjectReader.mm */; };
 		C3BDEE541552067A00A366E4 /* CustomFieldValueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDEE531552067A00A366E4 /* CustomFieldValueItem.m */; };
 		C3E418B21548A9C400B1CBA2 /* BooleanUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E418B11548A9C300B1CBA2 /* BooleanUtility.mm */; };
 		F594F6C21544EFDB00C1FF71 /* EnumUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = F594F6C11544EFDB00C1FF71 /* EnumUtility.mm */; };
@@ -217,6 +221,16 @@
 		7AF9FE8815462CBA002AB0CF /* RelationType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RelationType.mm; sourceTree = "<group>"; };
 		7AF9FE8915462CBA002AB0CF /* TaskType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TaskType.mm; sourceTree = "<group>"; };
 		7AF9FE8C15462CDA002AB0CF /* RelationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationType.h; sourceTree = "<group>"; };
+		C327F81B155333E600666710 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		C327F81C155333E600666710 /* Table.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Table.mm; sourceTree = "<group>"; };
+		C327F81F155337F500666710 /* GenericCriteriaPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericCriteriaPrompt.h; sourceTree = "<group>"; };
+		C327F820155337F500666710 /* GenericCriteriaPrompt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GenericCriteriaPrompt.mm; sourceTree = "<group>"; };
+		C327F822155339C000666710 /* GenericCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericCriteria.h; sourceTree = "<group>"; };
+		C327F823155339C000666710 /* GenericCriteria.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GenericCriteria.mm; sourceTree = "<group>"; };
+		C327F825155349B100666710 /* TestOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOperator.h; sourceTree = "<group>"; };
+		C327F826155349B100666710 /* TestOperator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestOperator.mm; sourceTree = "<group>"; };
+		C327F828155357B400666710 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		C327F829155357B500666710 /* Filter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Filter.mm; sourceTree = "<group>"; };
 		C3842B13154F44DA00C716F3 /* Props.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Props.h; sourceTree = "<group>"; };
 		C3842B14154F44DA00C716F3 /* Props.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Props.mm; sourceTree = "<group>"; };
 		C3842B17154F44EA00C716F3 /* Props14.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Props14.h; sourceTree = "<group>"; };
@@ -256,8 +270,6 @@
 		C3854540154A00B50030B489 /* SubProject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubProject.mm; sourceTree = "<group>"; };
 		C3854543154B12060030B489 /* ProjectReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectReader.h; sourceTree = "<group>"; };
 		C3854544154B12370030B489 /* ProjectListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListener.h; sourceTree = "<group>"; };
-		C3854545154B168A0030B489 /* AbstractProjectReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProjectReader.h; sourceTree = "<group>"; };
-		C3854546154B168A0030B489 /* AbstractProjectReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AbstractProjectReader.mm; sourceTree = "<group>"; };
 		C3869F661549BE26000E8FBA /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
 		C3BDEE521552067A00A366E4 /* CustomFieldValueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFieldValueItem.h; sourceTree = "<group>"; };
 		C3BDEE531552067A00A366E4 /* CustomFieldValueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFieldValueItem.m; sourceTree = "<group>"; };
@@ -286,8 +298,6 @@
 		5ED0196E152B6D370012148C = {
 			isa = PBXGroup;
 			children = (
-				C3854545154B168A0030B489 /* AbstractProjectReader.h */,
-				C3854546154B168A0030B489 /* AbstractProjectReader.mm */,
 				C3842B1E154F660F00C716F3 /* AbstractVarMeta.h */,
 				C3842B1F154F661000C716F3 /* AbstractVarMeta.mm */,
 				7AD45AA21546176B004FF2A2 /* AccrueType.h */,
@@ -333,6 +343,8 @@
 				7AD45AD915461ECD004FF2A2 /* FieldType.h */,
 				5ED019D4152B6EFB0012148C /* FileCreationRecord.h */,
 				5ED019D5152B6EFB0012148C /* FileCreationRecord.mm */,
+				C327F828155357B400666710 /* Filter.h */,
+				C327F829155357B500666710 /* Filter.mm */,
 				5ED0197C152B6D370012148C /* Frameworks */,
 				7AD45AB8154617C2004FF2A2 /* GanttBarDateFormat.h */,
 				C3852B95154EFB67002753C4 /* GanttBarDateFormat.mm */,
@@ -344,6 +356,10 @@
 				7AD45ABF154617C2004FF2A2 /* GanttBarStartEndShape.mm */,
 				7AD45AC0154617C2004FF2A2 /* GanttBarStartEndType.h */,
 				7AD45AC1154617C2004FF2A2 /* GanttBarStartEndType.mm */,
+				C327F822155339C000666710 /* GenericCriteria.h */,
+				C327F823155339C000666710 /* GenericCriteria.mm */,
+				C327F81F155337F500666710 /* GenericCriteriaPrompt.h */,
+				C327F820155337F500666710 /* GenericCriteriaPrompt.mm */,
 				7AD45AC2154617C2004FF2A2 /* Interval.h */,
 				7AD45AC3154617C2004FF2A2 /* Interval.mm */,
 				7AD45AC4154617C2004FF2A2 /* LineStyle.h */,
@@ -419,6 +435,8 @@
 				C3842B331551992C00C716F3 /* StreamHelper.h */,
 				C385453F154A00B50030B489 /* SubProject.h */,
 				C3854540154A00B50030B489 /* SubProject.mm */,
+				C327F81B155333E600666710 /* Table.h */,
+				C327F81C155333E600666710 /* Table.mm */,
 				5ED019E4152B6EFB0012148C /* Task.h */,
 				5ED019E5152B6EFB0012148C /* Task.mm */,
 				7ABCBC7E1533B2C40006391D /* TaskField.h */,
@@ -427,6 +445,8 @@
 				7ABEB7FA153CE3B3007E9B05 /* TaskMode.mm */,
 				7AF9FE8715462CBA002AB0CF /* TaskType.h */,
 				7AF9FE8915462CBA002AB0CF /* TaskType.mm */,
+				C327F825155349B100666710 /* TestOperator.h */,
+				C327F826155349B100666710 /* TestOperator.mm */,
 				7AD45AE81546255F004FF2A2 /* TimescaleAlignment.h */,
 				7AD45AE91546255F004FF2A2 /* TimescaleAlignment.mm */,
 				7AD45AEA15462560004FF2A2 /* TimescaleFormat.h */,
@@ -613,7 +633,6 @@
 				7A683817154718D60098FDF8 /* Priority.mm in Sources */,
 				C3E418B21548A9C400B1CBA2 /* BooleanUtility.mm in Sources */,
 				C3854541154A00B50030B489 /* SubProject.mm in Sources */,
-				C3854547154B168A0030B489 /* AbstractProjectReader.mm in Sources */,
 				C3852317154EF805002753C4 /* pole.cpp in Sources */,
 				C3852B93154EFB23002753C4 /* BookingType.mm in Sources */,
 				C3852B97154EFB69002753C4 /* DateUtility.mm in Sources */,
@@ -633,6 +652,11 @@
 				C3842B321551992000C716F3 /* StreamHelper.cpp in Sources */,
 				C3842B361551CEE700C716F3 /* ProjectReaderUtility.m in Sources */,
 				C3BDEE541552067A00A366E4 /* CustomFieldValueItem.m in Sources */,
+				C327F81D155333E700666710 /* Table.mm in Sources */,
+				C327F821155337F500666710 /* GenericCriteriaPrompt.mm in Sources */,
+				C327F824155339C000666710 /* GenericCriteria.mm in Sources */,
+				C327F827155349B200666710 /* TestOperator.mm in Sources */,
+				C327F82A155357B500666710 /* Filter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

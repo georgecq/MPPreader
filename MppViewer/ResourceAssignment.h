@@ -15,12 +15,13 @@
 
 @interface ResourceAssignment : NSObject
 
-// Gets or Sets the task UniqueId.
-@property (readwrite, assign) int UniqueID;
-
 -(id)init:(ProjectFile *)file with:(Task *)task;
 
 -(Task*) getTask;
+
+-(NSNumber *)getUniqueID;
+
+-(void)setUniqueID:(NSNumber *)val;
 
 -(Resource*)getResource;
 
