@@ -111,6 +111,18 @@ static NSNumber *_BASELINE10_DATE = nil;
     return result;
 }
 
+-(Boolean)getBoolean:(NSNumber *)type
+{
+    Boolean result = false;
+    NSData *item = [_map objectForKey:type];
+    {
+        unsigned char *buffer = new unsigned char[[item length]];
+        [item getBytes:buffer length:[item length]];
+        result = !([MPPUtility getShort:buffer] == 0);
+    }
+    return result;
+}
+
 -(NSString *)getUnicodeString:(NSNumber *)type
 {
     NSString *result = nil;

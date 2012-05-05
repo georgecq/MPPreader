@@ -13,6 +13,7 @@
 #import "Props14.h"
 #import "VarMeta12.h"
 #import "Var2Data.h"
+#import "ProjectHeader.h"
 #import "StreamHelper.h"
 #import "pole.h"
 
@@ -66,6 +67,9 @@ static NSMutableArray *DEFAULT_WORKING_WEEK = [[NSMutableArray alloc]initWithObj
 {
     @try 
     {
+        ProjectHeader *h = [[ProjectHeader alloc]init:nil];
+        [h setTimeSeparator:@"test"];
+        
         Props14 *props14 = [[Props14 alloc]init:(StreamHelper::getStream(storage, (char *)"Props14"))];
 
         [file setProjectFilePath:[props14 getUnicodeString:[Props PROJECT_FILE_PATH]]];
@@ -107,6 +111,7 @@ static NSMutableArray *DEFAULT_WORKING_WEEK = [[NSMutableArray alloc]initWithObj
         _nullTaskOrder = [[NSMutableDictionary alloc]init];
         
         [_file setMppFileType:14];
+        [_file setAutoFilter:[props14 getBoolean:[Props AUTO_FILTER]]];
         
         [self processCustomValueLists];
         

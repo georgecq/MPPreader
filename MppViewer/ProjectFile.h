@@ -45,7 +45,7 @@
     NSMutableArray *_taskFilters;
     NSMutableArray *_resourceFilters;
     NSMutableArray *_groups;
-    NSMutableArray *_allsubProjects;
+    NSMutableArray *_allSubProjects;
     
     NSMutableDictionary *_taskUniqueIDMap;
     NSMutableDictionary *_taskIDMap;
@@ -295,10 +295,6 @@
 -(void)unmapCalendarUniqueID:(NSNumber *)identifier;
 
 -(void)mapCalendarUniqueID:(NSNumber *)identifier withResource:(ProjectCalendar *)resource;
-
--(int)getMppFileType;
-
--(void)setMppFileType:(int)fileType;
 
 -(void)addView:(View *)view;
 

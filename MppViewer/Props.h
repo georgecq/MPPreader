@@ -20,6 +20,7 @@
 
 -(NSString *)getUnicodeString:(NSNumber *)type;
 
+-(Boolean)getBoolean:(NSNumber *)type;
 
 +(NSNumber *)PROJECT_START_DATE;
 +(NSNumber *)PROJECT_FINISH_DATE;

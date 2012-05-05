@@ -23,6 +23,8 @@
 #import "NumberUtility.h"
 #import "MPPDuration.h"
 #import "ProjectListener.h"
+#import "Group.h"
+#import "CustomFieldValueItem.h"
 
 @implementation ProjectFile
 
@@ -41,6 +43,7 @@
 @synthesize viewState;
 @synthesize resourceSubProject;
 @synthesize mppFileType;
+@synthesize encoded;
 
 int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
 
@@ -60,7 +63,7 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
         _taskFilters = [[NSMutableArray alloc]init];
         _resourceFilters = [[NSMutableArray alloc]init];
         _groups = [[NSMutableArray alloc]init];
-        _allsubProjects = [[NSMutableArray alloc]init];
+        _allSubProjects = [[NSMutableArray alloc]init];
         
         _fileCreationRecord = [[FileCreationRecord alloc]init:self];
         _projectHeader = [[ProjectHeader alloc]init:self];
@@ -1580,34 +1583,94 @@ int const MS_PROJECT_MAX_UNIQUE_ID = 0x1FFFFF;
     return _groups;
 }
 
--(Group *)getGroupByName:(NSString *)name{}
+-(Group *)getGroupByName:(NSString *)name
+{
+    return [_groupsByName objectForKey:name];
+}
 
--(void)addGroup:(Group *)group{}
+-(void)addGroup:(Group *)group
+{
+    [_groups addObject:group];
+    [_groupsByName setObject:group forKey:[group getName]];
+}
 
--(void)addGraphicalIndicator:(id<FieldType>)field withIndicator:(GraphicalIndicator *)indicator{}
+-(void)addGraphicalIndicator:(id<FieldType>)field withIndicator:(GraphicalIndicator *)indicator
+{
+    [_graphicalIndicators setObject:indicator forKey:field];
+}
 
--(GraphicalIndicator *)getGraphicalIndicator:(id<FieldType>)field{}
+-(GraphicalIndicator *)getGraphicalIndicator:(id<FieldType>)field
+{
+    return (GraphicalIndicator *)[_graphicalIndicators objectForKey:field];
+}
 
--(Table *)getTaskTableByName:(NSString *)name{}
+-(Table *)getTaskTableByName:(NSString *)name
+{
+    return (Table *)[_taskTablesByName objectForKey:name];
+}
 
--(Table *)getResourceTableByName:(NSString *)name{}
+-(Table *)getResourceTableByName:(NSString *)name
+{
+    return (Table *)[_resourceTablesByName objectForKey:name];
+}
 
--(void)addSubProject:(SubProject *)project{}
+-(void)addSubProject:(SubProject *)project
+{
+    [_allSubProjects addObject:project];
+}
 
--(NSMutableArray *)getAllSubProjects{}
+-(NSMutableArray *)getAllSubProjects
+{
+    return _allSubProjects;
+}
 
--(void)setEncryptionCode:(Byte)encriptionKey{}
+-(void)setEncryptionCode:(Byte)encriptionKey
+{
+    if (encriptionKey != 0x00) 
+    {
+        _encryptionKey = (Byte)(0xFF - encriptionKey);
+    }
+    else
+    {
+        _encryptionKey = (Byte)0x00;
+    }
+}
 
--(Byte)getEncryptionCode{}
+-(Byte)getEncryptionCode
+{
+    return _encryptionKey;
+}
 
--(void)addCustomFieldValue:(CustomFieldValueItem *)item{}
+-(void)addCustomFieldValue:(CustomFieldValueItem *)item
+{
+    [_customFieldValueItems setObject:item forKey:[item getUniqueID]];
+}
 
--(CustomFieldValueItem *)getCustomFieldValueItem:(NSNumber *)uniqueID{}
+-(CustomFieldValueItem *)getCustomFieldValueItem:(NSNumber *)uniqueID
+{
+    return (CustomFieldValueItem *)[_customFieldValueItems objectForKey:uniqueID];
+}
 
--(ProjectCalendar *)getCalendar{}
+-(ProjectCalendar *)getCalendar
+{
+    NSString *calendarName = [_projectHeader calendarName];
+    ProjectCalendar *calendar = [self getBaseCalendar:calendarName];
+    return calendar;
+}
 
--(void)setCalendar:(ProjectCalendar *)calendar{}
+-(void)setCalendar:(ProjectCalendar *)calendar
+{
+    [_projectHeader setCalendarName:[calendar Name]];
+}
 
--(ProjectCalendar *)getBaseCalendar{}
+-(ProjectCalendar *)getBaseCalendar
+{
+    ProjectCalendar *result = [self getBaseCalendar:@"Used for Microsoft Project 98 Baseline Calendar"];
+    if(result == nil)
+    {
+        result = [self getCalendar];
+    }
+    return result;
+}
 
 @end

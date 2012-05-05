@@ -109,7 +109,7 @@ static NSMutableArray *_ZERO_DURATIONS = nil;
 
 +(MPPDuration *) convertUnits:(double) duration  withFromUnits:(TimeUnit *) fromUnits withToUnits: (TimeUnit *) toUnits withDefaults:(ProjectHeader *) defaults
 {
-    return [MPPDuration convertUnits:duration  withFromUnits:fromUnits withToUnits:toUnits withMinutesPerDay:[defaults getMinutesPerDay] withMinutesPerWeek:[defaults getMinutesPerWeek] withDaysPerWeek:[defaults getDaysPerMonth]];
+    return [MPPDuration convertUnits:duration  withFromUnits:fromUnits withToUnits:toUnits withMinutesPerDay:[[defaults minutesPerDay]intValue] withMinutesPerWeek:[[defaults minutesPerWeek]intValue] withDaysPerWeek:[[defaults daysPerMonth] intValue]];
 }
 
 /**
